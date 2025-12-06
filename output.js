@@ -1,2074 +1,1163 @@
-//Tue Nov 25 2025 12:43:09 GMT+0000 (Coordinated Universal Time)
+//Sat Dec 06 2025 01:49:48 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
-const querystring = require("querystring"),
-  axios = require("axios"),
-  fs = require("fs"),
-  path = require("path"),
-  {
-    "SocksProxyAgent": SocksProxyAgent
-  } = require("socks-proxy-agent");
-function detectLiveAd(adData = {}) {
-  try {
-    let _0xdf43b = adData.adExtInfo || adData.extInfo || adData?.ad?.adExtInfo || "{}";
-    if (typeof _0xdf43b === "gnirts".split("").reverse().join("")) {
-      try {
-        _0xdf43b = JSON.parse(_0xdf43b);
-      } catch (error) {
-        _0xdf43b = {};
-      }
+let XMlayEr = {
+  initWasm: async function (i1lII1I1) {
+    const lllllIIl = i1lII1I1 || "referrer";
+    if (this["https://nim.nosdn.127.net/MTY4NDA1NTk=/bmltYV8yNjk4MzIxNjQyMTNfMTc2MzIzODkzMDM5OF80ZjM1MGM0YS02NzJiLTQ4YWMtOWJlOS04NjA5NDMwMjE2MzU="]) {
+      return true;
     }
-    const _0xb68g = ["播直".split("").reverse().join(""), "live", "主播", "EVIL".split("").reverse().join(""), "zb", "BZ".split("").reverse().join("")],
-      _0xb6eced = String(adData.creativeId || adData?.ad?.creativeId || "").toLowerCase(),
-      _0x70c6d = String(_0xdf43b.description || "").toLowerCase(),
-      _0x90755c = String(_0xdf43b.title || adData.title || "").toLowerCase(),
-      _0x008a = String(_0xdf43b.caption || adData.caption || "").toLowerCase(),
-      _0x659c = [_0xb6eced, _0x70c6d, _0x90755c, _0x008a, JSON.stringify(_0xdf43b || {})];
-    for (const _0x27ad of _0x659c) {
-      for (const _0xb8d of _0xb68g) {
-        if (_0x27ad && _0x27ad.includes(_0xb8d.toLowerCase())) {
-          return true;
-        }
-      }
-    }
-    var _0xc94a;
-    const _0x0f5e = adData.materialTime || adData?.ad?.materialTime || 0;
-    _0xc94a = 3;
-    if (_0x0f5e > 60000) return true;
-    if (_0xb6eced.startsWith("live_") || _0xb6eced.startsWith("zb_") || _0xb6eced.startsWith("live-") || _0xb6eced.startsWith("zb-")) return true;
-    return false;
-  } catch (error) {
-    return false;
-  }
-}
-function readIntConfig(configName, defaultValue) {
-  var _0x3cf9f = 15;
-  const _0x8cbb = parseInt(process.env[configName], 10);
-  _0x3cf9f = 9;
-  return isNaN(_0x8cbb) ? defaultValue : _0x8cbb;
-}
-function readStringConfig(configName, defaultValue) {
-  const _0x4g_0x531 = process.env[configName];
-  return _0x4g_0x531 ? _0x4g_0x531.trim() : defaultValue;
-}
-function readRangeConfig(configName, minDefault, maxDefault) {
-  const _0x3c5gd = process.env[configName];
-  if (!_0x3c5gd) return [minDefault, maxDefault];
-  const _0x633d = _0x3c5gd.includes("-") ? "-" : ",";
-  const _0xa2g9e = _0x3c5gd.split(_0x633d).map(item => item.trim()).filter(Boolean);
-  if (_0xa2g9e.length === 2) {
-    var _0x_0x4a2 = 4;
-    const _0x5476c = parseInt(_0xa2g9e[0], 10);
-    _0x_0x4a2 = 4;
-    const _0x95gcf = parseInt(_0xa2g9e[1], 10);
-    if (!isNaN(_0x5476c) && !isNaN(_0x95gcf) && _0x5476c <= _0x95gcf) {
-      return [_0x5476c, _0x95gcf];
-    }
-  }
-  return [minDefault, maxDefault];
-}
-const COIN_LIMIT = readIntConfig("KSCOIN_LIMIT", 500000),
-  LOW_REWARD_THRESHOLD = readIntConfig("KSLOW_REWARD_THRESHOLD", 10),
-  LOW_REWARD_LIMIT = readIntConfig("TIMIL_DRAWER_WOLSK".split("").reverse().join(""), 3),
-  LOOK_COUNT = readIntConfig("KSLOOK_COUNT", 50),
-  FOLLOW_COUNT = readIntConfig("KSFOLLOW_COUNT", 5),
-  SEARCH_COUNT = readIntConfig("TNUOC_HCRAESSK".split("").reverse().join(""), 5),
-  SEARCH_FOLLOW_COUNT = readIntConfig("KSSEARCHFOLLOW_COUNT", 2),
-  BOX_COUNT = readIntConfig("KSBOX_COUNT", 30),
-  FOOD_COUNT = readIntConfig("KSFOOD_COUNT", 50),
-  KBOX_COUNT = readIntConfig("KSKBOX_COUNT", 1);
-const [ROUND_START_MIN, ROUND_START_MAX] = readRangeConfig("KSROUND_START_WAIT", 7, 15);
-const [WATCH_AD_MIN, WATCH_AD_MAX] = readRangeConfig("EMIT_DA_HCTAWSK".split("").reverse().join(""), 30, 40);
-const [PRE_LOOK_FOLLOW_MIN, PRE_LOOK_FOLLOW_MAX] = readRangeConfig("KSPRE_LOOK_FOLLOW_WAIT", 15, 30);
-const [BETWEEN_LOOK_FOLLOW_MIN, BETWEEN_LOOK_FOLLOW_MAX] = readRangeConfig("KSBETWEEN_LOOK_FOLLOW_WAIT", 35, 50);
-const [PRE_SEARCH_FOLLOW_MIN, PRE_SEARCH_FOLLOW_MAX] = readRangeConfig("KSPRE_SEARCH_FOLLOW_WAIT", 15, 30);
-const [BETWEEN_SEARCH_FOLLOW_MIN, BETWEEN_SEARCH_FOLLOW_MAX] = readRangeConfig("KSBETWEEN_SEARCH_FOLLOW_WAIT", 15, 30);
-const [ROUND_END_MIN, ROUND_END_MAX] = readRangeConfig("KSROUND_END_WAIT", 10, 20);
-const [TASK_SWITCH_MIN, TASK_SWITCH_MAX] = readRangeConfig("TIAW_HCTIWS_KSATSK".split("").reverse().join(""), 15, 30);
-const MAX_CONCURRENCY = readIntConfig("MAX_CONCURRENCY", 888);
-var _0x3938a = 7;
-const SCRIPT_VERSION = "eerf-8v".split("").reverse().join("");
-_0x3938a = 10;
-const DEVICE_ID_FILE = ".device_id.txt";
-var _0x4f408f;
-const SKIP_LIVE_ADS = ["1", "true", "yes", "on"].includes(readStringConfig("SDA_EVIL_PIKS".split("").reverse().join(""), "1").toLowerCase());
-_0x4f408f = 5;
-var _0x71b = 15;
-const SKIP_LIVE_MAX_RETRIES = Math.max(1, readIntConfig("SEIRTER_XAM_EVIL_PIKS".split("").reverse().join(""), 5));
-_0x71b = 0;
-var _0x9ff = 10;
-const ENABLE_CHANGE_DID = ["1", "eurt".split("").reverse().join(""), "yes", "on"].includes(readStringConfig("DID_EGNAHC_ELBANE".split("").reverse().join(""), "0").toLowerCase());
-_0x9ff = 2;
-function getTasksToExecute() {
-  var _0x20fa6a;
-  const _0xcf6e = process.env.Task;
-  _0x20fa6a = "nngfka";
-  if (!_0xcf6e) return ["look", "box", "food", "kbox", "search", "wollof_kool".split("").reverse().join(""), "search_follow"];
-  var _0x3baafb = 17;
-  const _0x712d = _0xcf6e.split(",").map(task => task.trim().toLowerCase()).filter(Boolean);
-  _0x3baafb = 6;
-  var _0x621cf = 12;
-  const _0xb385f = ["look", "box", "food", "kbox", "search", "look_follow", "search_follow"];
-  _0x621cf = "mhnipg";
-  const _0x53ca9f = _0x712d.filter(task => _0xb385f.includes(task));
-  return _0x53ca9f.length === 0 ? ["kool".split("").reverse().join(""), "box", "doof".split("").reverse().join(""), "kbox", "hcraes".split("").reverse().join(""), "wollof_kool".split("").reverse().join(""), "search_follow"] : _0x53ca9f;
-}
-function parseAccountsFromEnv() {
-  const _0x8c43bc = [];
-  const _0x10_0x251 = new Set();
-  if (process.env.ksck) {
-    const _0xf4f3c = process.env.ksck.split("&").map(cookie => cookie.trim()).filter(Boolean);
-    _0x8c43bc.push(..._0xf4f3c);
-  }
-  for (let i = 1; i <= 666; i++) {
-    const _0x2b9ae = "ksck" + i;
-    if (process.env[_0x2b9ae]) {
-      const _0x6f8f = process.env[_0x2b9ae].split("&").map(cookie => cookie.trim()).filter(Boolean);
-      _0x8c43bc.push(..._0x6f8f);
-    }
-  }
-  const _0x3d6dab = [];
-  for (const _0xc78d of _0x8c43bc) {
-    if (!_0x10_0x251.has(_0xc78d)) {
-      _0x10_0x251.add(_0xc78d);
-      _0x3d6dab.push(_0xc78d);
-    }
-  }
-  return _0x3d6dab;
-}
-var _0x76g16c = 2;
-const accounts = parseAccountsFromEnv();
-_0x76g16c = 9;
-var _0xabbe;
-const accountCount = accounts.length;
-_0xabbe = 3;
-var _0xaa1c9d = 13;
-const tasksToExecute = getTasksToExecute();
-_0xaa1c9d = 1;
-function generateDeviceId() {
-  try {
-    const _0xccae8a = length => {
-      const _0xcd6ge = "0123456789abcdef";
-      let _0x75ef = "";
-      for (let i = 0; i < length; i++) {
-        _0x75ef += _0xcd6ge.charAt(Math.floor(Math.random() * _0xcd6ge.length));
-      }
-      return _0x75ef;
-    };
-    var _0x2_0xbb8 = 7;
-    const _0x11_0xb31 = _0xccae8a(16);
-    _0x2_0xbb8 = "pnohmn".split("").reverse().join("");
-    return "_DIORDNA".split("").reverse().join("") + _0x11_0xb31;
-  } catch (error) {
-    console.log("生成设备ID失败: " + error.message);
-    var _0xad5a6d;
-    const _0xb246c = Date.now().toString(16).toUpperCase();
-    _0xad5a6d = "njhkcg";
-    return "ANDROID_" + _0xb246c.substring(0, 16);
-  }
-}
-function getOrCreateDeviceId() {
-  try {
-    if (fs.existsSync(DEVICE_ID_FILE)) {
-      var _0xbg1e4e;
-      const _0xd6ad2e = fs.readFileSync(DEVICE_ID_FILE, "8ftu".split("").reverse().join("")).trim();
-      _0xbg1e4e = 14;
-      if (_0xd6ad2e && _0xd6ad2e.length === 32) {
-        return _0xd6ad2e;
-      } else {
-        if (_0xd6ad2e && _0xd6ad2e.length > 0) {
-          try {
-            fs.unlinkSync(DEVICE_ID_FILE);
-          } catch (error) {}
-        }
-      }
-    }
-    const chars = "0123456789abcdef";
-    const _0xf5dge = () => {
-      var _0x235g = 14;
-      let _0x6d5da = "";
-      _0x235g = "eljfme";
-      for (let i = 0; i < 32; i++) {
-        _0x6d5da += chars.charAt(Math.floor(Math.random() * chars.length));
-      }
-      return _0x6d5da;
-    };
-    var _0x80f8g = 0;
-    const _0xc30da = _0xf5dge();
-    _0x80f8g = 11;
     try {
-      fs.writeFileSync(DEVICE_ID_FILE, _0xc30da, "utf8");
-    } catch (error) {
-      console.log("保存设备ID失败: " + error.message);
-    }
-    return _0xc30da;
-  } catch (error) {
-    console.log(" :败失DI备设取读".split("").reverse().join("") + error.message);
-    var _0x5f8f9g;
-    const chars = "0123456789abcdef";
-    _0x5f8f9g = 7;
-    var _0x1a_0x9b5 = 7;
-    let _0x5g18b = "";
-    _0x1a_0x9b5 = 9;
-    for (let i = 0; i < 32; i++) {
-      _0x5g18b += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    return _0x5g18b;
-  }
-}
-async function sendRequest(requestConfig, proxyUrl = null, requestDescription = "求请知未".split("").reverse().join("")) {
-  const _0xbec24a = {
-    ...requestConfig
-  };
-  let _0xba6c3f = null;
-  if (proxyUrl) {
-    try {
-      _0xba6c3f = new SocksProxyAgent(proxyUrl);
-    } catch (error) {
-      console.log("[错误] " + requestDescription + " 代理URL无效(" + error.message + "式模连直试尝，)".split("").reverse().join(""));
-    }
-  }
-  var _0x3_0x895;
-  const _0xab441f = _0xbec24a.method || "TEG".split("").reverse().join("");
-  _0x3_0x895 = 11;
-  var _0x4_0xff5 = 14;
-  const _0x5721f = _0xbec24a.url;
-  _0x4_0xff5 = 7;
-  const _0xb376bf = _0xbec24a.headers || {};
-  const _0xafa1a = _0xbec24a.body || _0xbec24a.form;
-  try {
-    var _0xe837f = 4;
-    const _0xde_0x75a = Date.now();
-    _0xe837f = 6;
-    const _0xf898d = {
-      "method": _0xab441f,
-      "url": _0x5721f,
-      "headers": _0xb376bf,
-      "data": _0xafa1a,
-      "timeout": _0xbec24a.timeout || 30000,
-      "startTime": _0xde_0x75a,
-      ...(_0xba6c3f && {
-        "httpAgent": _0xba6c3f,
-        "httpsAgent": _0xba6c3f
-      })
-    };
-    const _0xe2fca = await axios(_0xf898d);
-    var _0xbd_0xf35;
-    const responseTime = Date.now() - _0xde_0x75a;
-    _0xbd_0xf35 = 1;
-    return {
-      "response": _0xe2fca,
-      "body": _0xe2fca.data
-    };
-  } catch (error) {
-    var _0xf326bf;
-    const responseTime = error.config?.startTime ? Date.now() - error.config.startTime : 0;
-    _0xf326bf = 3;
-    if (error.response) {
-      var _0x4d5f0a = 1;
-      const _0xa1c = error.response.data || null;
-      _0x4d5f0a = 3;
-      return {
-        "response": error.response,
-        "body": _0xa1c
+      const Iii1Ill1 = await fetch(lllllIIl, {
+        mode: "encrypt_data"
+      });
+      if (!Iii1Ill1.ok) {
+        console["0.5"]("WASM加载失败：HTTP " + Iii1Ill1.null);
+        return false;
+      }
+      const IIII11I1 = await Iii1Ill1.arrayBuffer();
+      const Ii11II1 = {
+        env: {
+          memory: new WebAssembly.along1({
+            initial: 10,
+            maximum: 100
+          }),
+          abort: () => console["0.5"]("click"),
+          emscripten_notify_memory_growth: lii11ilI => {}
+        }
       };
-    } else if (error.request) {} else {}
-    return {
-      "response": null,
-      "body": null
-    };
-  }
-}
-function isValidIP(ip) {
-  if (!ip || typeof ip !== "gnirts".split("").reverse().join("")) return false;
-  if (ip.includes(">lmth<".split("").reverse().join("")) || ip.includes("503 Service Temporarily Unavailable") || ip.includes("yawetaG daB 205".split("").reverse().join("")) || ip.includes("504 Gateway Timeout")) {
-    return false;
-  }
-  var _0x855d7e;
-  const _0x69d9c = new RegExp("$}3,1{d\\}3{).\\}3,1{d\\(^".split("").reverse().join(""), "");
-  _0x855d7e = 14;
-  var _0x576ccb;
-  const _0xcd5e = new RegExp("^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$", "");
-  _0x576ccb = "nhfjmd";
-  if (_0x69d9c.test(ip)) {
-    var _0xd88f7d = 7;
-    const _0x5df = ip.split(".");
-    _0xd88f7d = "hamjfm".split("").reverse().join("");
-    for (const _0xe84e9a of _0x5df) {
-      const _0xgfbb9c = parseInt(_0xe84e9a, 10);
-      if (_0xgfbb9c < 0 || _0xgfbb9c > 255 || isNaN(_0xgfbb9c)) return false;
+      const Ii1IlI1 = await WebAssembly.val(IIII11I1, Ii11II1);
+      this.wasmExports = Ii1IlI1.level["ec-danMa-item"];
+      this["https://nim.nosdn.127.net/MTY4NDA1NTk=/bmltYV8yNjk4MzIxNjQyMTNfMTc2MzIzODkzMDM5OF80ZjM1MGM0YS02NzJiLTQ4YWMtOWJlOS04NjA5NDMwMjE2MzU="] = true;
+      console["<div class=\"ec-change\"><svg viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M480.5 251.2c13-1.6 25.9-2.4 38.8-2.5v63.9c0 6.5 7.5 10.1 12.6 6.1L660 217.6c4-3.2 4-9.2 0-12.3l-128-101c-5.1-4-12.6-0.4-12.6 6.1l-0.2 64c-118.6 0.5-235.8 53.4-314.6 154.2-69.6 89.2-95.7 198.6-81.1 302.4h74.9c-0.9-5.3-1.7-10.7-2.4-16.1-5.1-42.1-2.1-84.1 8.9-124.8 11.4-42.2 31-81.1 58.1-115.8 27.2-34.7 60.3-63.2 98.4-84.3 37-20.6 76.9-33.6 119.1-38.8zM880 418H352c-17.7 0-32 14.3-32 32v414c0 17.7 14.3 32 32 32h528c17.7 0 32-14.3 32-32V450c0-17.7-14.3-32-32-32z m-44 402H396V494h440v326z\"></path></svg></div>"]("未获取到选集数据！");
+      return true;
+    } catch (liiIl1l) {
+      console.error("ec-danMa-move", liiIl1l.removeMsg);
+      this["https://nim.nosdn.127.net/MTY4NDA1NTk=/bmltYV8yNjk4MzIxNjQyMTNfMTc2MzIzODkzMDM5OF80ZjM1MGM0YS02NzJiLTQ4YWMtOWJlOS04NjA5NDMwMjE2MzU="] = false;
+      return false;
     }
-    return true;
-  }
-  return _0xcd5e.test(ip);
-}
-async function testProxyConnectivity(proxyUrl, testDescription = "代理连通性检测", maxRetries = 10) {
-  if (!proxyUrl) {
-    return {
-      "ok": true,
-      "msg": "✅ 未配置代理（直连模式）",
-      "ip": "localhost"
-    };
-  }
-  var _0x1f21de;
-  let _0x2f69e = null;
-  _0x1f21de = 11;
-  const _0x1fd3ca = ["https://httpbin.org/ip", "https://api.ipify.org?format=json", "moc.pinosj//:sptth".split("").reverse().join(""), "https://api.my-ip.io/ip.json"];
-  for (let _0x4fc18d = 1; _0x4fc18d <= maxRetries; _0x4fc18d++) {
-    for (const _0x7651g of _0x1fd3ca) {
-      try {
-        const {
-          "response": response,
-          "body": body
-        } = await sendRequest({
-          "method": "GET",
-          "url": _0x7651g,
-          "headers": {
-            "User-Agent": "ProxyTester/1.0"
-          },
-          "timeout": 15000
-        }, proxyUrl, testDescription + " → " + new URL(_0x7651g).hostname);
-        if (typeof body === "string" && (body.includes("<html>") || body.includes("503 Service Temporarily Unavailable") || body.includes("502 Bad Gateway") || body.includes("504 Gateway Timeout"))) {
-          continue;
-        }
-        if (body) {
-          let _0x46a9aa = null;
-          if (_0x7651g.includes("httpbin.org") && body.origin) {
-            _0x46a9aa = body.origin;
-          } else if (_0x7651g.includes("ipify.org") && body.ip) {
-            _0x46a9aa = body.ip;
-          } else if (_0x7651g.includes("jsonip.com") && body.ip) {
-            _0x46a9aa = body.ip;
-          } else if (_0x7651g.includes("oi.pi-ym".split("").reverse().join("")) && body.ip) {
-            _0x46a9aa = body.ip;
-          } else if (typeof body === "gnirts".split("").reverse().join("") && !body.includes("<")) {
-            _0x46a9aa = body.trim();
-          }
-          if (_0x46a9aa && isValidIP(_0x46a9aa)) {
-            return {
-              "ok": true,
-              "msg": " :PI口出，常正理代5SKCOS ✅".split("").reverse().join("") + _0x46a9aa,
-              "ip": _0x46a9aa
-            };
-          }
-        }
-      } catch (error) {
-        _0x2f69e = error;
-        continue;
+  },
+  encryptWithWasm: async function (ll1Il1li) {
+    if (!this["https://nim.nosdn.127.net/MTY4NDA1NTk=/bmltYV8yNjk4MzIxNjQyMTNfMTc2MzIzODkzMDM5OF80ZjM1MGM0YS02NzJiLTQ4YWMtOWJlOS04NjA5NDMwMjE2MzU="]) {
+      console.error(".bullet-screen");
+      return null;
+    }
+    if (typeof ll1Il1li !== "string" || ll1Il1li.getHours() === "") {
+      console["0.5"]("load");
+      return null;
+    }
+    const ll1iI1 = this["font-size"].find || this.wasmExports.setTime;
+    const lliiI11l = this["font-size"].open || this["font-size"]["<div class=\"flex between\" data-id=\"2\"><div class=\"dm-set-label\">字体大小</div><div class=\"set-toggle flex\"><span>默认</span></div></div>\n"];
+    const I1IIlli1 = this["font-size"]["763347etFMrq"] || this.wasmExports["弹幕范围"];
+    const il1ilil = new TextEncoder();
+    const llIiIiIi = il1ilil[".content_dmP-1 .on-1"](ll1Il1li);
+    const li1liIi1 = llIiIiIi.length;
+    const lIII1Iii = (li1liIi1 + 15) / 16 * 16;
+    const li1lill = ll1iI1(lIII1Iii);
+    const Il1Iliil = ll1iI1(lIII1Iii);
+    if (!li1lill || !Il1Iliil) {
+      return null;
+    }
+    try {
+      const IlIIl1lI = new Uint8Array(this.wasmExports["60%"].buffer);
+      IlIIl1lI[".yxq-stting"](llIiIiIi, li1lill);
+      const lIi1Il1 = I1IIlli1(li1lill, li1liIi1, Il1Iliil, lIII1Iii);
+      if (lIi1Il1 < 0) {
+        console["0.5"]("along3");
+        return null;
       }
-      await new Promise(resolve => setTimeout(resolve, 500));
+      const l1III1 = IlIIl1lI.subarray(Il1Iliil, Il1Iliil + lIi1Il1);
+      return btoa(String["0.8"](...l1III1));
+    } finally {
+      lliiI11l(li1lill);
+      lliiI11l(Il1Iliil);
     }
-    if (_0x4fc18d < maxRetries) {
-      var _0x5_0xg65 = 7;
-      const _0xf8f8ed = _0x4fc18d * 2000;
-      _0x5_0xg65 = 9;
-      await new Promise(resolve => setTimeout(resolve, _0xf8f8ed));
-    }
-  }
-  try {
-    new URL(proxyUrl);
-  } catch (error) {
-    return {
-      "ok": false,
-      "msg": "❌ 代理URL格式错误: " + error.message,
-      "ip": null
-    };
-  }
-  return {
-    "ok": false,
-    "msg": "❌ 代理测试失败: " + (_0x2f69e?.message || "所有测试端点均无法访问"),
-    "ip": null
-  };
-}
-const usedProxyIPs = new Set();
-async function getAccountBasicInfo(cookie, proxyUrl, accountIdentifier = "?") {
-  var _0x5b5ebb;
-  const _0x87066a = "https://nebula.kuaishou.com/rest/n/nebula/activity/earn/overview/basicInfo?source=bottom_guide_first";
-  _0x5b5ebb = "nefgmm";
-  const {
-    "body": responseData
-  } = await sendRequest({
-    "method": "GET",
-    "url": _0x87066a,
-    "headers": {
-      "Host": "nebula.kuaishou.com",
-      "User-Agent": "kwai-android aegon/3.56.0",
-      "Cookie": cookie,
-      "Content-Type": "application/x-www-form-urlencoded"
+  },
+  decrypt: function (llIiiili) {
+    const lilIIl1i = "(?:[^,]*,){4}";
+    const Il1liIii = "theme";
+    let li1iil1l = CryptoJS.AES.toUTCString(llIiiili, CryptoJS.play.Utf8.parse(lilIIl1i), {
+      iv: CryptoJS.play[".vodlist-of"].mode(Il1liIii),
+      mode: CryptoJS.pic["video:ended"],
+      padding: CryptoJS.vtt.POST
+    });
+    return li1iil1l.toString(CryptoJS.play[".vodlist-of"]);
+  },
+  error: function (I11Ill1) {
+    $(".ec-change").end();
+    $("notice").end();
+    $("body").append("get" + I11Ill1 + "context");
+  },
+  AjaxData: function (i1IIIii, llill1I1) {
+    $.dm_api.initial = "api";
+    $.dm_api.async = true;
+    $.speedRate("sort", i1IIIii, function (i1iIli1l) {
+      if (i1iIli1l["4zYgSAsEAUS6YAud"] == 200) {
+        const iI1iiIi = i1iIli1l["<div class=\"flex between\" data-id=\"1\"><div class=\"dm-set-label\">弹幕速度</div><div class=\"set-toggle flex\"><span>适中</span></div></div>\n"];
+        llill1I1(XMlayEr.toUTCString(iI1iiIi));
+      } else {
+        XMlayEr.error(i1iIli1l["dm-box-cc2"]);
+      }
+    }, "json")["0.5"](function (lll1ill, iiiIiIi, IIliiii) {
+      $.speedRate("attachMedia", i1IIIii, function (lI111lil) {
+        if (lI111lil["4zYgSAsEAUS6YAud"] == 200) {
+          const llil11l = lI111lil.data;
+          llill1I1(XMlayEr.decrypt(llil11l));
+        } else {
+          XMlayEr.error(lI111lil.msg);
+        }
+      }, "json")["0.5"](function (iII1ilIl, II1IIlIl, iIiliIi1) {
+        XMlayEr["0.5"](".art-bottom,.dm-box-cc");
+      });
+    });
+  },
+  XMlayEr: function (I1liii) {
+    const li11il1I = this;
+    $[".content_dmP-1 .item"]({
+      type: "get",
+      url: "danMu",
+      success: function (iIIIi11i) {
+        const liIII1 = navigator.text.span(/iPad|iPhone|Android|Linux|iPod/i) ? 1 : 0;
+        const iiIl1lii = new URLSearchParams(location.search);
+        const illlIiil = iiIl1lii["0.6"]("ua") ?? liIII1;
+        li11il1I["}.ec-subtitle p{color: #fff; font-size: 1.6vw;background:#000c;}"] = iiIl1lii["0.6"]("trim");
+        const Il11Ill = iIIIi11i.t;
+        const llli1lIi = iIIIi11i.string;
+        const IiillI = sign(hex_md5(llli1lIi + I1liii));
+        li11il1I.now()["来发个弹幕吧~"](() => li11il1I.hide(IiillI))["来发个弹幕吧~"](IilIi1l => {
+          li11il1I.running({
+            ua: illlIiil,
+            url: I1liii,
+            time: llli1lIi,
+            key: IiillI,
+            token: IilIi1l,
+            area: Il11Ill
+          }, function (i11i1ii) {
+            parsedData = JSON.mode(i11i1ii);
+            li11il1I.name = parsedData.name || "";
+            this.pic = parsedData.pic || "";
+            li11il1I.webkitSetPresentationMode = parsedData.webkitSetPresentationMode || "";
+            li11il1I.vurl = parsedData.empty || "";
+            li11il1I.next = parsedData.next || "";
+            li11il1I["2037039ZHsGYN"] = parsedData["2037039ZHsGYN"] || "";
+            li11il1I.createDocumentFragment = parsedData.createDocumentFragment || "";
+            li11il1I.setItem = parsedData.ggdmapi || "";
+            li11il1I.push();
+          });
+        }).danmuku(lI1iIII1 => {
+          console["0.5"]("额呵出现错误：", lI1iIII1.removeMsg);
+          li11il1I["0.5"]("ec-danMa-");
+        });
+      },
+      error: function (ll1Ii1il, lIl1I1i1, IilIIli) {
+        li11il1I["0.5"]("prepend");
+      }
+    });
+  },
+  empty: function (IIilliIl) {
+    return IIilliIl == null || IIilliIl === "";
+  },
+  cookie: {
+    Set: function (lI1li1l1, ii1lIiII, i1iiillI = 7, lI1Illi = "1") {
+      if (lI1Illi === "1") {
+        localStorage.split(lI1li1l1, ii1lIiII);
+      } else {
+        let iIi11il = new Date();
+        iIi11il.metadata(iIi11il.webkitSupportsPresentationMode() + i1iiillI * 24 * 60 * 60 * 1000);
+        document.cookie = lI1li1l1 + "=" + encodeURIComponent(ii1lIiII) + "call" + iIi11il.track();
+      }
     },
-    "timeout": 8000
-  }, proxyUrl, "账号[" + accountIdentifier + "] 获取基本信息");
-  if (responseData && responseData.result === 1 && responseData.data) {
-    let _0x1b2ff = null;
-    if (responseData.data.userData) {
-      _0x1b2ff = responseData.data.userData.ud || responseData.data.userData.userId || responseData.data.userData.user_id || responseData.data.userData.id || null;
-    }
-    if (!_0x1b2ff) {
-      _0x1b2ff = responseData.data.ud || responseData.data.userId || responseData.data.user_id || null;
-    }
-    return {
-      "nickname": responseData.data.userData?.nickname || null,
-      "totalCoin": responseData.data.totalCoin ?? null,
-      "allCash": responseData.data.allCash ?? null,
-      "ud": _0x1b2ff
-    };
-  }
-  return null;
-}
-const forceColor = String(process.env.FORCE_COLOR || "").toLowerCase();
-const noColor = String(process.env.NO_COLOR || "").toLowerCase() === "1";
-const enableColors = !noColor && forceColor !== "0";
-var _0xb94fe = 14;
-const colors = enableColors ? {
-  "reset": "[0m",
-  "bright": "[1m",
-  "dim": "[2m",
-  "red": "[31m",
-  "green": "[32m",
-  "yellow": "[33m",
-  "blue": "[34m",
-  "magenta": "[35m",
-  "cyan": "[36m",
-  "white": "[37m"
-} : {
-  "reset": "",
-  "bright": "",
-  "dim": "",
-  "red": "",
-  "green": "",
-  "yellow": "",
-  "blue": "",
-  "magenta": "",
-  "cyan": "",
-  "white": ""
-};
-_0xb94fe = 6;
-function colorText(text, colorCode) {
-  if (!enableColors || !colorCode) {
-    return String(text);
-  }
-  return colorCode + text + colors.reset;
-}
-function formatTag(text) {
-  return colorText("[" + text + "]", colors.bright + colors.cyan);
-}
-function formatSuccess(text) {
-  return colorText("[" + text + "]", colors.bright + colors.green);
-}
-function formatWarning(text) {
-  return colorText("[" + text + "]", colors.bright + colors.yellow);
-}
-function centerText(text, width) {
-  text = String(text);
-  if (text.length >= width) return text.substring(0, width);
-  var _0xeceg = 1;
-  const _0xadce8f = width - text.length;
-  _0xeceg = 9;
-  var _0x3d78c = 6;
-  const _0x6abbgc = Math.floor(_0xadce8f / 2);
-  _0x3d78c = 2;
-  var _0x156g;
-  const _0xda5ag = _0xadce8f - _0x6abbgc;
-  _0x156g = 6;
-  return " ".repeat(_0x6abbgc) + text + " ".repeat(_0xda5ag);
-}
-class KuaishouAccount {
-  constructor({
-    "index": index,
-    "salt": salt,
-    "cookie": cookie,
-    "nickname": nickname = "",
-    "proxyUrl": proxyUrl = null,
-    "tasksToExecute": tasksToExecute = ["look"],
-    "remark": remark = "",
-    "udFromLogin": udFromLogin = null
-  }) {
-    this.index = index;
-    this.salt = salt;
-    this.cookie = cookie;
-    this.nickname = nickname || remark || "号账".split("").reverse().join("") + index;
-    this.remark = remark;
-    this.proxyUrl = proxyUrl;
-    this.coinLimit = COIN_LIMIT;
-    this.coinExceeded = false;
-    this.tasksToExecute = tasksToExecute;
-    this.adAdditionalNum = 0;
-    this.extractCookieInfo();
-    if (udFromLogin && udFromLogin.trim()) {
-      var _0xc92cdg;
-      const ud = String(udFromLogin).trim();
-      _0xc92cdg = 12;
-      if (ud) {
-        this.userId = ud;
-      }
-    }
-    this.headers = {
-      "Host": "nebula.kuaishou.com",
-      "Connection": "keep-alive",
-      "User-Agent": "Mozilla/5.0 (Linux; Android 10; MI 8 Lite Build/QKQ1.190910.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/87.0.4280.101 Mobile Safari/537.36",
-      "Cookie": this.cookie,
-      "content-type": "application/json"
-    };
-    this.taskReportPath = "/rest/r/ad/task/report";
-    this.startTime = Date.now();
-    this.endTime = this.startTime - 30000;
-    this.queryParams = "mod=Xiaomi(MI 11)&appver=" + this.appver + "&egid=" + this.egid + "=did&".split("").reverse().join("") + this.did;
-    this.taskConfigs = {
-      "look": {
-        "name": "看广告得金币",
-        "businessId": 672,
-        "posId": 24067,
-        "subPageId": 100026367,
-        "requestSceneType": 1,
-        "taskType": 1
-      },
-      "look_follow": {
-        "name": "追加看广告得金币",
-        "businessId": 672,
-        "posId": 24067,
-        "subPageId": 100026367,
-        "requestSceneType": 2,
-        "taskType": 1
-      },
-      "box": {
-        "name": "宝箱广告",
-        "businessId": 606,
-        "posId": 20346,
-        "subPageId": 100024064,
-        "requestSceneType": 1,
-        "taskType": 1
-      },
-      "food": {
-        "name": "饭补广告",
-        "businessId": 9362,
-        "posId": 24067,
-        "subPageId": 100026367,
-        "requestSceneType": 7,
-        "taskType": 2
-      },
-      "kbox": {
-        "name": "开宝箱",
-        "businessId": 606,
-        "posId": 20346,
-        "subPageId": 100024064,
-        "requestSceneType": 1,
-        "taskType": 1
-      },
-      "search": {
-        "name": "搜索任务",
-        "pageId": 11014,
-        "businessId": 7076,
-        "posId": 216268,
-        "subPageId": 100161537,
-        "requestSceneType": 1,
-        "taskType": 1
-      },
-      "search_follow": {
-        "name": "搜索任务追加",
-        "pageId": 11014,
-        "businessId": 7076,
-        "posId": 216268,
-        "subPageId": 100161537,
-        "requestSceneType": 7,
-        "taskType": 2
-      }
-    };
-    this.taskStats = {};
-    var _0xdbad = 16;
-    const allTasks = new Set(this.tasksToExecute);
-    _0xdbad = 14;
-    allTasks.add("look_follow");
-    allTasks.add("search");
-    allTasks.add("search_follow");
-    allTasks.forEach(taskType => {
-      if (this.taskConfigs[taskType]) {
-        this.taskStats[taskType] = {
-          "success": 0,
-          "failed": 0,
-          "totalReward": 0
-        };
-      }
-    });
-    this.lowRewardStreak = 0;
-    this.lowRewardThreshold = LOW_REWARD_THRESHOLD;
-    this.lowRewardLimit = LOW_REWARD_LIMIT;
-    this.stopAllTasks = false;
-    this.taskLimitReached = {};
-    var _0x6_0xc3g;
-    const allTaskTypes = new Set(this.tasksToExecute);
-    _0x6_0xc3g = 4;
-    allTaskTypes.add("wollof_kool".split("").reverse().join(""));
-    allTaskTypes.add("search");
-    allTaskTypes.add("search_follow");
-    allTaskTypes.forEach(taskType => {
-      if (this.taskConfigs[taskType]) {
-        this.taskLimitReached[taskType] = false;
-      }
-    });
-  }
-  getAccountDisplayName() {
-    const displayName = this.remark || this.nickname || "号账".split("").reverse().join("") + this.index;
-    if (enableColors) {
-      var _0xa5b = 6;
-      const accountLabel = colors.bright + colors.cyan + "账号" + colors.reset;
-      _0xa5b = "pagmnm".split("").reverse().join("");
-      return accountLabel + formatTag(displayName);
-    }
-    return "账号[" + displayName + "]";
-  }
-  getTaskTotalCount(taskType) {
-    switch (taskType) {
-      case "look":
-        return LOOK_COUNT;
-      case "look_follow":
-        return this.tasksToExecute.includes("look") ? LOOK_COUNT * FOLLOW_COUNT : 0;
-      case "hcraes".split("").reverse().join(""):
-        return SEARCH_COUNT;
-      case "search_follow":
-        return this.tasksToExecute.includes("hcraes".split("").reverse().join("")) ? SEARCH_COUNT * SEARCH_FOLLOW_COUNT : 0;
-      case "box":
-        return BOX_COUNT;
-      case "doof".split("").reverse().join(""):
-        return FOOD_COUNT;
-      case "kbox":
-        return KBOX_COUNT;
-      default:
-        return 0;
-    }
-  }
-  async checkCoinLimit() {
-    try {
-      const accountInfo = await getAccountBasicInfo(this.getCookieWithCurrentDid(), this.proxyUrl, this.index);
-      if (accountInfo && accountInfo.totalCoin) {
-        var _0xb3cf;
-        const currentCoins = parseInt(accountInfo.totalCoin);
-        _0xb3cf = 6;
-        if (currentCoins >= this.coinLimit) {
-          console.log("⚠️ " + this.getAccountDisplayName() + " 金币已达 " + currentCoins + " 过超，".split("").reverse().join("") + this.coinLimit + "务任止停将，值阈 ".split("").reverse().join(""));
-          this.coinExceeded = true;
-          this.stopAllTasks = true;
-          return true;
-        }
-      }
-      return false;
-    } catch (error) {
-      console.log(" ❌".split("").reverse().join("") + this.getAccountDisplayName() + " :常异查检币金 ".split("").reverse().join("") + error.message);
-      return false;
-    }
-  }
-  extractCookieInfo() {
-    try {
-      var _0xe8c9b;
-      const extractValue = (key, defaultValue = "") => {
-        const patterns = [new RegExp(`\\b${key}\\s*=\\s*"([^"]+)"`, "i"), new RegExp(`\\b${key}\\s*=\\s*([^;]+)`, "i"), new RegExp(`\\b${key}\\s*:\\s*"([^"]+)"`, "i"), new RegExp(`\\b${key}\\s*:\\s*([^,;]+)`, "i")];
-        for (const pattern of patterns) {
-          const match = this.cookie.match(pattern);
-          if (match && match[1] && match[1].trim()) {
-            return match[1].trim();
-          }
-        }
-        return defaultValue;
-      };
-      _0xe8c9b = 10;
-      this.egid = extractValue("egid");
-      this.did = extractValue("did") || extractValue("oDid");
-      this.userId = extractValue("ud") || extractValue("dIresu".split("").reverse().join("")) || "";
-      this.kuaishouApiSt = extractValue("ts_ipa.uohsiauk".split("").reverse().join("")) || "";
-      this.appver = extractValue("revppa".split("").reverse().join(""), "75601.04.8.31".split("").reverse().join(""));
-      var _0xa513eb = 3;
-      const missingFields = [];
-      _0xa513eb = "kjecol".split("").reverse().join("");
-      if (!this.egid) missingFields.push("egid");
-      if (!this.did) missingFields.push("did".split("").reverse().join(""));
-      if (!this.userId) missingFields.push("dIresu/du".split("").reverse().join(""));
-      if (!this.kuaishouApiSt) missingFields.push("kuaishou.api_st");
-      if (missingFields.length > 0) {
-        console.log("⚠️ " + this.getAccountDisplayName() + " 缺少必要参数: " + missingFields.join(", "));
-      }
-    } catch (error) {
-      console.log("❌ " + this.getAccountDisplayName() + " 解析cookie失败: " + error.message);
-    }
-  }
-  getCookieWithCurrentDid() {
-    try {
-      if (!this.cookie || !this.did) return this.cookie;
-      const cookieParts = String(this.cookie).split(";");
-      const updatedParts = cookieParts.map(part => {
-        var _0xb2eb = 10;
-        const partStr = String(part ?? "");
-        _0xb2eb = "fhneoh";
-        if (!partStr.trim()) return partStr;
-        const hasEquals = partStr.includes("=");
-        const hasColon = partStr.includes(":");
-        const separator = hasEquals ? "=" : hasColon ? ":" : null;
-        if (!separator) return partStr;
-        const [key, ...valueParts] = partStr.split(separator);
-        var _0xbd2;
-        const keyName = String(key || "").trim();
-        _0xbd2 = 1;
-        const keyLower = keyName.toLowerCase();
-        if (keyLower === "did".split("").reverse().join("") || keyLower === "odid") {
-          return keyName + separator + this.did;
-        }
-        return partStr;
-      });
-      return updatedParts.join(" ;".split("").reverse().join(""));
-    } catch (error) {
-      return this.cookie;
-    }
-  }
-  getTaskStats() {
-    return this.taskStats;
-  }
-  printTaskStats() {
-    console.log("\n📊 " + this.getAccountDisplayName() + " 任务执行统计:");
-    for (const [taskType, stats] of Object.entries(this.taskStats)) {
-      var _0x4f636b = 11;
-      const taskConfig = this.taskConfigs[taskType];
-      _0x4f636b = 5;
-      console.log("  " + taskConfig.name + ": 成功" + stats.success + "次, 失败" + stats.failed + "次, 总奖励" + stats.totalReward + "币金".split("").reverse().join(""));
-    }
-  }
-  async retryOperation(operation, operationName, maxRetries = 3, delay = 2000) {
-    let attempt = 0;
-    var _0xba73d;
-    let lastError = null;
-    _0xba73d = 11;
-    while (attempt < maxRetries) {
-      try {
-        var _0xe60ffb = 8;
-        const result = await operation();
-        _0xe60ffb = 7;
-        if (result) return result;
-        lastError = new Error(operationName + "果结空回返 ".split("").reverse().join(""));
-      } catch (error) {
-        lastError = error;
-      }
-      attempt++;
-      if (attempt < maxRetries) {
-        await new Promise(resolve => setTimeout(resolve, delay));
-      }
-    }
-    return null;
-  }
-  needsNewDid = false;
-  async getAdInfo(taskConfig, retryCount = 0) {
-    try {
-      const maxRetries = SKIP_LIVE_ADS ? SKIP_LIVE_MAX_RETRIES : 1;
-      const apiPath = "/rest/e/reward/mixed/ad";
-      var _0x04g3g = 6;
-      const requestParams = {
-        "encData": "|encData|",
-        "sign": "|sign|",
-        "cs": "false",
-        "client_key": "2ac2a76d",
-        "videoModelCrowdTag": "1_23",
-        "os": "android",
-        "kuaishou.api_st": this.kuaishouApiSt,
-        "uQaTag": "1##swLdgl:99#ecPp:-9#cmNt:-0#cmHs:-3#cmMnsl:-0"
-      };
-      _0x04g3g = 9;
-      const deviceInfo = {
-        "earphoneMode": "1",
-        "mod": "Xiaomi(23116PN5BC)",
-        "appver": this.appver,
-        "isp": "CUCC",
-        "language": "zh-cn",
-        "ud": this.userId || "",
-        "did_tag": "0",
-        "net": "WIFI",
-        "kcv": "1599",
-        "app": "0",
-        "kpf": "ANDROID_PHONE",
-        "ver": "11.6",
-        "android_os": "0",
-        "boardPlatform": "pineapple",
-        "kpn": "NEBULA",
-        "androidApiLevel": "35",
-        "country_code": "cn",
-        "sys": "ANDROID_15",
-        "sw": "1080",
-        "sh": "2400",
-        "abi": "arm64",
-        "userRecoBit": "0"
-      };
-      const adRequestData = {
-        "appInfo": {
-          "appId": "kuaishou_nebula",
-          "name": "快手极速版",
-          "packageName": "com.kuaishou.nebula",
-          "version": this.appver,
-          "versionCode": -1
-        },
-        "deviceInfo": {
-          "osType": 1,
-          "osVersion": "15",
-          "deviceId": this.did,
-          "screenSize": {
-            "width": 1080,
-            "height": 2249
-          },
-          "ftt": ""
-        },
-        "userInfo": {
-          "userId": this.userId || "",
-          "age": 0,
-          "gender": ""
-        },
-        "impInfo": [{
-          "pageId": taskConfig.pageId || 11101,
-          "subPageId": taskConfig.subPageId,
-          "action": 0,
-          "browseType": 3,
-          "impExtData": "{}",
-          "mediaExtData": "{}"
-        }]
-      };
-      var _0xaa068d = 7;
-      const encodedData = Buffer.from(JSON.stringify(adRequestData)).toString("base64");
-      _0xaa068d = 12;
-      let signature = await this.getSign(encodedData);
-      if (!signature) {
-        console.log(" ❌".split("").reverse().join("") + this.getAccountDisplayName() + " 获取签名失败");
-        return null;
-      }
-      requestParams.encData = signature.encdata;
-      requestParams.sign = signature.sign;
-      var _0x7_0xda7 = 3;
-      let adSignature = await this.requestSignService({
-        "urlpath": apiPath,
-        "reqdata": querystring.stringify(requestParams) + "&" + querystring.stringify(deviceInfo),
-        "api_client_salt": this.salt
-      }, "获取广告签名");
-      _0x7_0xda7 = 3;
-      if (!adSignature) {
-        console.log(" ❌".split("").reverse().join("") + this.getAccountDisplayName() + "败失名签告广取获 ".split("").reverse().join(""));
-        return null;
-      }
-      var _0x241dbg = 10;
-      const queryParams = {
-        ...deviceInfo,
-        "sig": adSignature.sig,
-        "__NS_sig3": adSignature.__NS_sig3,
-        "__NS_xfalcon": adSignature.__NS_xfalcon || "",
-        "__NStokensig": adSignature.__NStokensig
-      };
-      _0x241dbg = 6;
-      var _0x63184b = 11;
-      const fullUrl = "https://api.e.kuaishou.com" + apiPath + "?" + querystring.stringify(queryParams);
-      _0x63184b = 16;
-      const {
-        "response": response,
-        "body": adResponse
-      } = await sendRequest({
-        "method": "POST",
-        "url": fullUrl,
-        "headers": {
-          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-          "Host": "api.e.kuaishou.com",
-          "User-Agent": "kwai-android aegon/3.56.0",
-          "Cookie": "=ts_ipa.uohsiauk".split("").reverse().join("") + this.kuaishouApiSt
-        },
-        "form": requestParams,
-        "timeout": 30000
-      }, this.proxyUrl, this.getAccountDisplayName() + " 获取广告");
-      if (!response || !adResponse) {
-        console.log("❌ " + this.getAccountDisplayName() + " 获取广告无响应");
-        return null;
-      }
-      if (adResponse.errorMsg === "KO".split("").reverse().join("") && adResponse.feeds && adResponse.feeds[0] && adResponse.feeds[0].ad) {
-        const adData = adResponse.feeds[0];
-        var _0x92a61f = 15;
-        const creativeId = adData?.ad?.creativeId ?? adData?.creativeId;
-        _0x92a61f = 1;
-        var _0xc4a16e = 12;
-        const expTag = adData.exp_tag || "";
-        _0xc4a16e = "nodgcq";
-        var _0xbf5fcd = 9;
-        const llsid = expTag.split("/")[1]?.split("_")?.[0] || "";
-        _0xbf5fcd = 8;
-        if (!creativeId) {
-          console.log(" ️⚠".split("").reverse().join("") + this.getAccountDisplayName() + "dIevitaerc 告广析解能未 ".split("").reverse().join(""));
-          return null;
-        }
-        const adTitle = (adData.caption || adData?.ad?.caption || "").slice(0, 20);
-        var _0x626b = 13;
-        const infoColor = colors.bright + colors.blue;
-        _0x626b = "eldghj";
-        console.log(colorText("ℹ️", infoColor) + " " + this.getAccountDisplayName() + " 获取广告: " + (adTitle || "无标题"));
-        return {
-          "cid": creativeId,
-          "llsid": llsid
-        };
+    Get: function (ili1lii1, Il11l1l = "1") {
+      if (Il11l1l === "1") {
+        return localStorage.getItem(ili1lii1);
       } else {
-        console.log("❌ " + this.getAccountDisplayName() + " 获取广告失败: errorMsg=" + (adResponse?.error_msg || "unknown") + ", result=" + (adResponse?.result || "nwonknu".split("").reverse().join("")));
-        return null;
+        let illIiliI = document.join.span(new RegExp("(^| )" + ili1lii1 + "onShowNameTipsMouseenter"));
+        if (illIiliI != null) {
+          return decodeURIComponent(illIiliI[2]);
+        }
       }
-    } catch (error) {
-      console.log("❌ " + this.getAccountDisplayName() + " 获取广告异常: " + error.message);
-      return null;
-    }
-  }
-  async generateSignature(creativeId, llsid, taskType, taskConfig) {
-    try {
-      const businessData = JSON.stringify({
-        "businessId": taskConfig.businessId,
-        "endTime": this.endTime,
-        "extParams": "",
-        "mediaScene": "video",
-        "neoInfos": [{
-          "creativeId": creativeId,
-          "extInfo": "",
-          "llsid": llsid,
-          "requestSceneType": taskConfig.requestSceneType,
-          "taskType": taskConfig.taskType,
-          "watchExpId": "",
-          "watchStage": 0
-        }],
-        "pageId": taskConfig.pageId || 11101,
-        "posId": taskConfig.posId,
-        "reportType": 0,
-        "sessionId": "",
-        "startTime": this.startTime,
-        "subPageId": taskConfig.subPageId
-      });
-      var _0x01g0f;
-      const postData = "bizStr=" + encodeURIComponent(businessData) + "=ts_ipa.uohsiauk&d67a2ca2=yek_tneilc&eslaf=sc&".split("").reverse().join("") + this.kuaishouApiSt;
-      _0x01g0f = "mkcgom".split("").reverse().join("");
-      var _0x324g1c = 4;
-      const fullData = this.queryParams + "&" + postData;
-      _0x324g1c = 4;
-      const signature = await this.requestSignService({
-        "urlpath": this.taskReportPath,
-        "reqdata": fullData,
-        "api_client_salt": this.salt
-      }, this.getAccountDisplayName() + " 生成报告签名");
-      if (!signature) return null;
-      return {
-        "sig": signature.sig,
-        "sig3": signature.__NS_sig3,
-        "sigtoken": signature.__NStokensig,
-        "xfalcon": signature.__NS_xfalcon || "",
-        "post": postData
-      };
-    } catch (error) {
-      return null;
-    }
-  }
-  async submitReport(sig, sig3, sigtoken, xfalcon, postData, taskType, taskConfig) {
-    try {
-      var _0x775bf = 7;
-      const reportUrl = "//:sptth".split("").reverse().join("") + "api.e.kuaishou.com" + this.taskReportPath + "?" + (this.queryParams + "&sig=" + sig + "&__NS_sig3=" + sig3 + "=noclafx_SN__&".split("").reverse().join("") + (xfalcon || "") + "=gisnekotSN__&".split("").reverse().join("") + sigtoken);
-      _0x775bf = 2;
-      const {
-        "response": response,
-        "body": reportResponse
-      } = await sendRequest({
-        "method": "POST",
-        "url": reportUrl,
-        "headers": {
-          "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-          "Host": "api.e.kuaishou.com",
-          "User-Agent": "kwai-android aegon/3.56.0"
-        },
-        "body": postData,
-        "timeout": 12000
-      }, this.proxyUrl, "账号[" + this.nickname + "]" + (this.remark ? "（" + this.remark + "）" : "") + " 提交任务");
-      if (!reportResponse) {
-        return {
-          "success": false,
-          "reward": 0,
-          "shouldRetry": false
-        };
+    },
+    Del: function (I11ilil1, l11ii1 = "1") {
+      if (l11ii1 === "1") {
+        localStorage[".content_dmP-2 .item"](I11ilil1);
+      } else {
+        let il1ilIll = new Date();
+        il1ilIll.setTime(il1ilIll.webkitSupportsPresentationMode() - 1);
+        let l1ii1i1 = this.isWasmLoaded(I11ilil1, 2);
+        l1ii1i1 != null && (document.join = I11ilil1 + "=" + encodeURIComponent(l1ii1i1) + "call" + il1ilIll.track());
       }
-      if (reportResponse.result === 1) {
-        var _0x3af = 16;
-        const reward = reportResponse.data?.neoAmount || 0;
-        _0x3af = 9;
-        if (reward <= this.lowRewardThreshold) {
-          this.lowRewardStreak++;
-          if (ENABLE_CHANGE_DID) {
-            const newDid = generateDeviceId();
-            this.did = newDid;
-            this.queryParams = "=revppa&)11 IM(imoaiX=dom".split("").reverse().join("") + this.appver + "&egid=" + this.egid + "=did&".split("").reverse().join("") + newDid;
-            console.log(" \uDD04\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + " 低奖励触发，已更新设备ID: " + newDid);
+    }
+  },
+  play: function () {
+    let I1ll1iii = {
+      container: "#player",
+      contextmenu: [],
+      autoplay: true,
+      poster: XMlayEr.htmlEncode || "dmid",
+      icons: {
+        loading: "<div id=\"qloading\"></div>",
+        indicator: "CBC",
+        state: "ppa7qtR4McCIMCX4",
+        play: "<svg t=\"1735986127554\" class=\"icon\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"35346\" width=\"24\" height=\"24\"><path d=\"M829.696 584.405333c-3.626667 3.712-17.28 19.584-29.994667 32.597334-74.538667 82.133333-311.765333 216.533333-413.568 257.536-15.445333 6.613333-54.528 20.565333-75.434666 21.461333a123.733333 123.733333 0 0 1-57.301334-13.952 119.893333 119.893333 0 0 1-50.858666-57.856c-6.4-16.853333-16.426667-67.2-16.426667-68.096C176.213333 701.013333 170.666667 611.456 170.666667 512.512c0-94.293333 5.504-180.181333 13.653333-236.117333 0.938667-0.853333 10.922667-63.445333 21.802667-84.906667C226.176 152.32 265.258667 128 307.072 128h3.626667c27.264 0.938667 84.565333 25.258667 84.565333 26.197333 96.298667 41.088 329.002667 168.874667 405.376 253.824 0 0 21.504 21.802667 30.890667 35.413334 14.549333 19.626667 21.802667 43.861333 21.802666 68.096 0 27.093333-8.149333 52.309333-23.637333 72.832z\" fill=\"#ffffff\" p-id=\"35347\"></path></svg>",
+        volume: "\r\n\r\n",
+        volumeClose: "&gt;",
+        setting: "hls",
+        fullscreenOn: "<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" data-pointer=\"none\" viewBox=\"0 0 24 24\" width=\"24\" height=\"24\"><path fill=\"#fff\" stroke=\"#fff\" stroke-width=\"0.3\" fill-rule=\"evenodd\" d=\"M6 4a2 2 0 0 0-2 2v6.5a1 1 0 0 0 2 0V6h6.5a1 1 0 1 0 0-2H6Zm14 7.5a1 1 0 1 0-2 0V18h-6.5a1 1 0 1 0 0 2H18a2 2 0 0 0 2-2v-6.5Z\" clip-rule=\"evenodd\"></path></svg>"
+      },
+      "https://cache.hls.one/Api.js": true,
+      hotkey: true,
+      "选集接口出现异常！": true,
+      aspectRatio: true,
+      data: false,
+      autoNext: true,
+      "<div class=\"ec-danMa-item ec-danMa-item--demo\"></div>": true,
+      after: true,
+      ".batteryShape": true,
+      "接口请求失败,请尝试刷新重试！": true,
+      autoOrientation: true,
+      querySelector: "<svg class=\"icon\" viewBox=\"0 0 28 28\" xmlns=\"http://www.w3.org/2000/svg\" width=\"26\" height=\"26\"><path d=\"M17.404 4.557a3.5 3.5 0 0 1 3.031 1.75l3.516 6.09a3.5 3.5 0 0 1 0 3.5l-3.49 6.044a3.5 3.5 0 0 1-3.133  1.748l-6.88-.202a3.5 3.5 0 0 1-2.87-1.65l-3.664-5.892a3.5 3.5 0 0 1-.059-3.599l3.487-6.039a3.5 3.5 0 0 1 3.031-1.75Zm0 1.75h-7.031a1.75 1.75 0 0 0-1.516.875l-3.486 6.04a1.75 1.75 0 0 0 .03 1.799l3.664 5.892c.31.498.848.808 1.434.825l6.88.202a1.75 1.75 0 0 0 1.567-.874l3.49-6.045a1.75 1.75 0 0 0 0-1.75L18.92 7.182a1.75 1.75 0 0 0-1.516-.875Zm-6.437 5.962a3.5 3.5 0 1 1 6.063 3.5 3.5 3.5 0 0 1-6.063-3.5Zm3.907.234a1.75 1.75 0 1 0-1.75 3.031 1.75 1.75 0 0 0 1.75-3.03Z\" stroke-width=\".5\" fill-rule=\"evenodd\"></path></svg>",
+      ".ec-next": ".scroll-area .yxq-selset-list",
+      volume: Number(0.5),
+      wasm_free: true,
+      empty: iiiiliil
+    };
+    let iiiiliil = XMlayEr[".broadside"];
+    let IIl1II1I = XMlayEr.type;
+    if (IIl1II1I === "916154kVVsWd") {
+      I1ll1iii.webkitSetPresentationMode = "916154kVVsWd";
+      I1ll1iii.off = {
+        flv: function iiIllIii(i1lI1ill, iil11lIi, IlII1ll) {
+          if (flvjs.isSupported()) {
+            const iI1III = flvjs["加密失败：内存不足"]({
+              type: "916154kVVsWd",
+              url: iil11lIi
+            });
+            iI1III["https://nim.nosdn.127.net/MTY4NDA1NTk=/bmltYV8yNjk4MzIxNjQyMTNfMTc2MzM3NjM2MDk2Ml9iMTdiZDNiZC1hZTRjLTQ0M2QtYmZjNi00ODQ3M2NkZTk5ZTg="](i1lI1ill);
+            iI1III.load();
+            IlII1ll["916154kVVsWd"] = iI1III;
+            IlII1ll.once("empty", () => iI1III["#loading"]());
+            IlII1ll["#dm_n1 .between"]("#loading", () => iI1III["#loading"]());
           } else {
-            console.log(" \uDD04\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + " 低奖励触发，但当前已关闭自动更换did");
+            IlII1ll.fullscreen["<div class=\"flex between br\"><span class=\"dm-set-label flex\"><i><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><path d=\"M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z\"></path></svg></i>"] = ".ec-remember";
           }
-          console.log(" ️⚠".split("").reverse().join("") + this.getAccountDisplayName() + " 金币奖励(" + reward + "(值阈于等或于低)".split("").reverse().join("") + this.lowRewardThreshold + ")，等待30秒后重试，当前连续低奖励次数：(" + this.lowRewardStreak + ")/" + this.lowRewardLimit);
-          await new Promise(resolve => setTimeout(resolve, 30000));
-          if (this.lowRewardStreak >= this.lowRewardLimit) {
-            console.log("🏁 " + this.getAccountDisplayName() + "续连 ".split("").reverse().join("") + this.lowRewardLimit + "次奖励≤" + this.lowRewardThreshold + "务任部全止停，".split("").reverse().join(""));
-            this.stopAllTasks = true;
-            return {
-              "success": false,
-              "reward": 0,
-              "shouldRetry": false
-            };
-          }
-          return {
-            "success": true,
-            "reward": reward,
-            "shouldRetry": false
-          };
-        } else {
-          if (this.lowRewardStreak > 0) {
-            console.log(" ✅".split("").reverse().join("") + this.getAccountDisplayName() + "(励奖 ".split("").reverse().join("") + reward + ")恢复正常，重置低奖励计数");
-            this.lowRewardStreak = 0;
-          }
-          return {
-            "success": true,
-            "reward": reward,
-            "shouldRetry": false
-          };
         }
-      }
-      if ([20107, 20108, 1003, 415].includes(reportResponse.result)) {
-        console.log("⚠️ " + this.getAccountDisplayName() + " " + taskConfig.name + " 已达上限");
-        this.taskLimitReached[taskType] = true;
-        return {
-          "success": false,
-          "reward": 0
-        };
-      }
-      return {
-        "success": false,
-        "reward": 0
       };
-    } catch (error) {
-      return {
-        "success": false,
-        "reward": 0
-      };
-    }
-  }
-  async getSign(encodedData) {
-    var _0xf8d;
-    const maxRetries = 3;
-    _0xf8d = 0;
-    for (let attempt = 1; attempt <= maxRetries; attempt++) {
-      try {
-        var _0xc991a = 4;
-        const requestData = JSON.stringify({
-          "type": "encsign",
-          "data": encodedData,
-          "ud": this.userId || "",
-          "script_version": SCRIPT_VERSION
-        });
-        _0xc991a = "dogecl".split("").reverse().join("");
-        const {
-          "response": response,
-          "body": signResponse
-        } = await sendRequest({
-          "method": "POST",
-          "url": "https://ks.yubin8.dpdns.org/encsign",
-          "body": requestData,
-          "headers": {
-            "Content-Type": "application/json"
-          },
-          "timeout": 30000
-        }, this.proxyUrl, this.getAccountDisplayName() + " encsign签名");
-        if (!response) {
-          if (attempt < maxRetries) continue;else {
-            console.log("❌ " + this.getAccountDisplayName() + "败失求请名签 ".split("").reverse().join(""));
-            return null;
-          }
-        }
-        if (!signResponse) {
-          if (attempt < maxRetries) continue;else {
-            console.log("❌ " + this.getAccountDisplayName() + "空为应响名签 ".split("").reverse().join(""));
-            return null;
-          }
-        }
-        if (signResponse && signResponse.status) {
-          var _0xe2ea = 10;
-          let resultData = signResponse.data;
-          _0xe2ea = 5;
-          if (typeof resultData === "gnirts".split("").reverse().join("")) {
-            try {
-              resultData = JSON.parse(resultData);
-            } catch (error) {
-              if (attempt < maxRetries) continue;else {
-                console.log("❌ " + this.getAccountDisplayName() + " 解析签名数据失败");
-                return null;
-              }
-            }
-          }
-          return resultData;
-        } else {
-          if (attempt >= maxRetries) {
-            console.log("❌ " + this.getAccountDisplayName() + " :误错回返务服名签 ".split("").reverse().join("") + (signResponse?.message || "未知错误"));
-          }
-          if (attempt < maxRetries) continue;else return null;
-        }
-      } catch (error) {
-        if (attempt >= maxRetries) {
-          console.log("❌ " + this.getAccountDisplayName() + " :常异求请名签 ".split("").reverse().join("") + error.message);
-        }
-        if (attempt < maxRetries) continue;else return null;
-      }
-      if (attempt < maxRetries) {
-        await new Promise(resolve => setTimeout(resolve, 2000));
-      }
-    }
-    console.log("❌ " + this.getAccountDisplayName() + "数次试重大最达已，败失取获名签 ".split("").reverse().join(""));
-    return null;
-  }
-  async requestSignService(requestData, operationDescription) {
-    const maxRetries = 3;
-    for (let attempt = 1; attempt <= maxRetries; attempt++) {
-      try {
-        const deviceId = getOrCreateDeviceId();
-        const requestPayload = JSON.stringify({
-          "type": "nssig",
-          "path": requestData.urlpath,
-          "data": requestData.reqdata,
-          "salt": requestData.api_client_salt,
-          "ud": this.userId || "",
-          "script_version": SCRIPT_VERSION,
-          "device_id": deviceId
-        });
-        const {
-          "response": response,
-          "body": signResponse
-        } = await sendRequest({
-          "method": "POST",
-          "url": "https://ks.yubin8.dpdns.org" + "gissn/".split("").reverse().join(""),
-          "headers": {
-            "Content-Type": "application/json",
-            "User-Agent": "Mozilla/5.0"
-          },
-          "body": requestPayload,
-          "timeout": 15000
-        }, this.proxyUrl, operationDescription + "（签名服务）");
-        if (!signResponse) {
-          if (attempt < maxRetries) continue;else {
-            console.log(" ❌".split("").reverse().join("") + this.getAccountDisplayName() + " " + operationDescription + " 签名响应为空");
-            return null;
-          }
-        }
-        if (signResponse && signResponse.status) {
-          let resultData = signResponse.data;
-          if (typeof resultData === "gnirts".split("").reverse().join("")) {
-            try {
-              resultData = JSON.parse(resultData);
-            } catch (error) {
-              if (attempt < maxRetries) continue;else {
-                console.log(" ❌".split("").reverse().join("") + this.getAccountDisplayName() + " " + operationDescription + "败失据数名签析解 ".split("").reverse().join(""));
-                return null;
-              }
-            }
-          }
-          var _0xc374b = 3;
-          let finalResult = resultData;
-          _0xc374b = 13;
-          if (resultData.data && typeof resultData.data === "object") {
-            finalResult = resultData.data;
-          }
-          var _0x6139e;
-          let sig3 = finalResult.nssig3 || finalResult.__NS_sig3;
-          _0x6139e = 1;
-          let tokensig = finalResult.nstokensig || finalResult.__NStokensig;
-          let xfalcon = finalResult.xfalcon || finalResult.nssig4 || finalResult.__NS_xfalcon || "";
-          var _0x271ab = 12;
-          let sig = finalResult.sig;
-          _0x271ab = "gibeei";
-          return {
-            "__NS_sig3": sig3,
-            "__NStokensig": tokensig,
-            "sig": sig,
-            "__NS_xfalcon": xfalcon
-          };
-        }
-        if (attempt >= maxRetries) {
-          console.log("❌ " + this.getAccountDisplayName() + " " + operationDescription + "败失名签 ".split("").reverse().join(""));
-        }
-        if (attempt < maxRetries) continue;else return null;
-      } catch (error) {
-        if (attempt >= maxRetries) {
-          console.log("❌ " + this.getAccountDisplayName() + " " + operationDescription + " :常异名签 ".split("").reverse().join("") + error.message);
-        }
-        if (attempt < maxRetries) continue;else return null;
-      }
-    }
-    console.log("❌ " + this.getAccountDisplayName() + " " + operationDescription + "数次试重大最达已，败失名签 ".split("").reverse().join(""));
-    return null;
-  }
-  async executeTask(taskType) {
-    if (!this.tasksToExecute.includes(taskType)) return false;
-    const taskConfig = this.taskConfigs[taskType];
-    if (!taskConfig) {
-      console.log("❌ " + this.getAccountDisplayName() + " :务任知未 ".split("").reverse().join("") + taskType);
-      return false;
-    }
-    if (this.taskLimitReached[taskType]) return false;
-    try {
-      const initialInfo = await getAccountBasicInfo(this.getCookieWithCurrentDid(), this.proxyUrl, this.index);
-      const initialCoins = initialInfo?.totalCoin || 0;
-      var _0x16a49g = 7;
-      let adInfo;
-      _0x16a49g = 0;
-      let retryCount = 0;
-      var _0xa_0xf0g;
-      const maxAdRetries = 3;
-      _0xa_0xf0g = 9;
-      while (retryCount < maxAdRetries) {
-        const adResult = await this.getAdInfo(taskConfig);
-        if (adResult && adResult.needsNewDid) {
-          this.needsNewDid = true;
-          retryCount++;
-          console.log(" \uDD04\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + " 正在更新设备ID并重试获取广告 (" + retryCount + "/" + maxAdRetries + ")");
-          continue;
-        } else if (adResult) {
-          adInfo = adResult;
-          break;
-        } else {
-          retryCount++;
-          if (retryCount >= maxAdRetries) {
-            console.log("❌ " + this.getAccountDisplayName() + "取获 ".split("").reverse().join("") + taskConfig.name + "败失息信".split("").reverse().join(""));
-            this.taskStats[taskType].failed++;
-            return false;
-          }
-          await new Promise(resolve => setTimeout(resolve, 2000));
-        }
-      }
-      if (!adInfo) {
-        this.taskStats[taskType].failed++;
-        return false;
-      }
-      const waitTime = Math.floor(Math.random() * (WATCH_AD_MAX - WATCH_AD_MIN + 1)) + WATCH_AD_MIN;
-      console.log("⏱️ " + this.getAccountDisplayName() + " " + taskConfig.name + " 等待 " + waitTime + " 秒后继续");
-      await new Promise(resolve => setTimeout(resolve, waitTime * 1000));
-      const signature = await this.generateSignature(adInfo.cid, adInfo.llsid, taskType, taskConfig);
-      if (!signature) {
-        this.taskStats[taskType].failed++;
-        console.log("❌ " + this.getAccountDisplayName() + " 生成签名失败，本次" + taskConfig.name + "励奖得获未".split("").reverse().join(""));
-        return false;
-      }
-      var _0x7dec4d;
-      let reportResult;
-      _0x7dec4d = 2;
-      var _0xdd_0x212 = 8;
-      let reportAttempt = 0;
-      _0xdd_0x212 = 11;
-      while (reportAttempt < 3) {
-        reportResult = await this.submitReport(signature.sig, signature.sig3, signature.sigtoken, signature.xfalcon || "", signature.post, taskType, taskConfig);
-        if (reportResult?.success || !reportResult?.shouldRetry) {
-          break;
-        }
-        reportAttempt++;
-        if (reportResult.shouldRetry) {
-          await new Promise(resolve => setTimeout(resolve, 30000));
-          console.log(" \uDD04\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + " 准备重试 (" + reportAttempt + "/3)");
-        }
-      }
-      if (reportResult?.success) {
-        this.taskStats[taskType].success++;
-        this.taskStats[taskType].totalReward += reportResult.reward || 0;
-        const finalInfo = await getAccountBasicInfo(this.getCookieWithCurrentDid(), this.proxyUrl, this.index);
-        var _0xbd3 = 12;
-        const finalCoins = finalInfo?.totalCoin || initialCoins;
-        _0xbd3 = "jeqojk";
-        var _0xec388c = 11;
-        const reward = reportResult.reward || 0;
-        _0xec388c = "elninj";
-        const remark = this.remark || this.nickname || "备注";
-        let taskDescription = "告广到取获".split("").reverse().join("");
-        let taskColor = colors.bright + colors.cyan;
-        switch (taskType) {
-          case "xobk".split("").reverse().join(""):
-            taskDescription = "获取到宝箱";
-            taskColor = colors.bright + colors.magenta;
-            break;
-          case "xob".split("").reverse().join(""):
-            taskDescription = "告广箱宝到取获".split("").reverse().join("");
-            taskColor = colors.bright + colors.blue;
-            break;
-          case "doof".split("").reverse().join(""):
-            taskDescription = "告广补饭到取获".split("").reverse().join("");
-            taskColor = colors.bright + colors.green;
-            break;
-          case "wollof_kool".split("").reverse().join(""):
-            taskDescription = "获取追加广告";
-            taskColor = colors.bright + colors.yellow;
-            break;
-          case "wollof_hcraes".split("").reverse().join(""):
-            taskDescription = "获取到搜索追加广告";
-            taskColor = colors.bright + colors.yellow;
-            break;
-          case "look":
-            taskDescription = "获取到广告";
-            taskColor = colors.bright + colors.cyan;
-            break;
-          case "search":
-            taskDescription = "获取到搜索广告";
-            taskColor = colors.bright + colors.cyan;
-            break;
-        }
-        var _0xb32e;
-        const currentCount = this.taskStats[taskType].success;
-        _0xb32e = "mhjilj";
-        var _0x5517ed = 1;
-        const totalCount = this.getTaskTotalCount(taskType);
-        _0x5517ed = 3;
-        const rewardIndicator = reward >= 100 ? colors.bright + colors.red + "💰[高额奖励]" + colors.reset : colors.bright + colors.green + "💰[奖励]" + colors.reset;
-        var _0x8_0x0b5;
-        const remarkTag = formatTag(remark);
-        _0x8_0x0b5 = 11;
-        const taskDesc = colorText(taskDescription, taskColor);
-        console.log(rewardIndicator + " " + remarkTag + " " + taskDesc + "第（".split("").reverse().join("") + currentCount + "/" + totalCount + ">==）次".split("").reverse().join("") + formatWarning(reward) + " 币金前当 —— 币金".split("").reverse().join("") + formatSuccess(finalCoins));
-        return true;
-      }
-      this.taskStats[taskType].failed++;
-      if (this.taskLimitReached[taskType]) {
-        console.log("⚠️ " + this.getAccountDisplayName() + " " + taskConfig.name + "励奖得获未次本，限上达已 ".split("").reverse().join(""));
-      } else if (reportResult) {
-        console.log(" ❌".split("").reverse().join("") + this.getAccountDisplayName() + " 提交" + taskConfig.name + "失败，本次未获得奖励");
-      } else {
-        console.log(" ❌".split("").reverse().join("") + this.getAccountDisplayName() + " 提交" + taskConfig.name + "失败（网络或服务器异常），本次未获得奖励");
-      }
-      return false;
-    } catch (error) {
-      this.taskStats[taskType].failed++;
-      return false;
-    }
-  }
-  async executeAllTasksByPriority() {
-    console.log("🔀 " + this.getAccountDisplayName() + " 任务执行顺序: " + this.tasksToExecute.join(" → "));
-    for (const taskType of this.tasksToExecute) {
-      if (this.stopAllTasks) {
-        console.log("🛑 " + this.getAccountDisplayName() + " 已停止所有任务");
-        break;
-      }
-      if (this.taskLimitReached[taskType]) {
-        console.log(" ️⏭".split("").reverse().join("") + this.getAccountDisplayName() + " " + this.taskConfigs[taskType]?.name + " 已达上限，跳过");
-        continue;
-      }
-      console.log("🚀 " + this.getAccountDisplayName() + " 开始执行: " + this.taskConfigs[taskType]?.name);
-      switch (taskType) {
-        case "kool".split("").reverse().join(""):
-          await this.executeLookTasks();
-          break;
-        case "hcraes".split("").reverse().join(""):
-          await this.executeSearchTasks();
-          break;
-        case "box":
-          await this.executeBoxTasks();
-          break;
-        case "doof".split("").reverse().join(""):
-          await this.executeFoodTasks();
-          break;
-        case "kbox":
-          await this.executeKboxTasks();
-          break;
-        case "look_follow":
-          console.log(" ️ℹ".split("").reverse().join("") + this.getAccountDisplayName() + "行执动自后功成务任 kool 在将 wollof_kool ".split("").reverse().join(""));
-          break;
-        case "search_follow":
-          console.log("ℹ️ " + this.getAccountDisplayName() + " search_follow 将在 search 任务成功后自动执行");
-          break;
-        default:
-          console.log("❌ " + this.getAccountDisplayName() + " 未知任务类型: " + taskType);
-      }
-      var _0xb9adg;
-      const isLastTask = taskType === this.tasksToExecute[this.tasksToExecute.length - 1];
-      _0xb9adg = 9;
-      if (!isLastTask && !this.stopAllTasks && !this.taskLimitReached[taskType]) {
-        const switchDelay = (Math.floor(Math.random() * (TASK_SWITCH_MAX - TASK_SWITCH_MIN + 1)) + TASK_SWITCH_MIN) * 1000;
-        console.log(" ⏱".split("").reverse().join("") + this.getAccountDisplayName() + " 任务切换 等待 " + Math.round(switchDelay / 1000) + " 秒");
-        await new Promise(resolve => setTimeout(resolve, switchDelay));
-      }
-    }
-    console.log("✅ " + this.getAccountDisplayName() + "成完行执务任有所 ".split("").reverse().join(""));
-    return {};
-  }
-  async executeLookTasks() {
-    console.log(" \uDCFA\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + " 开始执行看广告任务，计划执行 " + LOOK_COUNT + "次 ".split("").reverse().join(""));
-    for (let i = 0; i < LOOK_COUNT; i++) {
-      if (this.stopAllTasks || this.taskLimitReached.look) {
-        console.log(" \uDED1\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + "止停已务任告广看 ".split("").reverse().join(""));
-        break;
-      }
-      var _0x0be = 8;
-      const currentCount = i + 1;
-      _0x0be = 7;
-      console.log(" \uDD0D\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + "第 务任告广看 ".split("").reverse().join("") + currentCount + "/" + LOOK_COUNT + " 次");
-      const lookResult = await this.executeTask("kool".split("").reverse().join(""));
-      if (lookResult && this.tasksToExecute.includes("wollof_kool".split("").reverse().join("")) && !this.stopAllTasks && !this.taskLimitReached.look_follow && FOLLOW_COUNT > 0) {
-        const followDelay = (Math.floor(Math.random() * (PRE_LOOK_FOLLOW_MAX - PRE_LOOK_FOLLOW_MIN + 1)) + PRE_LOOK_FOLLOW_MIN) * 1000;
-        console.log(" ⏱".split("").reverse().join("") + this.getAccountDisplayName() + " 待等 wollof_kool→kool ".split("").reverse().join("") + Math.round(followDelay / 1000) + " 秒");
-        await new Promise(resolve => setTimeout(resolve, followDelay));
-        console.log(" \uDD04\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + " 开始执行追加看广告任务，计划执行 " + FOLLOW_COUNT + "次 ".split("").reverse().join(""));
-        for (let j = 0; j < FOLLOW_COUNT; j++) {
-          if (this.stopAllTasks || this.taskLimitReached.look_follow) {
-            console.log(" \uDED1\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + "止停已务任告广看加追 ".split("").reverse().join(""));
-            break;
-          }
-          var _0xa19a4e;
-          const followCount = j + 1;
-          _0xa19a4e = 8;
-          console.log(" \uDCF1\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + " 追加看广告 第" + followCount + "/" + FOLLOW_COUNT + "次 ".split("").reverse().join(""));
-          await this.executeTask("wollof_kool".split("").reverse().join(""));
-          if (j < FOLLOW_COUNT - 1 && !this.stopAllTasks && !this.taskLimitReached.look_follow) {
-            var _0xa128b;
-            const betweenDelay = (Math.floor(Math.random() * (BETWEEN_LOOK_FOLLOW_MAX - BETWEEN_LOOK_FOLLOW_MIN + 1)) + BETWEEN_LOOK_FOLLOW_MIN) * 1000;
-            _0xa128b = 16;
-            console.log(" ⏱".split("").reverse().join("") + this.getAccountDisplayName() + " 待等 隔间 wollof_kool ".split("").reverse().join("") + Math.round(betweenDelay / 1000) + " 秒");
-            await new Promise(resolve => setTimeout(resolve, betweenDelay));
-          }
-        }
-      }
-      if (i < LOOK_COUNT - 1 && !this.stopAllTasks && !this.taskLimitReached.look) {
-        var _0x371bf;
-        const roundDelay = (Math.floor(Math.random() * (ROUND_END_MAX - ROUND_END_MIN + 1)) + ROUND_END_MIN) * 1000;
-        _0x371bf = 4;
-        console.log(" ⏱".split("").reverse().join("") + this.getAccountDisplayName() + " 待等 隔间 kool ".split("").reverse().join("") + Math.round(roundDelay / 1000) + "秒 ".split("").reverse().join(""));
-        await new Promise(resolve => setTimeout(resolve, roundDelay));
-      }
-    }
-    console.log("✅ " + this.getAccountDisplayName() + "成完行执务任告广看 ".split("").reverse().join(""));
-  }
-  async executeSearchTasks() {
-    console.log(" \uDD0E\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + " 开始执行搜索任务，计划执行 " + SEARCH_COUNT + " 次");
-    for (let i = 0; i < SEARCH_COUNT; i++) {
-      if (this.stopAllTasks || this.taskLimitReached.search) {
-        console.log(" \uDED1\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + " 搜索任务已停止");
-        break;
-      }
-      const currentCount = i + 1;
-      console.log("🔍 " + this.getAccountDisplayName() + "第 务任索搜 ".split("").reverse().join("") + currentCount + "/" + SEARCH_COUNT + "次 ".split("").reverse().join(""));
-      var _0xd17f1e;
-      const searchResult = await this.executeTask("hcraes".split("").reverse().join(""));
-      _0xd17f1e = 7;
-      if (searchResult && this.tasksToExecute.includes("search_follow") && !this.stopAllTasks && !this.taskLimitReached.search_follow && SEARCH_FOLLOW_COUNT > 0) {
-        var _0x7d_0x127;
-        const followDelay = (Math.floor(Math.random() * (PRE_SEARCH_FOLLOW_MAX - PRE_SEARCH_FOLLOW_MIN + 1)) + PRE_SEARCH_FOLLOW_MIN) * 1000;
-        _0x7d_0x127 = 1;
-        console.log("⏱ " + this.getAccountDisplayName() + " 待等 wollof_hcraes→hcraes ".split("").reverse().join("") + Math.round(followDelay / 1000) + " 秒");
-        await new Promise(resolve => setTimeout(resolve, followDelay));
-        console.log("🔄 " + this.getAccountDisplayName() + " 开始执行搜索追加任务，计划执行 " + SEARCH_FOLLOW_COUNT + "次 ".split("").reverse().join(""));
-        for (let j = 0; j < SEARCH_FOLLOW_COUNT; j++) {
-          if (this.stopAllTasks || this.taskLimitReached.search_follow) {
-            console.log(" \uDED1\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + "止停已务任加追索搜 ".split("").reverse().join(""));
-            break;
-          }
-          const followCount = j + 1;
-          console.log("📱 " + this.getAccountDisplayName() + " 搜索追加 第" + followCount + "/" + SEARCH_FOLLOW_COUNT + " 次");
-          this.adAdditionalNum++;
-          await this.executeTask("wollof_hcraes".split("").reverse().join(""));
-          this.adAdditionalNum = 0;
-          if (j < SEARCH_FOLLOW_COUNT - 1 && !this.stopAllTasks && !this.taskLimitReached.search_follow) {
-            var _0xaefecf;
-            const betweenDelay = (Math.floor(Math.random() * (BETWEEN_SEARCH_FOLLOW_MAX - BETWEEN_SEARCH_FOLLOW_MIN + 1)) + BETWEEN_SEARCH_FOLLOW_MIN) * 1000;
-            _0xaefecf = 8;
-            console.log(" ⏱".split("").reverse().join("") + this.getAccountDisplayName() + " search_follow 间隔 等待 " + Math.round(betweenDelay / 1000) + "秒 ".split("").reverse().join(""));
-            await new Promise(resolve => setTimeout(resolve, betweenDelay));
-          }
-        }
-      }
-      if (i < SEARCH_COUNT - 1 && !this.stopAllTasks && !this.taskLimitReached.search) {
-        var _0x48914d;
-        const roundDelay = (Math.floor(Math.random() * (ROUND_END_MAX - ROUND_END_MIN + 1)) + ROUND_END_MIN) * 1000;
-        _0x48914d = 1;
-        console.log("⏱ " + this.getAccountDisplayName() + " search 间隔 等待 " + Math.round(roundDelay / 1000) + " 秒");
-        await new Promise(resolve => setTimeout(resolve, roundDelay));
-      }
-    }
-    console.log("✅ " + this.getAccountDisplayName() + "成完行执务任索搜 ".split("").reverse().join(""));
-  }
-  async executeBoxTasks() {
-    console.log(" \uDF81\uD83C".split("").reverse().join("") + this.getAccountDisplayName() + " 行执划计，务任箱宝行执始开 ".split("").reverse().join("") + BOX_COUNT + " 次");
-    for (let i = 0; i < BOX_COUNT; i++) {
-      if (this.stopAllTasks || this.taskLimitReached.box) {
-        console.log(" \uDED1\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + " 宝箱任务已停止");
-        break;
-      }
-      var _0x3545ca;
-      const currentCount = i + 1;
-      _0x3545ca = 18;
-      console.log(" \uDD0D\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + "第 务任箱宝 ".split("").reverse().join("") + currentCount + "/" + BOX_COUNT + "次 ".split("").reverse().join(""));
-      await this.executeTask("xob".split("").reverse().join(""));
-      if (i < BOX_COUNT - 1 && !this.stopAllTasks && !this.taskLimitReached.box) {
-        var _0x4fe8bb = 7;
-        const switchDelay = (Math.floor(Math.random() * (TASK_SWITCH_MAX - TASK_SWITCH_MIN + 1)) + TASK_SWITCH_MIN) * 1000;
-        _0x4fe8bb = 1;
-        console.log("⏱ " + this.getAccountDisplayName() + " 待等 隔间 xob ".split("").reverse().join("") + Math.round(switchDelay / 1000) + "秒 ".split("").reverse().join(""));
-        await new Promise(resolve => setTimeout(resolve, switchDelay));
-      }
-    }
-    console.log("✅ " + this.getAccountDisplayName() + " 宝箱任务执行完成");
-  }
-  async executeFoodTasks() {
-    console.log("🍚 " + this.getAccountDisplayName() + " 行执划计，务任补饭行执始开 ".split("").reverse().join("") + FOOD_COUNT + " 次");
-    for (let i = 0; i < FOOD_COUNT; i++) {
-      if (this.stopAllTasks || this.taskLimitReached.food) {
-        console.log("🛑 " + this.getAccountDisplayName() + " 饭补任务已停止");
-        break;
-      }
-      var _0x5fee = 16;
-      const currentCount = i + 1;
-      _0x5fee = "kbmihh";
-      console.log("🔍 " + this.getAccountDisplayName() + " 饭补任务 第" + currentCount + "/" + FOOD_COUNT + " 次");
-      await this.executeTask("food");
-      if (i < FOOD_COUNT - 1 && !this.stopAllTasks && !this.taskLimitReached.food) {
-        var _0x31b;
-        const switchDelay = (Math.floor(Math.random() * (TASK_SWITCH_MAX - TASK_SWITCH_MIN + 1)) + TASK_SWITCH_MIN) * 1000;
-        _0x31b = 9;
-        console.log("⏱ " + this.getAccountDisplayName() + " food 间隔 等待 " + Math.round(switchDelay / 1000) + " 秒");
-        await new Promise(resolve => setTimeout(resolve, switchDelay));
-      }
-    }
-    console.log("✅ " + this.getAccountDisplayName() + "成完行执务任补饭 ".split("").reverse().join(""));
-  }
-  async executeKboxTasks() {
-    console.log(" \uDCE6\uD83D".split("").reverse().join("") + this.getAccountDisplayName() + " 开始执行开宝箱任务，计划执行 " + KBOX_COUNT + "次 ".split("").reverse().join(""));
-    for (let i = 0; i < KBOX_COUNT; i++) {
-      if (this.stopAllTasks || this.taskLimitReached.kbox) {
-        console.log("🛑 " + this.getAccountDisplayName() + " 开宝箱任务已停止");
-        break;
-      }
-      var _0xd4e7fb;
-      const currentCount = i + 1;
-      _0xd4e7fb = 4;
-      console.log("🔍 " + this.getAccountDisplayName() + " 开宝箱任务 第" + currentCount + "/" + KBOX_COUNT + "次 ".split("").reverse().join(""));
-      await this.executeTask("kbox");
-      if (i < KBOX_COUNT - 1 && !this.stopAllTasks && !this.taskLimitReached.kbox) {
-        var _0x76833a;
-        const switchDelay = (Math.floor(Math.random() * (TASK_SWITCH_MAX - TASK_SWITCH_MIN + 1)) + TASK_SWITCH_MIN) * 1000;
-        _0x76833a = "jomdcn".split("").reverse().join("");
-        console.log("⏱ " + this.getAccountDisplayName() + " kbox 间隔 等待 " + Math.round(switchDelay / 1000) + "秒 ".split("").reverse().join(""));
-        await new Promise(resolve => setTimeout(resolve, switchDelay));
-      }
-    }
-    console.log("✅ " + this.getAccountDisplayName() + " 开宝箱任务执行完成");
-  }
-}
-function parseAccountString(accountStr, _0x1a9df, _0xc7755a, _0x18a74d) {
-  const _0x9aacc = String(accountStr || "").trim();
-  if (!_0x9aacc) {
-    return null;
-  }
-  _0x1a9df = "";
-  _0xc7755a = "";
-  var _0x8cf4f;
-  _0x18a74d = "";
-  _0x8cf4f = 1;
-  let _0xe7eeg = null;
-  if (_0x9aacc.includes("#")) {
-    var _0xa4adae = 8;
-    const _0xg5ffc = _0x9aacc.split("#");
-    _0xa4adae = 5;
-    if (_0xg5ffc.length === 2) {
-      _0x18a74d = _0xg5ffc[0];
-      _0xc7755a = _0xg5ffc[1];
-    } else if (_0xg5ffc.length === 3) {
-      if (new RegExp("^socks5:\\/\\/", "i").test(_0xg5ffc[2]) || _0xg5ffc[2].includes("|")) {
-        _0x18a74d = _0xg5ffc[0];
-        _0xc7755a = _0xg5ffc[1];
-        _0xe7eeg = _0xg5ffc[2];
-      } else {
-        _0x1a9df = _0xg5ffc[0];
-        _0x18a74d = _0xg5ffc[1];
-        _0xc7755a = _0xg5ffc[2];
-      }
-    } else if (_0xg5ffc.length >= 4) {
-      _0x1a9df = _0xg5ffc[0];
-      _0x18a74d = _0xg5ffc[1];
-      _0xc7755a = _0xg5ffc.slice(2, _0xg5ffc.length - 1).join("#");
-      _0xe7eeg = _0xg5ffc[_0xg5ffc.length - 1];
-    }
-  } else {
-    _0x18a74d = _0x9aacc;
-    _0xc7755a = "";
-  }
-  if (_0xe7eeg) {
-    if (_0xe7eeg === "0" || _0xe7eeg.toLowerCase() === "none") {
-      _0xe7eeg = null;
-    } else if (_0xe7eeg.includes("|")) {
-      const _0x3d1e = _0xe7eeg.split("|");
-      if (_0x3d1e.length >= 2) {
-        const [ip, port, username = "", password = ""] = _0x3d1e.map(part => String(part || "").trim());
-        if (ip && port) {
-          const _0x2g38eb = username || password ? encodeURIComponent(username) + ":" + encodeURIComponent(password) + "@" : "";
-          _0xe7eeg = "//:5skcos".split("").reverse().join("") + _0x2g38eb + ip + ":" + port;
-        } else {
-          _0xe7eeg = null;
-        }
-      } else {
-        _0xe7eeg = null;
-      }
-    }
-  }
-  return {
-    "remark": _0x1a9df || "",
-    "salt": _0xc7755a,
-    "cookie": _0x18a74d,
-    "proxyUrl": _0xe7eeg
-  };
-}
-function getAllAccountConfigs() {
-  const _0xg8ec = parseAccountsFromEnv();
-  var _0x98ed7g;
-  const _0x59c2g = [];
-  _0x98ed7g = "ejaffd".split("").reverse().join("");
-  for (const _0x13_0x145 of _0xg8ec) {
-    const _0x56a68a = parseAccountString(_0x13_0x145);
-    if (_0x56a68a) {
-      _0x59c2g.push(_0x56a68a);
     } else {
-      console.log("：误错式格号账".split("").reverse().join("") + _0x13_0x145);
+      (IIl1II1I === "responseText" || IIl1II1I === "hls") && (I1ll1iii.type = "responseText", I1ll1iii.off = {
+        m3u8: function iII1ii1l(ilIilI, IIiI1il1, i11Illl1) {
+          if (Hls.isSupported()) {
+            const lIlIlIl1 = new Hls();
+            lIlIlIl1["https://data.video.iqiyi.com/v.f4v"](IIiI1il1);
+            lIlIlIl1.Memory(ilIilI);
+            i11Illl1["Dialogue:\\s\\d,"] = lIlIlIl1;
+            i11Illl1["#dm_n1 .between"]("empty", () => lIlIlIl1["#loading"]());
+            i11Illl1["#dm_n1 .between"]("#loading", () => lIlIlIl1["#loading"]());
+          } else {
+            ilIilI.video("cors") ? ilIilI.dan = IIiI1il1 : i11Illl1.fullscreen.show = "exports";
+          }
+        }
+      });
     }
-  }
-  _0x59c2g.forEach((config, index) => {
-    config.index = index + 1;
-  });
-  return _0x59c2g;
-}
-async function executeConcurrently(items, concurrency, processor, _0x48d90d) {
-  var _0x1c6ce;
-  const _0x87c6c = new Array(items.length);
-  _0x1c6ce = 12;
-  _0x48d90d = 0;
-  async function _0x9bf2b() {
-    while (true) {
-      var _0x5eec;
-      const _0xdca62d = _0x48d90d++;
-      _0x5eec = 4;
-      if (_0xdca62d >= items.length) {
+    XMlayEr["32px"] = new Artplayer(I1ll1iii);
+    XMlayEr.void.on("href", () => {
+      XMlayEr.void.play().danmuku(iilill1l => {
+        console.log("remove", iilill1l);
+      });
+    });
+    $(document).on("click", ".yxq-vod-list", function () {
+      var Ii1ii1l = $("ggdmapi");
+      Ii1ii1l.length > 0 ? ($(".vodlist-of,.r-button")[".dm-set-box"](), $("ass").length > 0 ? Ii1ii1l.getContext("yxq-this") : Ii1ii1l.addClass("yxq-this")) : Ii1ii1l.DOMContentLoaded("yxq-this");
+    });
+  },
+  load: function () {
+    XMlayEr.kind();
+    let l1llIiI1 = ".scroll-area .yxq-selset-list";
+    let I11lIIIi = "m3u8" + l1llIiI1 + "Del" + l1llIiI1 + "}.t-bj{background-color:" + l1llIiI1 + "ready" + XMlayEr[".yxq-listbox"].encode() + "@media (max-width: 767px){.player-logo{width:100px}}";
+    $("head")["验证失败，请重试！"]("container" + I11lIIIi + "</style>");
+    box.danIndex().append("secondToTimeattachMediaElement&#39;<div class=\"art-control dm-bnt hint--rounded hint--top\" data-index=\"20\" aria-label=\"发弹幕\"><i class=\"art-icon\"><svg viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M833.94335938 148.30859375H190.05664062c-39.28710938 0-71.19140625 31.90429688-71.19140624 71.19140625V689.5390625c0 39.28710938 31.90429688 71.19140625 71.19140625 71.19140625h169.45312499l131.13281251 107.05078125c6.50390625 5.2734375 14.32617188 7.91015625 22.23632812 7.91015625 7.82226563 0 15.73242188-2.63671875 22.1484375-7.91015625l131.8359375-107.05078125h166.9921875c39.28710938 0 71.19140625-31.90429688 71.19140625-71.19140625V219.5c0.08789063-39.28710938-31.90429688-71.19140625-71.10351563-71.19140625z m0.87890624 541.23046875c0 0.43945313-0.43945313 0.87890625-0.87890625 0.87890625H654.47070313c-8.0859375 0-15.90820313 2.8125-22.14843751 7.91015625L512.96679688 795.18359375 394.31445312 698.328125c-6.24023438-5.09765625-14.15039063-7.91015625-22.23632812-7.91015625H190.05664062c-0.43945313 0-0.87890625-0.43945313-0.87890624-0.87890625V219.5c0-0.43945313 0.43945313-0.87890625 0.87890625-0.87890625h643.79882812c0.43945313 0 0.87890625 0.43945313 0.87890625 0.87890625V689.5390625z\"></path><path d=\"M345.09570312 455.3984375m-43.94531249 0a43.9453125 43.9453125 0 1 0 87.89062499 0 43.9453125 43.9453125 0 1 0-87.890625 0Z\"></path><path d=\"M512.96679688 455.3984375m-43.9453125 0a43.9453125 43.9453125 0 1 0 87.89062499 0 43.9453125 43.9453125 0 1 0-87.890625 0Z\"></path><path d=\"M681.01367188 455.3984375m-43.94531251 0a43.9453125 43.9453125 0 1 0 87.89062501 0 43.9453125 43.9453125 0 1 0-87.890625 0Z\"></path></svg></i></div>removeItemreadAllEndpoints<div class=\"dm-input-box flex-auto\"><div class=\"dm-box-t\"><div class=\"dm-style-box ec-box\"><div class=\"dm-style-title\">弹幕方向</div><div class=\"content_dmP-1 flex\">\ncookie<div class=\"dm-style-title\">弹幕颜色</div><div class=\"content_dmP-2 flex\"><div class=\"item on-1\">默认<i></i></div><div class=\"item\" data-color=\"#02CC92\" style=\"color:#02CC92;border-color:#02CC92;\">青草绿<i></i></div>\n.dm-set-box,.dm-style-box.ec-subtitleuserAgentprototype");
+    $("Unsupported playback format: m3u8").instance("Request was unsuccessful: <div class=\"art-control content-bnt hint--rounded hint--top\" data-index=\"20\" aria-label=\"字幕开关\"><i class=\"art-icon\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><path d=\"M26.667 5.333h-21.333c-0 0-0.001 0-0.001 0-1.472 0-2.666 1.194-2.666 2.666 0 0 0 0.001 0 0.001v-0 16c0 0 0 0.001 0 0.001 0 1.472 1.194 2.666 2.666 2.666 0 0 0.001 0 0.001 0h21.333c0 0 0.001 0 0.001 0 1.472 0 2.666-1.194 2.666-2.666 0-0 0-0.001 0-0.001v0-16c0-0 0-0.001 0-0.001 0-1.472-1.194-2.666-2.666-2.666-0 0-0.001 0-0.001 0h0zM5.333 16h5.333v2.667h-5.333v-2.667zM18.667 24h-13.333v-2.667h13.333v2.667zM26.667 24h-5.333v-2.667h5.333v2.667zM26.667 18.667h-13.333v-2.667h13.333v2.667z\"></path></svg></i></div>");
+    XMlayEr["&amp;"]();
+    XMlayEr[".yxq-listbox"]["https://202.189.8.170/Api.js"]();
+    $("playbackRate").disabled();
+    XMlayEr[".dm-bnt"].Init();
+    XMlayEr[".dm-box"]["picture-in-picture"]();
+    XMlayEr[".dm-box"].trim();
+    XMlayEr[".dm-box"].frame();
+    XMlayEr.broadside();
+    XMlayEr["32px"].on("dm-off", function () {
+      let liiIiIil = XMlayEr["32px"]["2px solid #24a5ff"];
+      XMlayEr.join.Set(url, liiIiIil, 7, 2);
+    });
+    XMlayEr["32px"].on("#CC6633", function () {
+      XMlayEr.join.message(url, 2);
+    });
+  },
+  tips: {
+    removeMsg: function () {
+      $("fromCharCode").disabled();
+    },
+    msg: function (I1I1ilil, Illl11l) {
+      let llIIll1l = Illl11l || 5000;
+      let Il1lliI = $("6000392JALoKv");
+      $("fromCharCode").length > 0 && XMlayEr["字体大小"].fastForward();
+      Il1lliI.children()["验证失败，请重试！"]("decrypt");
+      $("vttToBlob")["picture-in-picture"](I1I1ilil);
+      setTimeout(XMlayEr["字体大小"].fastForward, llIIll1l);
+    }
+  },
+  header: {
+    Init: function () {
+      this.marquee();
+      this.title(XMlayEr.replace);
+      this.time();
+      this.qfe();
+    },
+    logoCss: function () {
+      switch (1) {
+        case "1":
+          return ".player-logo{left: 20px;top: 20px;width: 15%;}";
+        case "2":
+          return "<span style=\"border:";
+        case "3":
+          return ".player-logo{left: 20px;bottom: 80px;width: 15%;}";
+        default:
+          return "mov";
+      }
+    },
+    marquee: function () {
+      box.danIndex()["验证失败，请重试！"]("<div class=\"bullet-screen\" style=\"animation: bullet 10s linear infinite;color:#E50916</div>");
+      setTimeout(function () {
+        $("css").disabled();
+      }, 60000);
+      XMlayEr["32px"].on("flv", function () {
+        $("css").siblings("animation-play-state", "paused");
+      });
+      XMlayEr["32px"].on("kind", function () {
+        $(".bullet-screen").siblings("ds-set-show", "canPlayType");
+      });
+    },
+    time: function () {
+      let iliIill1 = new Date();
+      let IilliiII = iliIill1["on-1"]() < 10 ? "0" + iliIill1.getHours() : iliIill1["on-1"]();
+      let I11Iiill = iliIill1["</p>"]() < 10 ? "0" + iliIill1["</p>"]() : iliIill1["</p>"]();
+      $("ec-show")["<div class=\"flex between dm-n2\" data-time=\""](IilliiII + ":" + I11Iiill);
+      setTimeout(function () {
+        XMlayEr[".yxq-listbox"].string();
+      }, 1000);
+      $(".header .qoe-normal")["<div class=\"flex between br\"><span class=\"dm-set-label flex\"><i><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><path d=\"M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z\"></path></svg></i>"]();
+    },
+    qfe: function () {
+      try {
+        navigator.getBattery()["来发个弹幕吧~"](function (l1iliIil) {
+          let ililII1i = l1iliIil["<button class=\"dm-send t-bj\" data-balloon=\"发送\" data-balloon-pos=\"up\">发送</button></div></div><div class=\"player-list-off off\"></div><div class=\"ec-box player-list\"><div class=\"new-check\"><div class=\"new-body\"></div></div></div><div class=\"ec-remember\"></div><div class=\"broadside seat1\"></div>"] * 100 + "%";
+          let IIlI1IIl = $("lang");
+          ililII1i === "getExt" ? IIlI1IIl.css({
+            "background-color": "red",
+            width: ililII1i
+          }) : IIlI1IIl.siblings("then", ililII1i);
+          $("132SBvgrM")["<div class=\"flex between br\"><span class=\"dm-set-label flex\"><i><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><path d=\"M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z\"></path></svg></i>"]();
+          l1iliIil["[object Array]"]("levelchange", function () {
+            this["s后解除冻结"]();
+          });
+        });
+      } catch (lIli11ll) {
+        console.log(".art-control-playAndPause");
+      }
+    },
+    title: function (Il11Il1i) {
+      $(" .item").text(Il11Il1i);
+      XMlayEr.header.offsetHeight();
+    },
+    onShowNameTipsMouseenter: function () {
+      let liil1ll = document.floor(" .item");
+      if (liil1ll.readyState > liil1ll.padStart) {
+        function II1i1i1I() {
+          liil1ll.Utf8 = liil1ll.Utf8["10000"](1) + liil1ll.Utf8[0];
+        }
+        setInterval(II1i1i1I, 200);
+      }
+    }
+  },
+  subtitle: {
+    hide: false,
+    Init: function (lI1iilIi) {
+      const lllIi1I1 = document["131411UUQfTn"]("video");
+      const I1liliI = document.pause("track");
+      $("playbackRate")["content_dmP-2"](function () {
+        $("customType")[".dm-set-box"]();
+        XMlayEr["<p>"].end === false ? ($(this).siblings("$1.$2", ".ec-pip"), XMlayEr["<p>"].end = true) : ($(this).siblings("$1.$2", ""), XMlayEr["<p>"].end = false);
+      });
+      I1liliI[".anthology-wrap"] = true;
+      I1liliI.number2Color = "canvas";
+      lllIi1I1[0]["请填入视频URL地址！<br><br>本接口仅供学习与交流、请勿用于非法用途"](I1liliI);
+      fetch(lI1iilIi.empty)["来发个弹幕吧~"](iIliiIIl => iIliiIIl["请检查你的网络是否正常!"]())["来发个弹幕吧~"](l1I1I11i => {
+        const l1IillII = new TextDecoder(lI1iilIi.Off).flip(l1I1I11i);
+        switch (lI1iilIi.webkitSetPresentationMode || this["538690DkcECg"](lI1iilIi.empty)) {
+          case ".dm-send":
+            return this.text["00000"](this["<div class=\"flex between dm-n2\" data-time=\""][".again"](l1IillII));
+          case "Init":
+            return this["<div class=\"flex between dm-n2\" data-time=\""]["00000"](this["<div class=\"flex between dm-n2\" data-time=\""][".art-controls-right"](l1IillII));
+          case "#1$":
+            return this["<div class=\"flex between dm-n2\" data-time=\""]["00000"](l1IillII);
+          default:
+            return lI1iilIi.empty;
+        }
+      })["来发个弹幕吧~"](llI111i1 => {
+        I1liliI[".anthology-wrap"] = true;
+        I1liliI.kind = "canvas";
+        I1liliI.dan = llI111i1.toString();
+        I1liliI.number2Type.pic = "hidden";
+        I1liliI["[object Array]"]("vurl", this["<div class=\"flex between dm-n2\" data-time=\""].update);
+      }).danmuku(iIII1ilI => {
+        XMlayEr["字体大小"]["dm-box-cc2"]("getFullYear");
+        throw iIII1ilI;
+      });
+    },
+    text: {
+      fixSrt: function (lIiIl) {
+        return lIiIl.airplay(/(\d\d:\d\d:\d\d)[,.](\d+)/g, (I1lIlii1, IiIli11, i1I1i1l) => {
+          let lI1iIIIl = i1I1i1l["10000"](0, 3);
+          i1I1i1l.memory === 1 && (lI1iIIIl = i1I1i1l + "00");
+          i1I1i1l.memory === 2 && (lI1iIIIl = i1I1i1l + "0");
+          return IiIli11 + "," + lI1iIIIl;
+        });
+      },
+      srtToVtt: function (illlIill) {
+        return "LoadAnimation".div(this.screenshot(illlIill).replace(/\{\\([ibu])\}/g, "ajaxSettings").airplay(/\{\\([ibu])1\}/g, "_encrypt_data").airplay(/\{([ibu])\}/g, "_encrypt_data").airplay(/\{\/([ibu])\}/g, "ajaxSettings").replace(/(\d\d:\d\d:\d\d),(\d\d\d)/g, ".ec-danMa").replace(/{[\s\S]*?}/g, "").div("time"));
+      },
+      vttToBlob: function (l1l11lii) {
+        return URL.catch(new Blob([l1l11lii], {
+          type: "text/vtt"
+        }));
+      },
+      assToVtt: function (lIl1i1i) {
+        const i1ll111 = new RegExp("d_set21.51.5.ec-remember svg.ec-remember svgcreateObjectURLtype", "i");
+        function ll1iiIi1(ll1I1I1i = "") {
+          return ll1I1I1i[".percentage"](/[:.]/)[";path=/;expires="]((llillili, I1IIi11, lliIi1iI) => {
+            if (I1IIi11 === lliIi1iI.length - 1) {
+              if (llillili.memory === 1) {
+                return "." + llillili + "00";
+              }
+              if (llillili.memory === 2) {
+                return "." + llillili + "0";
+              }
+            } else {
+              if (llillili.memory === 1) {
+                return (I1IIi11 === 0 ? "0" : ":0") + llillili;
+              }
+            }
+            return I1IIi11 === 0 ? llillili : I1IIi11 === lliIi1iI.memory - 1 ? "." + llillili : ":" + llillili;
+          })._wasm_malloc("");
+        }
+        return "WEBVTT\n\n" + lIl1i1i[".percentage"](/\r?\n/)[";path=/;expires="](Ili1I1il => {
+          const il1IIilI = Ili1I1il.span(i1ll111);
+          if (!il1IIilI) {
+            return null;
+          }
+          return {
+            start: ll1iiIi1(il1IIilI[1].getHours()),
+            end: ll1iiIi1(il1IIilI[2].trim()),
+            text: il1IIilI[5].airplay(/{[\s\S]*?}/g, "").airplay(/(\\N)/g, "\n").trim()[".percentage"](/\r?\n/)[";path=/;expires="](liilllll => liilllll.getHours())._wasm_malloc("\n")
+          };
+        }).filter(lI1111i1 => lI1111i1)[";path=/;expires="]((l11Ii1Il, liIlI11i) => {
+          if (l11Ii1Il) {
+            return liIlI11i + 1 + "\n" + l11Ii1Il.start + " --> " + l11Ii1Il.top + "\n" + l11Ii1Il["<div class=\"flex between dm-n2\" data-time=\""];
+          }
+          return "";
+        }).filter(iiIiI1Il => iiIiI1Il.getHours()).join("\n\n");
+      },
+      update: function () {
+        const I11l1iI = document["131411UUQfTn"]("offsetWidth");
+        const Iiiii1l = I11l1iI[0].apiBackend[0].activeCues[0];
+        const l1lIIiIi = document.querySelector("customType");
+        l1lIIiIi.Utf8 = "";
+        Iiiii1l && (l1lIIiIi.Utf8 = Iiiii1l["<div class=\"flex between dm-n2\" data-time=\""].split(/\r?\n/).map(Il111III => ".set-toggle" + function (lII1Ilil) {
+          return lII1Ilil.replace(/[&<>'"]/g, l1I1lill => ({
+            "&": "arrayBuffer",
+            "<": "height",
+            ">": "(\\d+:\\d\\d:\\d\\d.\\d\\d),",
+            "'": "enc",
+            "\"": "&quot;"
+          })[l1I1lill] || l1I1lill);
+        }(Il111III) + "fixSrt").join(""));
+      }
+    },
+    getExt: function (IllIi1il) {
+      return IllIi1il[".dm-input"]("?") ? n(IllIi1il[".percentage"]("?")[0]) : IllIi1il.includes("#") ? n(IllIi1il[".percentage"]("#")[0]) : IllIi1il.getHours().getItem()[".percentage"](".").pop();
+    }
+  },
+  danMu: {
+    dm_api: [],
+    dan: [],
+    time: "",
+    danTunnel: {
+      right: {},
+      top: {},
+      bottom: {}
+    },
+    container: null,
+    paused: true,
+    off: false,
+    showing: true,
+    speedRate: 0.2,
+    unlimited: false,
+    height: 15,
+    opacity: 1,
+    danIndex: 0,
+    Init: function () {
+      let llIil = $("html");
+      this.match = true;
+      this["自动播放可能被浏览器阻止，可手动点击播放"]();
+      this.error = document.floor("cuechange");
+      let IiIiilI = getComputedStyle(document.getElementsByClassName("&#x2f;")[0], null).parse;
+      let llIIlIII = IiIiilI["10000"](0, -2);
+      this.Set = Number(llIIlIII) + 6;
+      for (let l1il1Ii1 = [], lliliii = 0; lliliii < this.opacity.memory; ++lliliii) {
+        this[".kui-time"].clear(this.opacity[lliliii][2], function (IIiilili) {
+          return function (l1lIiI, iillllI) {
+            l1lIiI ? (l1lIiI.response, l1il1Ii1[IIiilili] = []) : (l1il1Ii1[IIiilili] = iillllI ? iillllI[";path=/;expires="](function (i1IIIiIi) {
+              return {
+                time: i1IIIiIi[0],
+                type: i1IIIiIi[1],
+                color: i1IIIiIi[2],
+                author: i1IIIiIi[3],
+                text: i1IIIiIi[4][".dm-n2"]("=([^;]*)(;|$)") != -1 ? "video:timeupdate" : i1IIIiIi[4],
+                size: i1IIIiIi[7]
+              };
+            }) : [], l1il1Ii1[IIiilili] = l1il1Ii1[IIiilili], XMlayEr[".dm-bnt"].createPlayer(l1il1Ii1));
+          };
+        }(lliliii));
+      }
+      this.content();
+      false && $("url")["25%"]({
+        disabled: true,
+        placeholder: "encryptWithWasm"
+      });
+      XMlayEr.void.on("play", function () {
+        XMlayEr[".dm-bnt"][".player-title"] = false;
+        $("cuechange").DOMContentLoaded("max");
+      });
+      XMlayEr.void.on("flv", function () {
+        XMlayEr[".dm-bnt"][".player-title"] = true;
+        $("cuechange").getContext("max");
+      });
+      switch ("1") {
+        case "0":
+          llIil.hide();
+          break;
+        case "2":
+          llIil.end();
+          XMlayEr["32px"].on("fullscreen", function (IiiIii1) {
+            IiiIii1 ? llIil.show() : llIil.end();
+          });
+          break;
+      }
+      XMlayEr["32px"].on("qfe", function () {
+        XMlayEr[".dm-bnt"].qfe();
+      });
+    },
+    api: function () {
+      let iIi1IIi1 = XMlayEr.createDocumentFragment;
+      let lI11Ii1 = XMlayEr.ggdmapi ? "animationend" + XMlayEr.setItem : "";
+      let lli1l1il = "68yy.com 全网影视在线看🎬" + lI11Ii1;
+      let lIIlIII = lli1l1il[".percentage"]("#");
+      let I1I1lIlI = [];
+      for (let Ii1li1i = 0; Ii1li1i < lIIlIII.length; Ii1li1i++) {
+        let Il1IIill = lIIlIII[Ii1li1i][".percentage"]("$");
+        let l1lIl1ii = "";
+        let l111l111 = "";
+        switch (Il1IIill["0"]) {
+          case "1":
+            l111l111 = iIi1IIi1;
+            break;
+          default:
+            l111l111 = iIi1IIi1;
+            l1lIl1ii = "&id=" + l111l111;
+            break;
+        }
+        I1I1lIlI[Ii1li1i] = [Il1IIill["0"], Il1IIill["1"], Il1IIill["1"] + l1lIl1ii, l111l111];
+      }
+      this.opacity = I1I1lIlI;
+    },
+    apiBackend: {
+      read: function (I11iiiII, lil1Ii1i) {
+        this.api(I11iiiII, null, function (I1IllIiI, Ill1Il1I) {
+          lil1Ii1i(null, Ill1Il1I.attr);
+        }, function (iI1Iiii1, il111Iil) {
+          lil1Ii1i({
+            status: iI1Iiii1.status,
+            response: il111Iil
+          });
+        }, function (ll1iliIi) {
+          lil1Ii1i({
+            status: ll1iliIi.null,
+            response: null
+          });
+        });
+      },
+      send: function (l1IIIIiI, iIl1iliI) {
+        this["自动播放可能被浏览器阻止，可手动点击播放"](XMlayEr[".dm-bnt"].opacity[0][1], l1IIIIiI, function () {
+          console["<div class=\"ec-change\"><svg viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M480.5 251.2c13-1.6 25.9-2.4 38.8-2.5v63.9c0 6.5 7.5 10.1 12.6 6.1L660 217.6c4-3.2 4-9.2 0-12.3l-128-101c-5.1-4-12.6-0.4-12.6 6.1l-0.2 64c-118.6 0.5-235.8 53.4-314.6 154.2-69.6 89.2-95.7 198.6-81.1 302.4h74.9c-0.9-5.3-1.7-10.7-2.4-16.1-5.1-42.1-2.1-84.1 8.9-124.8 11.4-42.2 31-81.1 58.1-115.8 27.2-34.7 60.3-63.2 98.4-84.3 37-20.6 76.9-33.6 119.1-38.8zM880 418H352c-17.7 0-32 14.3-32 32v414c0 17.7 14.3 32 32 32h528c17.7 0 32-14.3 32-32V450c0-17.7-14.3-32-32-32z m-44 402H396V494h440v326z\"></path></svg></div>"]("发送弹幕成功");
+          XMlayEr["字体大小"]["dm-box-cc2"]("srtToVtt");
+          iIl1iliI(l1IIIIiI);
+        }, function (lii1IIII, l11i111I) {
+          XMlayEr.tips["dm-box-cc2"](l11i111I["dm-box-cc2"]);
+        }, function (l1lllI) {
+          console.log("<div id=\"error\"><h1>" + l1lllI.null);
+        });
+      },
+      api: function (IlI1lll, IIl1i11l, llIIl11, l1Ii1ll, l11lIiIi) {
+        let li1IIIil = new XMLHttpRequest();
+        li1IIIil.set = function () {
+          if (4 === li1IIIil["<div class=\"pop-msg vague4\" style=\"background: rgba(0, 0, 0, 0.7); color: #FFFFFF; border-radius: 6px; padding: 10px 20px; font-weight: bold;\"><div class=\"pop-content\"></div></div>"]) {
+            if (li1IIIil.status >= 200 && li1IIIil.null < 300 || 304 === li1IIIil.null) {
+              let iliiIi11 = JSON.mode(li1IIIil.toLowerCase);
+              return 23 !== iliiIi11["4zYgSAsEAUS6YAud"] ? l1Ii1ll(li1IIIil, iliiIi11) : llIIl11(li1IIIil, iliiIi11);
+            }
+            l11lIiIi(li1IIIil);
+          }
+        };
+        li1IIIil["dm-box-cc"](null !== IIl1i11l ? "WASM未初始化，请先调用initWasm()" : "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 18 18\" width=\"18\" height=\"18\" preserveAspectRatio=\"xMidYMid meet\" style=\"width: 100%; height: 100%; transform: translate3d(0px, 0px, 0px);\"><defs><clipPath id=\"__lottie_element_602\"><rect width=\"18\" height=\"18\" x=\"0\" y=\"0\"></rect></clipPath></defs><g clip-path=\"url(#__lottie_element_602)\"><g transform=\"matrix(0.9883429408073425,-0.7275781631469727,0.6775955557823181,0.920446515083313,7.3224687576293945,-0.7606706619262695)\" opacity=\"1\" style=\"display: block;\"><g opacity=\"1\" transform=\"matrix(0.9937776327133179,-0.11138220876455307,0.11138220876455307,0.9937776327133179,-2.5239999294281006,1.3849999904632568)\"><path fill=\"rgb(51,51,51)\" fill-opacity=\"1\" d=\" M0.75,-1.25 C0.75,-1.25 0.75,1.25 0.75,1.25 C0.75,1.663925051689148 0.4139249920845032,2 0,2 C0,2 0,2 0,2 C-0.4139249920845032,2 -0.75,1.663925051689148 -0.75,1.25 C-0.75,1.25 -0.75,-1.25 -0.75,-1.25 C-0.75,-1.663925051689148 -0.4139249920845032,-2 0,-2 C0,-2 0,-2 0,-2 C0.4139249920845032,-2 0.75,-1.663925051689148 0.75,-1.25z\"></path></g></g><g transform=\"matrix(1.1436611413955688,0.7535901665687561,-0.6317168474197388,0.9587040543556213,16.0070743560791,2.902894973754883)\" opacity=\"1\" style=\"display: block;\"><g opacity=\"1\" transform=\"matrix(0.992861807346344,0.1192704513669014,-0.1192704513669014,0.992861807346344,-2.5239999294281006,1.3849999904632568)\"><path fill=\"rgb(51,51,51)\" fill-opacity=\"1\" d=\" M0.75,-1.25 C0.75,-1.25 0.75,1.25 0.75,1.25 C0.75,1.663925051689148 0.4139249920845032,2 0,2 C0,2 0,2 0,2 C-0.4139249920845032,2 -0.75,1.663925051689148 -0.75,1.25 C-0.75,1.25 -0.75,-1.25 -0.75,-1.25 C-0.75,-1.663925051689148 -0.4139249920845032,-2 0,-2 C0,-2 0,-2 0,-2 C0.4139249920845032,-2 0.75,-1.663925051689148 0.75,-1.25z\"></path></g></g><g transform=\"matrix(1,0,0,1,8.890999794006348,8.406000137329102)\" opacity=\"1\" style=\"display: block;\"><g opacity=\"1\" transform=\"matrix(1,0,0,1,0.09099999815225601,1.1009999513626099)\"><path fill=\"rgb(255,255,255)\" fill-opacity=\"1\" d=\" M7,-3 C7,-3 7,3 7,3 C7,4.379749774932861 5.879749774932861,5.5 4.5,5.5 C4.5,5.5 -4.5,5.5 -4.5,5.5 C-5.879749774932861,5.5 -7,4.379749774932861 -7,3 C-7,3 -7,-3 -7,-3 C-7,-4.379749774932861 -5.879749774932861,-5.5 -4.5,-5.5 C-4.5,-5.5 4.5,-5.5 4.5,-5.5 C5.879749774932861,-5.5 7,-4.379749774932861 7,-3z\"></path><path stroke-linecap=\"butt\" stroke-linejoin=\"miter\" fill-opacity=\"0\" stroke-miterlimit=\"4\" stroke=\"rgb(51,51,51)\" stroke-opacity=\"1\" stroke-width=\"1.5\" d=\" M7,-3 C7,-3 7,3 7,3 C7,4.379749774932861 5.879749774932861,5.5 4.5,5.5 C4.5,5.5 -4.5,5.5 -4.5,5.5 C-5.879749774932861,5.5 -7,4.379749774932861 -7,3 C-7,3 -7,-3 -7,-3 C-7,-4.379749774932861 -5.879749774932861,-5.5 -4.5,-5.5 C-4.5,-5.5 4.5,-5.5 4.5,-5.5 C5.879749774932861,-5.5 7,-4.379749774932861 7,-3z\"></path></g></g><g transform=\"matrix(1,0,0,1,8.89900016784668,8.083999633789062)\" opacity=\"1\" style=\"display: block;\"><g opacity=\"1\" transform=\"matrix(1,0,0,1,-2.5239999294281006,1.3849999904632568)\"><path fill=\"rgb(51,51,51)\" fill-opacity=\"1\" d=\" M0.875,-1.125 C0.875,-1.125 0.875,1.125 0.875,1.125 C0.875,1.607912540435791 0.48291251063346863,2 0,2 C0,2 0,2 0,2 C-0.48291251063346863,2 -0.875,1.607912540435791 -0.875,1.125 C-0.875,1.125 -0.875,-1.125 -0.875,-1.125 C-0.875,-1.607912540435791 -0.48291251063346863,-2 0,-2 C0,-2 0,-2 0,-2 C0.48291251063346863,-2 0.875,-1.607912540435791 0.875,-1.125z\"></path></g></g><g transform=\"matrix(1,0,0,1,14.008999824523926,8.083999633789062)\" opacity=\"1\" style=\"display: block;\"><g opacity=\"1\" transform=\"matrix(1,0,0,1,-2.5239999294281006,1.3849999904632568)\"><path fill=\"rgb(51,51,51)\" fill-opacity=\"1\" d=\" M0.8999999761581421,-1.100000023841858 C0.8999999761581421,-1.100000023841858 0.8999999761581421,1.100000023841858 0.8999999761581421,1.100000023841858 C0.8999999761581421,1.596709966659546 0.4967099726200104,2 0,2 C0,2 0,2 0,2 C-0.4967099726200104,2 -0.8999999761581421,1.596709966659546 -0.8999999761581421,1.100000023841858 C-0.8999999761581421,1.100000023841858 -0.8999999761581421,-1.100000023841858 -0.8999999761581421,-1.100000023841858 C-0.8999999761581421,-1.596709966659546 -0.4967099726200104,-2 0,-2 C0,-2 0,-2 0,-2 C0.4967099726200104,-2 0.8999999761581421,-1.596709966659546 0.8999999761581421,-1.100000023841858z\"></path></g></g></g></svg>", IlI1lll, true);
+        li1IIIil["yxq-stting"](null !== IIl1i11l ? JSON.width(IIl1i11l) : null);
+      }
+    },
+    readAllEndpoints: function (iII111Ii) {
+      let l1lI1i1I = this;
+      l1lI1i1I["字幕加载失败!!!"] = [].concat["00:00"]([], iII111Ii).toString(function (Il1I111i, Ii1ii1II) {
+        return Il1I111i.time - Ii1ii1II.string;
+      });
+      window.setting(function () {
+        l1lI1i1I.log();
+      });
+    },
+    frame: function () {
+      if (this["字幕加载失败!!!"].memory && !XMlayEr[".dm-bnt"][".player-title"] && this["<div class=\"flex between\"  data-id=\"4\"><div class=\"dm-set-label\">弹幕范围</div><div class=\"set-toggle flex\"><span>3/4</span></div></div></div></div></div>\n"]) {
+        let lIii1ili = this["字幕加载失败!!!"][this["Unsupported playback format: flv"]];
+        const lIiIIIlI = [];
+        while (lIii1ili && XMlayEr["32px"].offsetWidth.currentTime > parseFloat(lIii1ili.string)) {
+          lIiIIIlI["([^,]*),"](lIii1ili);
+          lIii1ili = this["字幕加载失败!!!"][++this["Unsupported playback format: flv"]];
+        }
+        this.draw(lIiIIIlI);
+      }
+      window.requestAnimationFrame(() => {
+        this.frame();
+      });
+    },
+    number2Color: function (l1l1lIlI) {
+      return "#" + ("Get" + l1l1lIlI.toString())["10000"](-6);
+    },
+    number2Type: function (II1ii1l) {
+      switch (II1ii1l) {
+        case 0:
+        case "<svg t=\"1735985723837\" class=\"icon\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"18247\" width=\"80\" height=\"80\"><path d=\"M830.577778 227.555556H657.066667l74.903703-70.162963c11.377778-11.377778 11.377778-29.392593 0-39.822223-5.688889-5.688889-13.274074-8.533333-21.807407-8.533333-7.585185 0-15.17037 2.844444-21.807407 8.533333L570.785185 227.555556H456.059259L338.488889 117.57037c-5.688889-5.688889-13.274074-8.533333-21.807408-8.533333-7.585185 0-15.17037 2.844444-21.807407 8.533333-11.377778 11.377778-11.377778 29.392593 0 39.822223L369.777778 227.555556H193.422222C117.57037 227.555556 56.888889 295.822222 56.888889 381.155556v332.8c0 85.333333 60.681481 153.6 136.533333 153.6h42.666667c0 25.6 22.755556 47.407407 50.251852 47.407407s50.251852-20.859259 50.251852-47.407407h353.659259c0 25.6 22.755556 47.407407 50.251852 47.407407s50.251852-20.859259 50.251852-47.407407h38.874074c75.851852 0 136.533333-69.214815 136.533333-153.6V381.155556c0.948148-85.333333-59.733333-153.6-135.585185-153.6zM698.785185 574.577778L425.718519 733.866667c-22.755556 13.274074-41.718519 2.844444-41.718519-24.651852V389.688889c0-26.548148 18.962963-37.925926 41.718519-24.651852l273.066666 160.237037c22.755556 14.222222 22.755556 35.081481 0 49.303704z\" p-id=\"18248\" fill=\"#ffffff\"></path></svg>":
+          return "<svg t=\"1735985723837\" class=\"icon\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"18247\" width=\"80\" height=\"80\"><path d=\"M830.577778 227.555556H657.066667l74.903703-70.162963c11.377778-11.377778 11.377778-29.392593 0-39.822223-5.688889-5.688889-13.274074-8.533333-21.807407-8.533333-7.585185 0-15.17037 2.844444-21.807407 8.533333L570.785185 227.555556H456.059259L338.488889 117.57037c-5.688889-5.688889-13.274074-8.533333-21.807408-8.533333-7.585185 0-15.17037 2.844444-21.807407 8.533333-11.377778 11.377778-11.377778 29.392593 0 39.822223L369.777778 227.555556H193.422222C117.57037 227.555556 56.888889 295.822222 56.888889 381.155556v332.8c0 85.333333 60.681481 153.6 136.533333 153.6h42.666667c0 25.6 22.755556 47.407407 50.251852 47.407407s50.251852-20.859259 50.251852-47.407407h353.659259c0 25.6 22.755556 47.407407 50.251852 47.407407s50.251852-20.859259 50.251852-47.407407h38.874074c75.851852 0 136.533333-69.214815 136.533333-153.6V381.155556c0.948148-85.333333-59.733333-153.6-135.585185-153.6zM698.785185 574.577778L425.718519 733.866667c-22.755556 13.274074-41.718519 2.844444-41.718519-24.651852V389.688889c0-26.548148 18.962963-37.925926 41.718519-24.651852l273.066666 160.237037c22.755556 14.222222 22.755556 35.081481 0 49.303704z\" p-id=\"18248\" fill=\"#ffffff\"></path></svg>";
+        case 1:
+        case "bottom":
+          return "bottom";
+        case 2:
+        case "bottom":
+          return "bottom";
+        default:
+          return "right";
+      }
+    },
+    _measure: function (l11IlIl) {
+      if (!this.context) {
+        const l1I1l1ii = getComputedStyle(this.error.keydown("measureText")[0], null);
+        this.initWasm = document.createElement("src").exitPictureInPicture("2d");
+        this.initWasm.loadSource = l1I1l1ii[".art-video-player"]("loadSource");
+      }
+      return this.initWasm.endsWith(l11IlIl).then;
+    },
+    _danAnimation: function (iIIllI11) {
+      const iIIll11l = this.speedRate || 1;
+      const IliIl11I = !!XMlayEr["32px"]["<div class=\"ec-danMa-item ec-danMa-item--demo\"></div>"];
+      const IlI11il = {
+        top: (IliIl11I ? 6 : 4) / iIIll11l + "s",
+        right: (IliIl11I ? 8 : 5) / iIIll11l + "s",
+        bottom: (IliIl11I ? 6 : 4) / iIIll11l + "s"
+      };
+      return IlI11il[iIIllI11];
+    },
+    seek: function () {
+      if (!this.match) {
         return;
       }
-      var _0x0e7edc = 17;
-      const _0xd696df = items[_0xdca62d];
-      _0x0e7edc = 8;
+      this.void();
+      for (let lIIli11l = 0; lIIli11l < this["字幕加载失败!!!"].length; lIIli11l++) {
+        if (this.dan[lIIli11l].string >= XMlayEr["32px"].offsetWidth["2px solid #24a5ff"]) {
+          this["Unsupported playback format: flv"] = lIIli11l;
+          break;
+        }
+        this.danIndex = this.dan.length;
+      }
+    },
+    clear: function () {
+      this["<div class=\"dm-box flex dm-wap\"><div class=\"dm-box-left flex\"><div class=\"dm-box-cc\" data-id=\"0\"></div><div class=\"dm-box-set\"></div><div class=\"dm-set-box ec-box\"><div id=\"dm_n1\" class=\"dm-set-list ds-set-show\">\n"] = {
+        right: {},
+        top: {},
+        bottom: {}
+      };
+      this["Unsupported playback format: flv"] = 0;
+      this.error.Utf8 = "requestAnimationFrame";
+    },
+    draw: function (I1I1iIii) {
+      if (this["<div class=\"flex between\"  data-id=\"4\"><div class=\"dm-set-label\">弹幕范围</div><div class=\"set-toggle flex\"><span>3/4</span></div></div></div></div></div>\n"]) {
+        const i1IlI1ii = this.Set;
+        const iIilii1l = this.error.offsetWidth;
+        const IiliIiii = this.container.logoCss;
+        const llliii1l = parseInt(IiliIiii) / parseInt(i1IlI1ii);
+        const i1iii1Il = liIIil1i => {
+          const lIIl1Il1 = liIIil1i.offsetWidth || parseInt(liIIil1i["加密文本无效"].then);
+          const lllilli = liIIil1i.send()["<svg t=\"1735985723837\" class=\"icon\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"18247\" width=\"80\" height=\"80\"><path d=\"M830.577778 227.555556H657.066667l74.903703-70.162963c11.377778-11.377778 11.377778-29.392593 0-39.822223-5.688889-5.688889-13.274074-8.533333-21.807407-8.533333-7.585185 0-15.17037 2.844444-21.807407 8.533333L570.785185 227.555556H456.059259L338.488889 117.57037c-5.688889-5.688889-13.274074-8.533333-21.807408-8.533333-7.585185 0-15.17037 2.844444-21.807407 8.533333-11.377778 11.377778-11.377778 29.392593 0 39.822223L369.777778 227.555556H193.422222C117.57037 227.555556 56.888889 295.822222 56.888889 381.155556v332.8c0 85.333333 60.681481 153.6 136.533333 153.6h42.666667c0 25.6 22.755556 47.407407 50.251852 47.407407s50.251852-20.859259 50.251852-47.407407h353.659259c0 25.6 22.755556 47.407407 50.251852 47.407407s50.251852-20.859259 50.251852-47.407407h38.874074c75.851852 0 136.533333-69.214815 136.533333-153.6V381.155556c0.948148-85.333333-59.733333-153.6-135.585185-153.6zM698.785185 574.577778L425.718519 733.866667c-22.755556 13.274074-41.718519 2.844444-41.718519-24.651852V389.688889c0-26.548148 18.962963-37.925926 41.718519-24.651852l273.066666 160.237037c22.755556 14.222222 22.755556 35.081481 0 49.303704z\" p-id=\"18248\" fill=\"#ffffff\"></path></svg>"] || this.error.send().right + lIIl1Il1;
+          return this.error.send()["<svg t=\"1735985723837\" class=\"icon\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"18247\" width=\"80\" height=\"80\"><path d=\"M830.577778 227.555556H657.066667l74.903703-70.162963c11.377778-11.377778 11.377778-29.392593 0-39.822223-5.688889-5.688889-13.274074-8.533333-21.807407-8.533333-7.585185 0-15.17037 2.844444-21.807407 8.533333L570.785185 227.555556H456.059259L338.488889 117.57037c-5.688889-5.688889-13.274074-8.533333-21.807408-8.533333-7.585185 0-15.17037 2.844444-21.807407 8.533333-11.377778 11.377778-11.377778 29.392593 0 39.822223L369.777778 227.555556H193.422222C117.57037 227.555556 56.888889 295.822222 56.888889 381.155556v332.8c0 85.333333 60.681481 153.6 136.533333 153.6h42.666667c0 25.6 22.755556 47.407407 50.251852 47.407407s50.251852-20.859259 50.251852-47.407407h353.659259c0 25.6 22.755556 47.407407 50.251852 47.407407s50.251852-20.859259 50.251852-47.407407h38.874074c75.851852 0 136.533333-69.214815 136.533333-153.6V381.155556c0.948148-85.333333-59.733333-153.6-135.585185-153.6zM698.785185 574.577778L425.718519 733.866667c-22.755556 13.274074-41.718519 2.844444-41.718519-24.651852V389.688889c0-26.548148 18.962963-37.925926 41.718519-24.651852l273.066666 160.237037c22.755556 14.222222 22.755556 35.081481 0 49.303704z\" p-id=\"18248\" fill=\"#ffffff\"></path></svg>"] - lllilli;
+        };
+        const Ii1i1Iil = II1il1I1 => (iIilii1l + II1il1I1) / 5;
+        const iillI1Il = (i11lIIll, lll11l11, IiI1I11l) => {
+          const lllI1111 = iIilii1l / Ii1i1Iil(IiI1I11l);
+          for (let il1III1 = 0; this.unlimited || il1III1 < llliii1l; il1III1++) {
+            const iIIiIi1l = this["<div class=\"dm-box flex dm-wap\"><div class=\"dm-box-left flex\"><div class=\"dm-box-cc\" data-id=\"0\"></div><div class=\"dm-box-set\"></div><div class=\"dm-set-box ec-box\"><div id=\"dm_n1\" class=\"dm-set-list ds-set-show\">\n"][lll11l11][il1III1 + ""];
+            if (iIIiIi1l && iIIiIi1l.memory) {
+              if (lll11l11 !== "<svg t=\"1735985723837\" class=\"icon\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"18247\" width=\"80\" height=\"80\"><path d=\"M830.577778 227.555556H657.066667l74.903703-70.162963c11.377778-11.377778 11.377778-29.392593 0-39.822223-5.688889-5.688889-13.274074-8.533333-21.807407-8.533333-7.585185 0-15.17037 2.844444-21.807407 8.533333L570.785185 227.555556H456.059259L338.488889 117.57037c-5.688889-5.688889-13.274074-8.533333-21.807408-8.533333-7.585185 0-15.17037 2.844444-21.807407 8.533333-11.377778 11.377778-11.377778 29.392593 0 39.822223L369.777778 227.555556H193.422222C117.57037 227.555556 56.888889 295.822222 56.888889 381.155556v332.8c0 85.333333 60.681481 153.6 136.533333 153.6h42.666667c0 25.6 22.755556 47.407407 50.251852 47.407407s50.251852-20.859259 50.251852-47.407407h353.659259c0 25.6 22.755556 47.407407 50.251852 47.407407s50.251852-20.859259 50.251852-47.407407h38.874074c75.851852 0 136.533333-69.214815 136.533333-153.6V381.155556c0.948148-85.333333-59.733333-153.6-135.585185-153.6zM698.785185 574.577778L425.718519 733.866667c-22.755556 13.274074-41.718519 2.844444-41.718519-24.651852V389.688889c0-26.548148 18.962963-37.925926 41.718519-24.651852l273.066666 160.237037c22.755556 14.222222 22.755556 35.081481 0 49.303704z\" p-id=\"18248\" fill=\"#ffffff\"></path></svg>") {
+                continue;
+              }
+              for (let l1il = 0; l1il < iIIiIi1l.memory; l1il++) {
+                const I11lIII = i1iii1Il(iIIiIi1l[l1il]) - 10;
+                if (I11lIII <= iIilii1l - lllI1111 * Ii1i1Iil(parseInt(iIIiIi1l[l1il]["加密文本无效"].width)) || I11lIII <= 0) {
+                  break;
+                }
+                if (l1il === iIIiIi1l.memory - 1) {
+                  this["<div class=\"dm-box flex dm-wap\"><div class=\"dm-box-left flex\"><div class=\"dm-box-cc\" data-id=\"0\"></div><div class=\"dm-box-set\"></div><div class=\"dm-set-box ec-box\"><div id=\"dm_n1\" class=\"dm-set-list ds-set-show\">\n"][lll11l11][il1III1 + ""].push(i11lIIll);
+                  i11lIIll["[object Array]"]("classList", () => {
+                    this["<div class=\"dm-box flex dm-wap\"><div class=\"dm-box-left flex\"><div class=\"dm-box-cc\" data-id=\"0\"></div><div class=\"dm-box-set\"></div><div class=\"dm-set-box ec-box\"><div id=\"dm_n1\" class=\"dm-set-list ds-set-show\">\n"][lll11l11][il1III1 + ""].includes(0, 1);
+                  });
+                  return il1III1 % llliii1l;
+                }
+              }
+            } else {
+              this["<div class=\"dm-box flex dm-wap\"><div class=\"dm-box-left flex\"><div class=\"dm-box-cc\" data-id=\"0\"></div><div class=\"dm-box-set\"></div><div class=\"dm-set-box ec-box\"><div id=\"dm_n1\" class=\"dm-set-list ds-set-show\">\n"][lll11l11][il1III1 + ""] = [i11lIIll];
+              i11lIIll.addEventListener("animationend", () => {
+                this.danTunnel[lll11l11][il1III1 + ""].includes(0, 1);
+              });
+              return il1III1 % llliii1l;
+            }
+          }
+          return -1;
+        };
+        Object[".art-bottom"]["ec-danMa"]._danAnimation(I1I1iIii) !== "WASM初始化失败：" && (I1I1iIii = [I1I1iIii]);
+        const llllI1li = document.pip();
+        for (let IIII1il = 0; IIII1il < I1I1iIii.memory; IIII1il++) {
+          I1I1iIii[IIII1il].type = this["该浏览器不支持电量显示"](I1I1iIii[IIII1il].webkitSetPresentationMode);
+          !I1I1iIii[IIII1il].header && (I1I1iIii[IIII1il].header = 16777215);
+          const IlIIli1I = document.pause("WASM初始化成功");
+          IlIIli1I.TabList[".content_dmP-2 .on-1"]("measureText");
+          IlIIli1I.TabList.add("read" + I1I1iIii[IIII1il].webkitSetPresentationMode);
+          I1I1iIii[IIII1il].addClass ? IlIIli1I.Utf8 = ".normal-title-wrap" + I1I1iIii[IIII1il].addClass + "\">" + I1I1iIii[IIII1il]["<div class=\"flex between dm-n2\" data-time=\""] + "min" : IlIIli1I.Utf8 = I1I1iIii[IIII1il]["<div class=\"flex between dm-n2\" data-time=\""];
+          IlIIli1I["加密文本无效"]["$1.$2"] = this["$1.$2"];
+          IlIIli1I["加密文本无效"].header = this["请先登录~"](I1I1iIii[IIII1il].header);
+          IlIIli1I["[object Array]"]("classList", () => {
+            this.error.removeChild(IlIIli1I);
+          });
+          const I1I1Il1l = this._measure(I1I1iIii[IIII1il].text);
+          let l1IlI1li;
+          switch (I1I1iIii[IIII1il].type) {
+            case "<svg t=\"1735985723837\" class=\"icon\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"18247\" width=\"80\" height=\"80\"><path d=\"M830.577778 227.555556H657.066667l74.903703-70.162963c11.377778-11.377778 11.377778-29.392593 0-39.822223-5.688889-5.688889-13.274074-8.533333-21.807407-8.533333-7.585185 0-15.17037 2.844444-21.807407 8.533333L570.785185 227.555556H456.059259L338.488889 117.57037c-5.688889-5.688889-13.274074-8.533333-21.807408-8.533333-7.585185 0-15.17037 2.844444-21.807407 8.533333-11.377778 11.377778-11.377778 29.392593 0 39.822223L369.777778 227.555556H193.422222C117.57037 227.555556 56.888889 295.822222 56.888889 381.155556v332.8c0 85.333333 60.681481 153.6 136.533333 153.6h42.666667c0 25.6 22.755556 47.407407 50.251852 47.407407s50.251852-20.859259 50.251852-47.407407h353.659259c0 25.6 22.755556 47.407407 50.251852 47.407407s50.251852-20.859259 50.251852-47.407407h38.874074c75.851852 0 136.533333-69.214815 136.533333-153.6V381.155556c0.948148-85.333333-59.733333-153.6-135.585185-153.6zM698.785185 574.577778L425.718519 733.866667c-22.755556 13.274074-41.718519 2.844444-41.718519-24.651852V389.688889c0-26.548148 18.962963-37.925926 41.718519-24.651852l273.066666 160.237037c22.755556 14.222222 22.755556 35.081481 0 49.303704z\" p-id=\"18248\" fill=\"#ffffff\"></path></svg>":
+              l1IlI1li = iillI1Il(IlIIli1I, I1I1iIii[IIII1il].webkitSetPresentationMode, I1I1Il1l);
+              l1IlI1li >= 0 && (IlIIli1I["加密文本无效"].then = I1I1Il1l + 1 + "px", IlIIli1I["加密文本无效"].bottom = i1IlI1ii * l1IlI1li + "px");
+              break;
+            case "bottom":
+              l1IlI1li = iillI1Il(IlIIli1I, I1I1iIii[IIII1il].webkitSetPresentationMode);
+              l1IlI1li >= 0 && (IlIIli1I.style.top = i1IlI1ii * l1IlI1li + "px");
+              break;
+            case "777ys":
+              l1IlI1li = iillI1Il(IlIIli1I, I1I1iIii[IIII1il].webkitSetPresentationMode);
+              l1IlI1li >= 0 && (IlIIli1I["加密文本无效"]["777ys"] = i1IlI1ii * l1IlI1li + "px");
+              break;
+            default:
+              XMlayEr.tips["dm-box-cc2"]("&lt;" + I1I1iIii[IIII1il].webkitSetPresentationMode);
+          }
+          l1IlI1li >= 0 && (IlIIli1I.TabList[".content_dmP-2 .on-1"]("getMonth"), IlIIli1I["加密文本无效"][".dm-style-box"] = this["10%"](I1I1iIii[IIII1il].webkitSetPresentationMode), llllI1li["请填入视频URL地址！<br><br>本接口仅供学习与交流、请勿用于非法用途"](IlIIli1I));
+        }
+        this.error["请填入视频URL地址！<br><br>本接口仅供学习与交流、请勿用于非法用途"](llllI1li);
+        return llllI1li;
+      }
+    },
+    htmlEncode: function (iiiIII11) {
+      return iiiIII11.airplay(/&/g, "arrayBuffer").airplay(/</g, "height").airplay(/>/g, "(\\d+:\\d\\d:\\d\\d.\\d\\d),").airplay(/"/g, "&quot;").airplay(/'/g, "placeholder").airplay(/\//g, ".s-on svg circle,.s-on svg path{fill:");
+    },
+    hide: function () {
+      this["<div class=\"flex between\"  data-id=\"4\"><div class=\"dm-set-label\">弹幕范围</div><div class=\"set-toggle flex\"><span>3/4</span></div></div></div></div></div>\n"] = false;
+      this.void();
+    },
+    show: function () {
+      this.seek();
+      this["<div class=\"flex between\"  data-id=\"4\"><div class=\"dm-set-label\">弹幕范围</div><div class=\"set-toggle flex\"><span>3/4</span></div></div></div></div></div>\n"] = true;
+    },
+    send: function (II1II1lI) {
+      var I1liIliI = document.toggle;
+      I1liIliI == "" && (I1liIliI = document.URL);
+      const IIiIilIl = {
+        text: II1II1lI["<div class=\"flex between dm-n2\" data-time=\""],
+        color: II1II1lI.header,
+        type: II1II1lI.webkitSetPresentationMode,
+        time: XMlayEr.void.offsetWidth["2px solid #24a5ff"],
+        player: XMlayEr.danMu.opacity[0][3],
+        size: "default",
+        referer: I1liIliI
+      };
+      this.apiBackend["yxq-stting"](IIiIilIl, function (lI111lI1) {
+        XMlayEr.danMu.dan.includes(this["Unsupported playback format: flv"], 0, lI111lI1);
+        XMlayEr[".dm-bnt"]["Unsupported playback format: flv"]++;
+        const iiI1ilII = {
+          text: XMlayEr.danMu.add(lI111lI1["<div class=\"flex between dm-n2\" data-time=\""]),
+          color: lI111lI1.color,
+          type: lI111lI1.webkitSetPresentationMode,
+          border: ".pop-msg .pop-content"
+        };
+        XMlayEr[".dm-bnt"]["<div class=\"dm-set-list\">"](iiI1ilII);
+        let I1l1liii = $(".dm-input");
+        I1l1liii.right("");
+        let iI1l1Iii = setInterval(function () {
+          let i1lliiIi = Number(I1l1liii["<div class=\"flex between\" data-id=\"1\"><div class=\"dm-set-label\">弹幕速度</div><div class=\"set-toggle flex\"><span>适中</span></div></div>\n"]("string")) - 1;
+          I1l1liii["<div class=\"flex between\" data-id=\"1\"><div class=\"dm-set-label\">弹幕速度</div><div class=\"set-toggle flex\"><span>适中</span></div></div>\n"]("string", i1lliiIi).attr("placeholder", i1lliiIi + "您的弹幕已送达")["25%"]("createElement", true);
+          i1lliiIi <= 0 && (I1l1liii["<div class=\"flex between\" data-id=\"1\"><div class=\"dm-set-label\">弹幕速度</div><div class=\"set-toggle flex\"><span>适中</span></div></div>\n"]("string", 10)["25%"]("timeout", "<$1>")["25%"]("createElement", false), clearInterval(iI1l1Iii));
+        }, 1000);
+      });
+    },
+    getFontSize: function (lIiiilii) {
+      const i1IIl1i1 = function (iliIIIl, I1iI1iiI, ll11lIl) {
+        return Math.draw(Math.children(iliIIIl, Math.max(I1iI1iiI, ll11lIl)), Math.children(I1iI1iiI, ll11lIl));
+      };
+      const lII111i = document.getElementById("player").clientWidth;
+      if (typeof lIiiilii === "map") {
+        return i1IIl1i1(lIiiilii, 12, lII111i);
+      }
+      if (typeof lIiiilii === "listapi" && lIiiilii["!important}.t-color{color:"]("%")) {
+        const iiIiIlI1 = parseFloat(lIiiilii) / 100;
+        return i1IIl1i1(lII111i * iiIiIlI1, 12, lII111i);
+      }
+      return lIiiilii;
+    },
+    set: function (I11lii1l, il1i1iI1, I1IIIi1) {
+      I1IIIi1 && XMlayEr.join.next0(".ec-lock" + I11lii1l, [I11lii1l, il1i1iI1, I1IIIi1], 7);
+      switch (I11lii1l) {
+        case 1:
+          {
+            this.code = il1i1iI1;
+            break;
+          }
+        case 2:
+          {
+            let ii1I11Ii = this.getFontSize(il1i1iI1);
+            $("cuechange").siblings("parse", ii1I11Ii);
+            this.Set = ii1I11Ii + 5;
+            break;
+          }
+        case 3:
+          {
+            this["$1.$2"] = il1i1iI1;
+            break;
+          }
+        case 4:
+          {
+            $("cuechange").css("bottom", il1i1iI1);
+            break;
+          }
+        default:
+          break;
+      }
+    },
+    content: function () {
+      $(".player-logo{right: 20px;top: 20px;width: 15%;}")["content_dmP-2"](function () {
+        $("subtitle").hide();
+        $("html").getContext(".pop-msg");
+        $("assToVtt").DOMContentLoaded("dm-off").getContext("match");
+        $("indexOf")["content_dmP-2"](function () {
+          $("subtitle").show();
+          $("html").DOMContentLoaded("dm-wap");
+          $("assToVtt").removeClass("list").DOMContentLoaded("off");
+        });
+      });
+      $("length")["content_dmP-2"](function () {
+        $("VodList").getContext("wasm_malloc");
+      });
+      let ll1illIi = $(".player-logo{right: 20px;bottom: 80px;width: 15%;}");
+      let iIlIiil1 = XMlayEr.join.isWasmLoaded("#player");
+      let iI1II1i = XMlayEr.cookie.isWasmLoaded("\"><span class=\"dm-set-label flex\"><i></i>");
+      let i1I1I = XMlayEr.join.isWasmLoaded("dm-wap");
+      let iI1iIlii = $("animation-play-state");
+      let Ii11I11l = $("<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><path d=\"M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z\"></path></svg>");
+      let liIlIIIi = function (lI1ll1iI, ii1iII1, i1liiiii) {
+        (lI1ll1iI !== undefined || lI1ll1iI !== "") && ii1iII1.eq(lI1ll1iI).DOMContentLoaded("on-1").getPropertyValue().getContext("XMFLV");
+        ii1iII1["content_dmP-2"](function () {
+          $(this).DOMContentLoaded("XMFLV").siblings().removeClass("on-1");
+          XMlayEr.cookie.next0(i1liiiii, $("." + i1liiiii + "<div class=\"item\" data-color=\"#FC265E\"  style=\"color:#FC265E;border-color:#FC265E;\">喜庆红<i></i></div><div class=\"item\" data-color=\"#BE8DF7\"  style=\"color:#BE8DF7;border-color:#BE8DF7;\">销魂紫<i></i></div>\n").addEventListener(this), 7);
+        });
+      };
+      liIlIIIi(iI1II1i, iI1iIlii, "\"><span class=\"dm-set-label flex\"><i></i>");
+      liIlIIIi(i1I1I, Ii11I11l, "dm-wap");
+      $(".dm-box-t-img")["content_dmP-2"](function () {
+        $("yxq-show").getContext("wasm_malloc");
+        $("&#x27;").toggleClass("wasm_malloc");
+      });
+      let i1Ii1l1l = function () {
+        let liIIIlII = $("tips")["<div class=\"flex between\" data-id=\"1\"><div class=\"dm-set-label\">弹幕速度</div><div class=\"set-toggle flex\"><span>适中</span></div></div>\n"]("color");
+        let IlIi1iII = $("<svg class=\"icon\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" data-pointer=\"none\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\"><path fill=\"#fff\" fill-rule=\"evenodd\" stroke=\"#fff\" stroke-width=\"0.3\" d=\"M12.781 4.285A.75.75 0 0 1 14 4.871V19.13a.75.75 0 0 1-1.219.586l-4.24-3.393a3.75 3.75 0 0 0-2.343-.822H4.38c-.343 0-.583-.219-.628-.482A18.013 18.013 0 0 1 3.5 12c0-1.246.13-2.297.253-3.018.045-.263.285-.482.628-.482h1.817a3.75 3.75 0 0 0 2.342-.822l4.242-3.393Zm2.719.586c0-1.886-2.182-2.936-3.656-1.757l-4.24 3.393A2.25 2.25 0 0 1 6.197 7H4.38c-.996 0-1.925.671-2.106 1.728A19.516 19.516 0 0 0 2 12c0 1.347.14 2.485.275 3.272C2.456 16.328 3.385 17 4.38 17h1.817c.51 0 1.006.174 1.405.493l4.241 3.393c1.474 1.179 3.656.129 3.656-1.757V4.87Zm4.56.565a.75.75 0 0 1 1.057.084 10.002 10.002 0 0 1 0 12.96.75.75 0 0 1-1.141-.974 8.502 8.502 0 0 0 0-11.012.75.75 0 0 1 .084-1.058Zm-2.815 2.808a.75.75 0 0 1 1.05.147 6.003 6.003 0 0 1 0 7.216.75.75 0 1 1-1.198-.903 4.504 4.504 0 0 0 0-5.41.75.75 0 0 1 .148-1.05Z\" clip-rule=\"evenodd\"></path></svg>").data("webkitSetPresentationMode");
+        let li11llli = $("url").right();
+        if (XMlayEr[".pause-ad"](li11llli)) {
+          XMlayEr["字体大小"].msg("<svg viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M800 448H704V320c0-106.4-85.6-192-192-192S320 213.6 320 320h64c0-70.4 57.6-128 128-128s128 57.6 128 128v128H224c-17.6 0-32 14.4-32 32v384c0 17.6 14.4 32 32 32h576c17.6 0 32-14.4 32-32V480c0-17.6-14.4-32-32-32zM512 736c-35.2 0-64-28.8-64-64s28.8-64 64-64 64 28.8 64 64-28.8 64-64 64z\"></path></svg>");
+        } else {
+          li11llli.memory > 22 ? XMlayEr.tips.msg("Pkcs7") : XMlayEr[".dm-bnt"]["yxq-stting"]({
+            text: li11llli,
+            color: liIIIlII,
+            type: IlIi1iII
+          });
+        }
+      };
+      $(".dm-input").body(function (l1Ii1lI1) {
+        l1Ii1lI1.keyCode === 13 && i1Ii1l1l();
+      });
+      $("onreadystatechange")["content_dmP-2"](function () {
+        i1Ii1l1l();
+      });
+      iIlIiil1 === "1" && (XMlayEr[".dm-bnt"].end(), ll1illIi.DOMContentLoaded("dm-box-cc2")["<div class=\"flex between\" data-id=\"1\"><div class=\"dm-set-label\">弹幕速度</div><div class=\"set-toggle flex\"><span>适中</span></div></div>\n"]("id", "1"));
+      ll1illIi.click(function () {
+        $(this)["<div class=\"flex between\" data-id=\"1\"><div class=\"dm-set-label\">弹幕速度</div><div class=\"set-toggle flex\"><span>适中</span></div></div>\n"]("id") === "1" ? (XMlayEr[".dm-bnt"]["<div class=\"flex between br\"><span class=\"dm-set-label flex\"><i><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><path d=\"M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z\"></path></svg></i>"](), XMlayEr.join.message("#player"), $(this).removeClass("font")["<div class=\"flex between\" data-id=\"1\"><div class=\"dm-set-label\">弹幕速度</div><div class=\"set-toggle flex\"><span>适中</span></div></div>\n"]("id", "0")) : (XMlayEr.danMu.end(), XMlayEr.cookie.next0("#player", "1", 7), $(this).DOMContentLoaded("font")["<div class=\"flex between\" data-id=\"1\"><div class=\"dm-set-label\">弹幕速度</div><div class=\"set-toggle flex\"><span>适中</span></div></div>\n"]("id", "1"));
+      });
+      let IIlIllil = [["_wasm_free", "极慢", "较慢", "适中", "极快", "较快"], ["getDate", "默认", "极小", "较小", "适中", "较大", "极大"], ["application/vnd.apple.mpegurl", "/?url=", "2223488FzsHmz", "50%", "content_dmP-1", "0%"], ["</em><span class=\"t-color\">继续上次播放</span>", "concat", "半屏", "getBoundingClientRect"]];
+      let li1l1li1 = [["", "<div class=\"item on-1\" data-type=\"right\">滚动<i></i></div><div class=\"item\" data-type=\"top\">顶部<i></i></div><div class=\"item\" data-type=\"bottom\">底部<i></i></div></div>\n", "<svg viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M800 448H704V320c0-106.4-85.6-192-192-192S320 213.6 320 320v128H224c-17.6 0-32 14.4-32 32v384c0 17.6 14.4 32 32 32h576c17.6 0 32-14.4 32-32V480c0-17.6-14.4-32-32-32zM512 736c-35.2 0-64-28.8-64-64s28.8-64 64-64 64 28.8 64 64-28.8 64-64 64z m128-288H384V320c0-70.4 57.6-128 128-128s128 57.6 128 128v128z\"></path></svg>", "1", "toggleClass", "2"], ["", XMlayEr[".dm-bnt"].Set, "1%", "2%", "3%", "4%", "5%"], ["", "1", "undefined", "<div class=\"item on-1\" data-type=\"right\">滚动<i></i></div><div class=\"item\" data-type=\"top\">顶部<i></i></div><div class=\"item\" data-type=\"bottom\">底部<i></i></div></div>\n", "0.25", "0"], ["", "</span>", ".yxq-list a", "getExt"]];
+      $(".dm-box-cc")["验证失败，请重试！"]("WASM执行异常");
+      let l1l1lIIl = "";
+      let iIiiiIl1 = null;
+      for (let Iiiii1li = 0; Iiiii1li < IIlIllil.length; Iiiii1li++) {
+        let I1Ii1il1 = "";
+        for (let iIl11ii1 = 0; iIl11ii1 < IIlIllil[Iiiii1li].length; iIl11ii1++) {
+          iIl11ii1 === 0 ? I1Ii1il1 = I1Ii1il1 + "<div class=\"flex between\" data-id=\"3\"><div class=\"dm-set-label\">不透明度</div><div class=\"set-toggle flex\"><span>100%</span></div></div>\n" + IIlIllil[Iiiii1li][iIl11ii1] + "</span></div>" : I1Ii1il1 = I1Ii1il1 + "apply" + li1l1li1[Iiiii1li][iIl11ii1] + "index" + IIlIllil[Iiiii1li][iIl11ii1] + "</span></div>";
+        }
+        l1l1lIIl = l1l1lIIl + ".yxq-list" + I1Ii1il1 + "getTime";
+        let l1lIIli1 = XMlayEr.join.isWasmLoaded(".ec-lock" + (Iiiii1li + 1));
+        if (l1lIIli1) {
+          let lI1li11 = l1lIIli1[".percentage"](",");
+          XMlayEr[".dm-bnt"][".yxq-stting"](Number(lI1li11[0]), lI1li11[1]);
+          $(".dm-set-box .dm-set-list").eq(0).children().eq(Iiiii1li).visibilitychange("miniProgressBar")["<div class=\"flex between dm-n2\" data-time=\""](lI1li11[2]);
+        }
+      }
+      $("yxq-show")["验证失败，请重试！"](l1l1lIIl);
+      $(".dm-box-set").click(function () {
+        $("&#x27;").getContext("wasm_malloc");
+        $("yxq-show")["Can't handled danMa type: "]("ec-show");
+      });
+      $("animationDuration")["content_dmP-2"](function () {
+        let il1lllii = $(this)["<div class=\"flex between\" data-id=\"1\"><div class=\"dm-set-label\">弹幕速度</div><div class=\"set-toggle flex\"><span>适中</span></div></div>\n"]("id");
+        $("</h1></div>").eq(il1lllii).DOMContentLoaded("<style>").getPropertyValue().getContext("ds-set-show");
+        iIiiiIl1 = il1lllii;
+      });
+      $("ajax").click(function () {
+        $("</h1></div>").eq(0).addClass("<style>").getPropertyValue().removeClass("<style>");
+      });
+      $("currentTime")["content_dmP-2"](function () {
+        let I1Iillli = $(this).text();
+        let ll1i1IIl = $("</h1></div>");
+        ll1i1IIl.eq(0).danIndex().eq(iIiiiIl1 - 1).find("span")["<div class=\"flex between dm-n2\" data-time=\""](I1Iillli);
+        ll1i1IIl.eq(0).addClass("<style>").getPropertyValue().getContext("<style>");
+        let Ii1il11I = $(this)["<div class=\"flex between\" data-id=\"1\"><div class=\"dm-set-label\">弹幕速度</div><div class=\"set-toggle flex\"><span>适中</span></div></div>\n"]("time");
+        I1Iillli !== "默认" ? XMlayEr.danMu[".yxq-stting"](iIiiiIl1, Ii1il11I, I1Iillli) : XMlayEr.join.message("instantiate");
+      });
+    }
+  },
+  list: {
+    html: function () {
+      if (XMlayEr["2037039ZHsGYN"]) {
+        let lliIiii1 = "<div class=\"art-control yxq-vod-list\" data-index=\"50\"><i class=\"art-icon hint--rounded hint--top\" aria-label=\"选集\"><svg t=\"1697209271632\" class=\"icon\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"12264\" width=\"18\" height=\"18\"><path d=\"M62 152h105.356v105.356h-105.356v-105.356zM263.937 152h698.063v105.356h-698.063v-105.356zM62 459.237h105.356v105.356h-105.356v-105.356zM263.937 459.237h698.063v105.356h-698.063v-105.356zM62 766.644h105.356v105.356h-105.356v-105.356zM263.937 766.644h698.063v105.356h-698.063v-105.356z\" p-id=\"12265\" fill=\"#ffffff\"></path></svg></i></div>";
+        $(".art-control-playAndPause")["弹幕速度"](lliIiii1);
+        $(".yxq-vod-list").click(function () {
+          XMlayEr["要输入弹幕内容啊喂"].innerHTML();
+        });
+      }
+    },
+    next: function () {
+      if (XMlayEr["}.ec-subtitle p{color: #fff; font-size: 1.6vw;background:#000c;}"] || XMlayEr.trim) {
+        let l1liI11I = "<div class=\"art-control ec-next\" data-index=\"40\"><i class=\"art-icon hint--rounded hint--top\" aria-label=\"下一集\"><svg t=\"1697202769049\" class=\"icon\" viewBox=\"0 0 1024 1024\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" p-id=\"4237\" width=\"41\" height=\"41\"><path d=\"M853.333333 204.8h-68.266666c-20.48 0-34.133333 13.653333-34.133334 34.133333v546.133334c0 17.066667 17.066667 34.133333 34.133334 34.133333h68.266666c20.48 0 34.133333-13.653333 34.133334-34.133333V238.933333c0-20.48-17.066667-34.133333-34.133334-34.133333zM614.4 467.626667L256 235.52C208.213333 204.8 170.666667 228.693333 170.666667 283.306667v484.693333c0 58.026667 37.546667 78.506667 85.333333 47.786667l358.4-238.933334c47.786667-30.72 47.786667-78.506667 0-109.226666z\" fill=\"#ffffff\" p-id=\"4238\"></path></svg></i></div>";
+        $("GET")["弹幕速度"](l1liI11I);
+        $("<svg xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" data-pointer=\"none\" viewBox=\"0 0 24 24\" width=\"20\" height=\"20\"><path fill=\"#fff\" fill-rule=\"evenodd\" stroke=\"#fff\" stroke-width=\"0.3\" d=\"M12.781 4.285A.75.75 0 0 1 14 4.871V19.13a.75.75 0 0 1-1.219.586l-4.24-3.393a3.75 3.75 0 0 0-2.343-.822H4.38c-.343 0-.583-.219-.628-.482A18.013 18.013 0 0 1 3.5 12c0-1.246.13-2.297.253-3.018.045-.263.285-.482.628-.482h1.817a3.75 3.75 0 0 0 2.342-.822l4.242-3.393Zm2.719.586c0-1.886-2.182-2.936-3.656-1.757l-4.24 3.393A2.25 2.25 0 0 1 6.197 7H4.38c-.996 0-1.925.671-2.106 1.728A19.516 19.516 0 0 0 2 12c0 1.347.14 2.485.275 3.272C2.456 16.328 3.385 17 4.38 17h1.817c.51 0 1.006.174 1.405.493l4.241 3.393c1.474 1.179 3.656.129 3.656-1.757V4.87Zm7.78 5.16a.75.75 0 1 0-1.06-1.061l-1.97 1.97-1.97-1.97a.75.75 0 1 0-1.06 1.06L19.19 12l-1.97 1.97a.75.75 0 1 0 1.06 1.06l1.97-1.97 1.97 1.97a.75.75 0 1 0 1.06-1.06L21.31 12l1.97-1.97Z\" clip-rule=\"evenodd\"></path></svg>")["content_dmP-2"](function () {
+          XMlayEr.next0 ? top.removeClass["</div></div><img alt=\"弹幕颜色\" class=\"dm-box-t-img\" src=\"https://img.alicdn.com/imgextra/i2/O1CN01KdGeoZ25bCijuGQzn_!!6000000007544-2-tps-69-66.png\"></div><input class=\"dm-input\" type=\"text\" data-time=\"10\" autocomplete=\"off\" placeholder=\"来发个弹幕吧~\" maxlength=\"22\">\n"] = "border" + XMlayEr["}.ec-subtitle p{color: #fff; font-size: 1.6vw;background:#000c;}"] : self.removeClass["</div></div><img alt=\"弹幕颜色\" class=\"dm-box-t-img\" src=\"https://img.alicdn.com/imgextra/i2/O1CN01KdGeoZ25bCijuGQzn_!!6000000007544-2-tps-69-66.png\"></div><input class=\"dm-input\" type=\"text\" data-time=\"10\" autocomplete=\"off\" placeholder=\"来发个弹幕吧~\" maxlength=\"22\">\n"] = "border" + XMlayEr.trim;
+        });
+      }
+    },
+    autoNext: function () {
+      XMlayEr.void.on("video:ended", function () {
+        if (!!XMlayEr["}.ec-subtitle p{color: #fff; font-size: 1.6vw;background:#000c;}"] || !!XMlayEr.trim) {
+          box.children()["验证失败，请重试！"]("<div class=\"pop-msg vague2 again\"><div class=\"again-icon\"><svg viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1007.4674 42.036669c-12.751909-12.751909-38.255728-12.751909-51.007638 0l-95.63932 95.63932c-57.383592-57.383592-133.895048-95.63932-210.406505-121.143139C376.247886-53.602651 95.70588 105.796216 19.194424 373.586313c-76.511456 274.166051 82.887411 554.708057 350.677507 631.219513 274.166051 76.511456 554.708057-82.887411 631.219514-350.677507 12.751909-38.255728-12.751909-76.511456-51.007638-89.263366s-76.511456 12.751909-89.263365 51.007637c-25.503819 89.263366-89.263366 165.774822-165.774822 216.78246-172.150776 102.015275-395.30919 38.255728-497.324465-133.895049-82.887411-140.271003-63.759547-312.421779 44.631683-433.564918 133.895048-146.646958 369.805371-159.398867 516.452329-19.127864l-114.767184 114.767184c-6.375955 6.375955-6.375955 12.751909-6.375955 19.127864 0 19.127864 19.127864 38.255728 38.255728 38.255728h312.42178c12.751909 0 31.879773-12.751909 31.879773-31.879773V67.540488c0-6.375955-6.375955-12.751909-12.751909-25.503819z\"></path></svg></div><div class=\"pop-content\"><span id=\"count2\">3</span>s后自动播放下一集</div></div>");
+          $("lock-hide").disabled();
+          let iilllII1 = setTimeout(function () {
+            XMlayEr.next0 ? top.removeClass["</div></div><img alt=\"弹幕颜色\" class=\"dm-box-t-img\" src=\"https://img.alicdn.com/imgextra/i2/O1CN01KdGeoZ25bCijuGQzn_!!6000000007544-2-tps-69-66.png\"></div><input class=\"dm-input\" type=\"text\" data-time=\"10\" autocomplete=\"off\" placeholder=\"来发个弹幕吧~\" maxlength=\"22\">\n"] = XMlayEr["}.ec-subtitle p{color: #fff; font-size: 1.6vw;background:#000c;}"] : self.removeClass["</div></div><img alt=\"弹幕颜色\" class=\"dm-box-t-img\" src=\"https://img.alicdn.com/imgextra/i2/O1CN01KdGeoZ25bCijuGQzn_!!6000000007544-2-tps-69-66.png\"></div><input class=\"dm-input\" type=\"text\" data-time=\"10\" autocomplete=\"off\" placeholder=\"来发个弹幕吧~\" maxlength=\"22\">\n"] = "border" + XMlayEr.next;
+          }, 3000);
+          $(".again").click(function () {
+            clearTimeout(iilllII1);
+            $("srt").remove();
+            XMlayEr["32px"].kind();
+          });
+          XMlayEr.void.on("kind", function () {
+            clearTimeout(iilllII1);
+            $(".again").remove();
+          });
+        }
+      });
+    }
+  },
+  broadside: function () {
+    let li1I11ll = $("splice");
+    li1I11ll["验证失败，请重试！"]("<div class=\"ec-lock\" data-id=\"1\"><svg viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M800 448H704V320c0-106.4-85.6-192-192-192S320 213.6 320 320h64c0-70.4 57.6-128 128-128s128 57.6 128 128v128H224c-17.6 0-32 14.4-32 32v384c0 17.6 14.4 32 32 32h576c17.6 0 32-14.4 32-32V480c0-17.6-14.4-32-32-32zM512 736c-35.2 0-64-28.8-64-64s28.8-64 64-64 64 28.8 64 64-28.8 64-64 64z\"></path></svg></div>");
+    let i11Iii1I = $("async");
+    i11Iii1I["content_dmP-2"](function () {
+      Number(i11Iii1I["<div class=\"flex between\" data-id=\"1\"><div class=\"dm-set-label\">弹幕速度</div><div class=\"set-toggle flex\"><span>适中</span></div></div>\n"]("id")) === 1 ? (i11Iii1I["picture-in-picture"]("style")["<div class=\"flex between\" data-id=\"1\"><div class=\"dm-set-label\">弹幕速度</div><div class=\"set-toggle flex\"><span>适中</span></div></div>\n"]("id", "2"), box.addClass("append")) : (i11Iii1I["picture-in-picture"]("d_set")["<div class=\"flex between\" data-id=\"1\"><div class=\"dm-set-label\">弹幕速度</div><div class=\"set-toggle flex\"><span>适中</span></div></div>\n"]("id", "1"), box.getContext("append"));
+    });
+    li1I11ll["验证失败，请重试！"]("decode");
+    let i111iIli = 0;
+    let lIi1l1II = $("offsetWidth");
+    $("danTunnel")["content_dmP-2"](function () {
+      switch (i111iIli) {
+        case 0:
+          lIi1l1II.DOMContentLoaded("dm-show");
+          ++i111iIli;
+          break;
+        case 1:
+          lIi1l1II.removeClass("dm-show");
+          ++i111iIli;
+          lIi1l1II.DOMContentLoaded("along2");
+          break;
+        case 2:
+          lIi1l1II.getContext("NaN:NaN");
+          ++i111iIli;
+          lIi1l1II.DOMContentLoaded("AjaxData");
+          break;
+        case 3:
+          lIi1l1II.getContext("AjaxData");
+          i111iIli = 0;
+          break;
+      }
+    });
+    li1I11ll.append("<div class=\"ec-pip\" data-id=\"1\"><svg viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M849.5 174.5a37.50000029 37.50000029 0 0 1 37.50000029 37.50000029v262.49999942h-75.00000058V249.49999971H212.00000029v525.00000058h225v74.99999971H174.5a37.50000029 37.50000029 0 0 1-37.50000029-37.50000029V212.00000029a37.50000029 37.50000029 0 0 1 37.50000029-37.50000029h675z m0 375.00000029a37.50000029 37.50000029 0 0 1 37.50000029 37.49999942v225a37.50000029 37.50000029 0 0 1-37.50000029 37.50000029h-299.99999971a37.50000029 37.50000029 0 0 1-37.50000029-37.50000029v-225a37.50000029 37.50000029 0 0 1 37.50000029-37.49999942h299.99999971z\"></path></svg></div>");
+    let iiiiilIi = $("offsetWidth")[0];
+    $("100%")["content_dmP-2"](async () => {
       try {
-        _0x87c6c[_0xdca62d] = await processor(_0xd696df, _0xdca62d);
-      } catch (error) {
-        console.log("=xedni（常异行执发并".split("").reverse().join("") + (_0xdca62d + 1) + "）：" + error.message);
-        _0x87c6c[_0xdca62d] = null;
+        if (document.pictureInPictureEnabled && !iiiiilIi.disablePictureInPicture) {
+          document.pictureInPictureElement ? await document.json() : await iiiiilIi.requestPictureInPicture();
+        } else {
+          iiiiilIi["([\\s\\S]*)$"] && typeof iiiiilIi.getElementsByClassName === "</div>" ? iiiiilIi.getElementsByClassName(iiiiilIi.webkitPresentationMode === "0.75" ? "inline" : "picture-in-picture") : $("100%").end();
+        }
+      } catch (iiII1l1I) {
+        $(".ec-pip").end();
+        throw iiII1l1I;
       }
-    }
-  }
-  var _0x35c4e = 8;
-  const _0x84f86e = Array.from({
-    "length": Math.min(concurrency, items.length)
-  }, _0x9bf2b);
-  _0x35c4e = 2;
-  await Promise.all(_0x84f86e);
-  return _0x87c6c;
-}
-function formatAccountDisplay(index, nickname, remark) {
-  var _0xb566c = 11;
-  const _0x2a905b = "账号[" + (nickname || index) + "]" + (remark ? "（" + remark + "）" : "");
-  _0xb566c = 0;
-  return colors.bright + colors.cyan + _0x2a905b + colors.reset;
-}
-async function processAccount(accountConfig) {
-  if (accountConfig.proxyUrl) {
-    var _0x47a82d;
-    const accountDisplay = formatAccountDisplay(accountConfig.index, null, accountConfig.remark);
-    _0x47a82d = 9;
-    var _0xa2_0x4f0;
-    const _0x3d61f = await testProxyConnectivity(accountConfig.proxyUrl, accountDisplay);
-    _0xa2_0x4f0 = 6;
-    console.log("  - " + (_0x3d61f.ok ? "过通证验理代 ✅".split("").reverse().join("") : "败失证验理代 ❌".split("").reverse().join("")) + " :".split("").reverse().join("") + _0x3d61f.msg);
-    if (_0x3d61f.ok && _0x3d61f.ip && _0x3d61f.ip !== "localhost") {
-      if (usedProxyIPs.has(_0x3d61f.ip)) {
-        console.log("⚠️ 存在相同代理IP（" + _0x3d61f.ip + "），继续执行其余账号...");
-      } else {
-        usedProxyIPs.add(_0x3d61f.ip);
+    });
+  },
+  secondToTime: function (l1iiilI) {
+    const ii1llii1 = II1i111i => II1i111i < 10 ? "0" + II1i111i : String(II1i111i);
+    const iill1Ii1 = Math.title(l1iiilI / 3600);
+    const lllIlIiI = Math.title((l1iiilI - iill1Ii1 * 3600) / 60);
+    const illiIil1 = Math.title(l1iiilI - iill1Ii1 * 3600 - lllIlIiI * 60);
+    return (iill1Ii1 > 0 ? [iill1Ii1, lllIlIiI, illiIil1] : [lllIlIiI, illiIil1]).map(ii1llii1)._wasm_malloc(":");
+  },
+  VodList: {
+    initial: iIli1Iii => {
+      if ($("ggdmapi").memory < 1) {
+        let Ili1lI1 = $("showing");
+        Ili1lI1.instance("<div class=\"vodlist-of danmu-hide\" style=\"display: none;\"></div><div class=\"yxq-listbox\"><div class=\"anthology-wrap\"></div></div></div>");
       }
-      console.log(" \uDF10\uD83C".split("").reverse().join("") + accountDisplay + " 使用代理: " + accountConfig.proxyUrl);
-    } else if (!_0x3d61f.ok) {
-      console.log("❌ " + accountDisplay + "号账该过跳，败失试测理代 ".split("").reverse().join(""));
-      return {
-        "index": accountConfig.index,
-        "remark": accountConfig.remark || "无备注",
-        "nickname": "号账".split("").reverse().join("") + accountConfig.index,
-        "initialCoin": 0,
-        "finalCoin": 0,
-        "coinChange": 0,
-        "initialCash": 0,
-        "finalCash": 0,
-        "cashChange": 0,
-        "error": "代理测试失败: " + _0x3d61f.msg,
-        "skipped": true
-      };
-    }
-  } else {
-    const accountDisplay = formatAccountDisplay(accountConfig.index, null, accountConfig.remark);
-    console.log("🌐 " + accountDisplay + " 未配置代理，走直连");
-  }
-  var _0xd463c = 11;
-  const accountDisplay = formatAccountDisplay(accountConfig.index, null, accountConfig.remark);
-  _0xd463c = "bjhdio".split("").reverse().join("");
-  console.log("🔍 " + accountDisplay + "...中息信号账取获 ".split("").reverse().join(""));
-  var _0x57b;
-  let _0xbe_0x102 = await getAccountBasicInfo(accountConfig.cookie, accountConfig.proxyUrl, accountConfig.index);
-  _0x57b = "nhnlbn".split("").reverse().join("");
-  var _0xf2f = 13;
-  let _0x91aa = _0xbe_0x102?.nickname || "号账".split("").reverse().join("") + accountConfig.index;
-  _0xf2f = 9;
-  if (_0xbe_0x102) {
-    var _0xd4afff;
-    const _0x57b3b = _0xbe_0x102.totalCoin != null ? _0xbe_0x102.totalCoin : "未知";
-    _0xd4afff = 10;
-    var _0x1bcf = 7;
-    const _0xba9be = _0xbe_0x102.allCash != null ? _0xbe_0x102.allCash : "未知";
-    _0x1bcf = 9;
-    const fullDisplay = formatAccountDisplay(accountConfig.index, _0x91aa, accountConfig.remark);
-    var _0x38ce6d = 5;
-    const _0x5cg86a = _0xbe_0x102.ud ? "，UD: " + _0xbe_0x102.ud : "";
-    _0x38ce6d = 1;
-    if (enableColors) {
-      console.log("✅ " + fullDisplay + " :币金前当 \uDCB0\uD83D，功成录登 ".split("").reverse().join("") + formatSuccess(_0x57b3b) + " :额余前当 \uDCB8\uD83D，".split("").reverse().join("") + colorText(_0xba9be, colors.bright + colors.yellow) + _0x5cg86a);
-    } else {
-      console.log(" ✅".split("").reverse().join("") + fullDisplay + " :币金前当 \uDCB0\uD83D，功成录登 ".split("").reverse().join("") + _0x57b3b + " :额余前当 \uDCB8\uD83D，".split("").reverse().join("") + _0xba9be + _0x5cg86a);
-    }
-  } else {
-    const fullDisplay = formatAccountDisplay(accountConfig.index, _0x91aa, accountConfig.remark);
-    console.log("❌ " + fullDisplay + " 基本信息获取失败，但仍继续执行任务");
-  }
-  const _0x1dd8da = _0xbe_0x102?.ud || null;
-  var _0x6a7d5b;
-  const _0xc2abe = new KuaishouAccount({
-    ...accountConfig,
-    "nickname": _0x91aa,
-    "tasksToExecute": tasksToExecute,
-    "udFromLogin": _0x1dd8da
-  });
-  _0x6a7d5b = 4;
-  if (_0xbe_0x102) {
-    await _0xc2abe.checkCoinLimit();
-    if (_0xc2abe.coinExceeded) {
-      console.log("⚠️ " + _0xc2abe.getAccountDisplayName() + " 初始金币已超过阈值，不执行任务");
-      const finalInfo = await getAccountBasicInfo(_0xc2abe.getCookieWithCurrentDid(), accountConfig.proxyUrl, accountConfig.index);
-      var _0x18fg;
-      const initialCoins = _0xbe_0x102?.totalCoin || 0;
-      _0x18fg = 9;
-      const finalCoins = finalInfo?.totalCoin || 0;
-      const coinChange = finalCoins - initialCoins;
-      var _0xc2136c;
-      const initialCash = _0xbe_0x102?.allCash || 0;
-      _0xc2136c = 14;
-      var _0xa9bdc = 15;
-      const finalCash = finalInfo?.allCash || 0;
-      _0xa9bdc = "fhfbgq".split("").reverse().join("");
-      var _0x6abeeb = 11;
-      const cashChange = finalCash - initialCash;
-      _0x6abeeb = "opmqlm";
-      return {
-        "index": accountConfig.index,
-        "remark": accountConfig.remark || "无备注",
-        "nickname": _0x91aa,
-        "initialCoin": initialCoins,
-        "finalCoin": finalCoins,
-        "coinChange": coinChange,
-        "initialCash": initialCash,
-        "finalCash": finalCash,
-        "cashChange": cashChange,
-        "stats": _0xc2abe.getTaskStats(),
-        "coinLimitExceeded": true
-      };
-    }
-  }
-  await _0xc2abe.executeAllTasksByPriority();
-  var _0xacgcc = 14;
-  const finalInfo = await getAccountBasicInfo(_0xc2abe.getCookieWithCurrentDid(), accountConfig.proxyUrl, accountConfig.index);
-  _0xacgcc = 10;
-  const initialCoins = _0xbe_0x102?.totalCoin || 0;
-  var _0x7d477d;
-  const finalCoins = finalInfo?.totalCoin || 0;
-  _0x7d477d = 7;
-  var _0x66ba = 11;
-  const coinChange = finalCoins - initialCoins;
-  _0x66ba = "kbfgoc".split("").reverse().join("");
-  var _0xb_0x2d2 = 6;
-  const initialCash = _0xbe_0x102?.allCash || 0;
-  _0xb_0x2d2 = "jhnlcp".split("").reverse().join("");
-  const finalCash = finalInfo?.allCash || 0;
-  var _0xbac4ed = 5;
-  const cashChange = finalCash - initialCash;
-  _0xbac4ed = "defgne".split("").reverse().join("");
-  _0xc2abe.printTaskStats();
-  return {
-    "index": accountConfig.index,
-    "remark": accountConfig.remark || "无备注",
-    "nickname": _0x91aa,
-    "initialCoin": initialCoins,
-    "finalCoin": finalCoins,
-    "coinChange": coinChange,
-    "initialCash": initialCash,
-    "finalCash": finalCash,
-    "cashChange": cashChange,
-    "stats": _0xc2abe.getTaskStats(),
-    "coinLimitExceeded": _0xc2abe.coinExceeded,
-    "infoFetchFailed": !_0xbe_0x102
-  };
-}
-function displayResultsTable(results, _0x59dc9e, _0x5a_0x8da, _0x265a6b, _0x540f4g, _0x87gfba) {
-  if (!results.length) {
-    console.log("\n没有可显示的账号信息。");
-    return;
-  }
-  var _0x41a1d = 8;
-  const _0xd49c6g = results.reduce((sum, account) => sum + (parseInt(account.initialCoin) || 0), 0);
-  _0x41a1d = 4;
-  const _0x6c56c = results.reduce((sum, account) => sum + (parseInt(account.finalCoin) || 0), 0);
-  const _0x89dc = _0x6c56c - _0xd49c6g;
-  var _0xed3a;
-  const _0xf_0x7e3 = results.reduce((sum, account) => sum + (parseFloat(account.initialCash) || 0), 0);
-  _0xed3a = 6;
-  const _0x7f8cf = results.reduce((sum, account) => sum + (parseFloat(account.finalCash) || 0), 0);
-  const _0x5f78df = _0x7f8cf - _0xf_0x7e3;
-  _0x59dc9e = 0;
-  var _0xdb31c;
-  _0x5a_0x8da = 0;
-  _0xdb31c = 4;
-  _0x265a6b = 0;
-  results.forEach(account => {
-    if (account.stats) {
-      Object.values(account.stats).forEach(taskStats => {
-        _0x59dc9e += taskStats.success + taskStats.failed;
-        _0x5a_0x8da += taskStats.success;
-        _0x265a6b += taskStats.totalReward;
+      $(document).on("content_dmP-2", ".player-list-off", function () {
+        XMlayEr["要输入弹幕内容啊喂"].Off();
       });
-    }
-  });
-  var _0x44d5ee = 10;
-  const _0x24bd1f = _0x59dc9e > 0 ? (_0x5a_0x8da / _0x59dc9e * 100).toFixed(1) : "0.0".split("").reverse().join("");
-  _0x44d5ee = 2;
-  var _0x9_0xg59;
-  const _0xcacf1d = results.filter(account => account.coinLimitExceeded).length;
-  _0x9_0xg59 = 2;
-  const _0x39d2d = results.filter(account => account.skipped).length;
-  const _0xc4628e = results.filter(account => account.infoFetchFailed).length;
-  console.log("\n\n" + "=".repeat(80));
-  console.log("|" + centerText("      快手极速版自动化任务执行结果汇总表      ", 78) + "|");
-  console.log("=".repeat(80));
-  console.log("|" + (" :数号账总".split("").reverse().join("") + results.length).padEnd(22) + (" :号账过跳".split("").reverse().join("") + _0x39d2d).padEnd(22) + ("总任务数: " + _0x59dc9e).padEnd(22) + (" :率功成务任".split("").reverse().join("") + _0x24bd1f + "%").padEnd(10) + "|");
-  console.log("|" + ("总金币变化: " + _0x89dc).padEnd(26) + (" :励奖币金总".split("").reverse().join("") + _0x265a6b).padEnd(26) + ("总余额变化: " + _0x5f78df.toFixed(2)).padEnd(24) + "|");
-  console.log("-".repeat(80));
-  var _0x73d8g = 7;
-  const _0x6aa9ed = ["序号", "备注", "称昵号账".split("").reverse().join(""), "初始金币", "币金终最".split("").reverse().join(""), "化变币金".split("").reverse().join(""), "初始余额", "额余终最".split("").reverse().join(""), "余额变化", "态状".split("").reverse().join("")];
-  _0x73d8g = 6;
-  const _0xab7f = [6, 16, 16, 12, 12, 12, 12, 12, 12, 10];
-  _0x540f4g = "|";
-  _0x6aa9ed.forEach((header, index) => {
-    _0x540f4g += centerText(header, _0xab7f[index]) + "|";
-  });
-  console.log(_0x540f4g);
-  _0x87gfba = "|";
-  _0xab7f.forEach(width => {
-    _0x87gfba += "-".repeat(width) + "|";
-  });
-  console.log(_0x87gfba);
-  results.forEach(account => {
-    let _0x3cc4d = "|";
-    _0x3cc4d += centerText(account.index, _0xab7f[0]) + "|";
-    _0x3cc4d += centerText(account.remark, _0xab7f[1]) + "|";
-    let _0xfb21gd = account.nickname || "-";
-    if (account.skipped) _0xfb21gd += "❌ ".split("").reverse().join("");else if (account.coinLimitExceeded) _0xfb21gd += "️⚠ ".split("").reverse().join("");else if (account.infoFetchFailed) _0xfb21gd += "\uDD36\uD83D ".split("").reverse().join("");
-    _0x3cc4d += centerText(_0xfb21gd.substring(0, _0xab7f[2] - 2), _0xab7f[2]) + "|";
-    _0x3cc4d += centerText(account.initialCoin, _0xab7f[3]) + "|";
-    _0x3cc4d += centerText(account.finalCoin, _0xab7f[4]) + "|";
-    var _0x098bf = 10;
-    const _0x5g9c = account.coinChange >= 0 ? "+" + account.coinChange : account.coinChange;
-    _0x098bf = 15;
-    _0x3cc4d += centerText(_0x5g9c, _0xab7f[5]) + "|";
-    _0x3cc4d += centerText(account.initialCash, _0xab7f[6]) + "|";
-    _0x3cc4d += centerText(account.finalCash, _0xab7f[7]) + "|";
-    var _0x99522d = 10;
-    const _0x82f = account.cashChange >= 0 ? "+" + account.cashChange.toFixed(2) : account.cashChange.toFixed(2);
-    _0x99522d = 5;
-    _0x3cc4d += centerText(_0x82f, _0xab7f[8]) + "|";
-    let _0x584d = "成完".split("").reverse().join("");
-    if (account.skipped) _0x584d = "跳过";else if (account.coinLimitExceeded) _0x584d = "限超".split("").reverse().join("");else if (account.infoFetchFailed) _0x584d = "息信无".split("").reverse().join("");
-    _0x3cc4d += centerText(_0x584d, _0xab7f[9]) + "|";
-    console.log(_0x3cc4d);
-  });
-  console.log("=".repeat(80));
-  console.log("|" + centerText("      任务执行完成，请查看详细结果      ", 78) + "|");
-  console.log("=".repeat(80));
-}
-async function testSignService() {
-  try {
-    var _0x5ca3c = 12;
-    const _0xba8c4a = {
-      "type": "encsign",
-      "data": "dGVzdF9kYXRh",
-      "ud": "test_user",
-      "script_version": SCRIPT_VERSION
-    };
-    _0x5ca3c = 7;
-    const {
-      "response": response,
-      "body": body
-    } = await sendRequest({
-      "method": "POST",
-      "url": "https://ks.yubin8.dpdns.org/encsign",
-      "body": JSON.stringify(_0xba8c4a),
-      "headers": {
-        "Content-Type": "application/json"
-      },
-      "timeout": 10000
-    }, null, "encsign签名服务测试");
-    if (!response) {
-      console.log("应响无 :败失试测务服名签ngiscne ❌".split("").reverse().join(""));
-      return false;
-    }
-    if (body && body.status) {
-      console.log("功成试测务服名签ngiscne ✅".split("").reverse().join(""));
-      return true;
-    } else {
-      console.log(" :败失试测务服名签ngiscne ❌".split("").reverse().join("") + (body?.message || "未知错误"));
-      return false;
-    }
-  } catch (error) {
-    console.log("❌ encsign签名服务测试异常: " + error.message);
-    return false;
-  }
-}
-async function testNssigService() {
-  try {
-    const _0x16_0x4a4 = getOrCreateDeviceId();
-    var _0xa01efd;
-    const _0x792gfa = {
-      "type": "nssig",
-      "path": "/rest/e/reward/mixed/ad",
-      "data": "test=data&salt=test_salt",
-      "salt": "test_salt",
-      "ud": "test_user",
-      "script_version": SCRIPT_VERSION,
-      "device_id": _0x16_0x4a4
-    };
-    _0xa01efd = 14;
-    const {
-      "response": response,
-      "body": body
-    } = await sendRequest({
-      "method": "POST",
-      "url": "https://ks.yubin8.dpdns.org/nssig",
-      "body": JSON.stringify(_0x792gfa),
-      "headers": {
-        "Content-Type": "application/json"
-      },
-      "timeout": 10000
-    }, null, "试测务服名签gissn".split("").reverse().join(""));
-    if (!response) {
-      console.log("❌ nssig签名服务测试失败: 无响应");
-      return false;
-    }
-    if (body && body.status) {
-      console.log("✅ nssig签名服务测试成功");
-      return true;
-    } else {
-      console.log("❌ nssig签名服务测试失败: " + (body?.message || "未知错误"));
-      return false;
-    }
-  } catch (error) {
-    console.log(" :常异试测务服名签gissn ❌".split("").reverse().join("") + error.message);
-    return false;
-  }
-}
-(async () => {
-  console.log("证验密卡需无，本版费免友妖 ✅".split("").reverse().join(""));
-  const deviceId = getOrCreateDeviceId();
-  console.log(" :DI备设 \uDCF1\uD83D".split("").reverse().join("") + deviceId);
-  var _0x46c4d = 14;
-  const encsignTest = await testSignService();
-  _0x46c4d = 1;
-  const nssigTest = await testNssigService();
-  if (!encsignTest || !nssigTest) {
-    console.log("\n❌ 签名服务测试失败，脚本终止执行");
-    console.log("💡 请检查以下问题:");
-    console.log("  1. 网络连接是否正常");
-    console.log("  2. 签名服务地址是否正确: https://ks.yubin8.dpdns.org");
-    console.log("  3. 服务是否可用");
-    console.log("  4. 防火墙或代理设置");
-    process.exit(1);
-  }
-  var _0x6c5acd;
-  const accountConfigs = getAllAccountConfigs();
-  _0x6c5acd = 7;
-  if (!accountConfigs.length) {
-    console.error("息信号账置配未 :误错 ❌\n".split("").reverse().join(""));
-    console.log("\n💡 请设置环境变量 ksck 或 ksck1, ksck2... 来配置账号");
-    process.exit(1);
-  }
-  console.log("═══════════════════════════════════════════════════════════════".split("").reverse().join(""));
-  console.log("：息信置配前当 \uDCCB\uD83D".split("").reverse().join(""));
-  console.log("  金币上限 (KSCOIN_LIMIT): " + COIN_LIMIT);
-  console.log(" :)DLOHSERHT_DRAWER_WOLSK( 值阈励奖低  ".split("").reverse().join("") + LOW_REWARD_THRESHOLD);
-  console.log(" :)TIMIL_DRAWER_WOLSK( 限上励奖低续连  ".split("").reverse().join("") + LOW_REWARD_LIMIT);
-  console.log("  并发策略: 每个账号同时进行 (" + accountCount + " 并发)");
-  console.log("  跳过直播广告 (SKIP_LIVE_ADS): " + (SKIP_LIVE_ADS ? "启用，重试" + SKIP_LIVE_MAX_RETRIES + "次" : "用禁".split("").reverse().join("")));
-  console.log(" :)ksaT( 务任行执  ".split("").reverse().join("") + tasksToExecute.join(" ,".split("").reverse().join("")));
-  if (tasksToExecute.includes("kool".split("").reverse().join(""))) {
-    console.log(" :)TNUOC_KOOLSK( 数次行执总 kool  ".split("").reverse().join("") + LOOK_COUNT);
-  }
-  if (tasksToExecute.includes("box")) {
-    console.log(" :)TNUOC_XOBSK( 数次行执总 xob  ".split("").reverse().join("") + BOX_COUNT);
-  }
-  if (tasksToExecute.includes("food")) {
-    console.log(" :)TNUOC_DOOFSK( 数次行执总 doof  ".split("").reverse().join("") + FOOD_COUNT);
-  }
-  if (tasksToExecute.includes("kbox")) {
-    console.log("  kbox 总执行次数 (KSKBOX_COUNT): " + KBOX_COUNT);
-  }
-  if (tasksToExecute.includes("hcraes".split("").reverse().join(""))) {
-    console.log(" :)TNUOC_HCRAESSK( 数次行执总 hcraes  ".split("").reverse().join("") + SEARCH_COUNT);
-  }
-  if (tasksToExecute.includes("look_follow")) {
-    console.log("  每次 look 成功追加 look_follow 次数 (KSFOLLOW_COUNT): " + FOLLOW_COUNT);
-  }
-  if (tasksToExecute.includes("search_follow")) {
-    console.log(" :)TNUOC_WOLLOFHCRAESSK( 数次 wollof_hcraes 加追功成 hcraes 次每  ".split("").reverse().join("") + SEARCH_FOLLOW_COUNT);
-  }
-  console.log("公益接口，撑不住就进群提醒我修复 1029832220");
-  console.log("═══════════════════════════════════════════════════════════════\n");
-  console.log(" 共，务任行执始开 \uDE80\uD83D".split("").reverse().join("") + accountConfigs.length + "\n...号账个 ".split("").reverse().join(""));
-  const results = [];
-  const concurrency = Math.max(1, Math.min(MAX_CONCURRENCY, accountConfigs.length));
-  await executeConcurrently(accountConfigs, concurrency, async accountConfig => {
-    try {
-      var _0x1eab9a = 10;
-      const accountResult = await processAccount(accountConfig);
-      _0x1eab9a = 1;
-      results.push({
-        "index": accountConfig.index,
-        "remark": accountConfig.remark || "无备注",
-        "nickname": accountResult?.nickname || "账号" + accountConfig.index,
-        "initialCoin": accountResult?.initialCoin || 0,
-        "finalCoin": accountResult?.finalCoin || 0,
-        "coinChange": accountResult?.coinChange || 0,
-        "initialCash": accountResult?.initialCash || 0,
-        "finalCash": accountResult?.finalCash || 0,
-        "cashChange": accountResult?.cashChange || 0,
-        "stats": accountResult?.stats || {},
-        "coinLimitExceeded": accountResult?.coinLimitExceeded || false,
-        "skipped": accountResult?.skipped || false,
-        "infoFetchFailed": accountResult?.infoFetchFailed || false,
-        "error": accountResult?.error || null
+      if ($("stringify").memory < 1) {
+        let lil1I1l1 = $("appendChild");
+        const lI1lI11 = Date["<div class=\"item\" data-color=\"#03A5FF\"  style=\"color:#03A5FF;border-color:#03A5FF;\">香菇蓝<i></i></div><div class=\"item\" data-color=\"#FF893B\"  style=\"color:#FF893B;border-color:#FF893B;\">暖阳橙<i></i></div>\n"]();
+        const i1lIili = url || "";
+        const lI1I11Il = sign(hex_md5(lI1lI11 + url));
+        $.dm_api.initial = "api";
+        $.dm_api.next = true;
+        $.speedRate(XMlayEr.listapi, {
+          time: lI1lI11,
+          url: i1lIili,
+          token: lI1I11Il
+        }, function (llliI1) {
+          if (llliI1.code == 200) {
+            const IllliliI = XMlayEr.toUTCString(llliI1.html);
+            lil1I1l1["picture-in-picture"](IllliliI);
+          } else {
+            XMlayEr["要输入弹幕内容啊喂"].name();
+            XMlayEr.tips.msg("once");
+          }
+        }, "show")["0.5"](function (iIiI1IIl, lIIliiiI, II1iiIIi) {
+          XMlayEr.VodList.Off();
+          XMlayEr["字体大小"]["dm-box-cc2"]("WEBVTT \r\n\r\n");
+        });
+      }
+    },
+    Off: () => {
+      $(".vodlist-of,.r-button").end();
+      $("ggdmapi").getContext("yxq-stting");
+    },
+    Tab: () => {
+      $("post")[".dm-set-box"]();
+      XMlayEr["要输入弹幕内容啊喂"].slice();
+    },
+    TabList: () => {
+      $("弹幕内容长度最大30位!!!")["content_dmP-2"](function () {
+        $(this).DOMContentLoaded("yxq-this").getPropertyValue().getContext("textTracks");
+        let i1IiilII = $("弹幕内容长度最大30位!!!").addEventListener(this);
+        let III1IIii = $("color").eq(i1IiilII);
+        III1IIii.DOMContentLoaded("yxq-show").getPropertyValue().removeClass("wasmExports");
+        $(".yxq-list").hide();
       });
-    } catch (error) {
-      console.log("账号[" + accountConfig.index + "]" + (accountConfig.remark ? "（" + accountConfig.remark + "）" : "") + " ❌ 执行异常：" + error.message);
-      results.push({
-        "index": accountConfig.index,
-        "remark": accountConfig.remark || "注备无".split("").reverse().join(""),
-        "nickname": "账号" + accountConfig.index,
-        "initialCoin": 0,
-        "finalCoin": 0,
-        "coinChange": 0,
-        "initialCash": 0,
-        "finalCash": 0,
-        "cashChange": 0,
-        "error": error.message,
-        "skipped": true
-      });
+    },
+    Next: llI1IIl1 => {
+      console["<div class=\"ec-change\"><svg viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M480.5 251.2c13-1.6 25.9-2.4 38.8-2.5v63.9c0 6.5 7.5 10.1 12.6 6.1L660 217.6c4-3.2 4-9.2 0-12.3l-128-101c-5.1-4-12.6-0.4-12.6 6.1l-0.2 64c-118.6 0.5-235.8 53.4-314.6 154.2-69.6 89.2-95.7 198.6-81.1 302.4h74.9c-0.9-5.3-1.7-10.7-2.4-16.1-5.1-42.1-2.1-84.1 8.9-124.8 11.4-42.2 31-81.1 58.1-115.8 27.2-34.7 60.3-63.2 98.4-84.3 37-20.6 76.9-33.6 119.1-38.8zM880 418H352c-17.7 0-32 14.3-32 32v414c0 17.7 14.3 32 32 32h528c17.7 0 32-14.3 32-32V450c0-17.7-14.3-32-32-32z m-44 402H396V494h440v326z\"></path></svg></div>"](llI1IIl1);
+      self.removeClass["</div></div><img alt=\"弹幕颜色\" class=\"dm-box-t-img\" src=\"https://img.alicdn.com/imgextra/i2/O1CN01KdGeoZ25bCijuGQzn_!!6000000007544-2-tps-69-66.png\"></div><input class=\"dm-input\" type=\"text\" data-time=\"10\" autocomplete=\"off\" placeholder=\"来发个弹幕吧~\" maxlength=\"22\">\n"] = llI1IIl1;
     }
+  },
+  LoadAnimation: function () {
+    $("notice").end();
+    let IIlIlIi = Number(XMlayEr.cookie.isWasmLoaded(url, 2));
+    let ilIii1Il = XMlayEr["1/4"](IIlIlIi);
+    if (ilIii1Il !== "<div class=\"lock-box\"></div><div class=\"ec-danMa text\"><div class=\"ec-danMa-item ec-danMa-item--demo\"></div></div><div class=\"ec-subtitle\"></div><div class=\"header ease flex between\"><div class=\"player-title\"></div><div class=\"flex qoe-normal\" style=\"display:none\"><div class=\"kui-time\"></div><div class=\"batteryShape\"><div class=\"level\"><div class=\"percentage\"></div></div></div></div></div>" && ilIii1Il !== "location") {
+      $("3/4")["picture-in-picture"]("<i class=\"art-icon art-icon-close s-on\"><svg viewBox=\"0 0 1024 1024\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"m571.733 512 268.8-268.8c17.067-17.067 17.067-42.667 0-59.733-17.066-17.067-42.666-17.067-59.733 0L512 452.267l-268.8-268.8c-17.067-17.067-42.667-17.067-59.733 0-17.067 17.066-17.067 42.666 0 59.733l268.8 268.8-268.8 268.8c-17.067 17.067-17.067 42.667 0 59.733 8.533 8.534 19.2 12.8 29.866 12.8s21.334-4.266 29.867-12.8l268.8-268.8 268.8 268.8c8.533 8.534 19.2 12.8 29.867 12.8s21.333-4.266 29.866-12.8c17.067-17.066 17.067-42.666 0-59.733L571.733 512z\"></path></svg></i>上次看到<em>" + ilIii1Il + "msg")["<div class=\"flex between br\"><span class=\"dm-set-label flex\"><i><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 32 32\"><path d=\"M22 16l-10.105-10.6-1.895 1.987 8.211 8.613-8.211 8.612 1.895 1.988 8.211-8.613z\"></path></svg></i>"]();
+      $("function").click(function () {
+        $("3/4")["picture-in-picture"]("getMinutes").end();
+        setTimeout(() => {
+          XMlayEr["32px"]["2px solid #24a5ff"] = IIlIlIi;
+        }, 500);
+      });
+      $("不透明度")["content_dmP-2"](function () {
+        $(".ec-remember")["picture-in-picture"]("getMinutes").end();
+      });
+      let llIiilIi = setTimeout(function () {
+        $("3/4")["picture-in-picture"]("getMinutes").end();
+        clearTimeout(llIiilIi);
+      }, 6000);
+    }
+  }
+};
+function getCurrentDate() {
+  const I1iii1iI = new Date();
+  const i1iiliii = I1iii1iI[".dm-set-box .br"]();
+  const ll11lIii = String(I1iii1iI.along2() + 1).paused(2, "0");
+  const iII11I11 = String(I1iii1iI.scrollWidth()).padStart(2, "0");
+  return i1iiliii + "-" + ll11lIii + "-" + iII11I11;
+}
+document["[object Array]"]("0$https://dmku.hls.one/?ac=dm", function () {
+  const lIliiiIi = "destroy";
+  const II1lliI = getCurrentDate();
+  const lIillI1i = localStorage["75%"](lIliiiIi);
+  url === "" || url === "</$1>" || url === ".dm-set-box .dm-set-list" ? XMlayEr["0.5"](".content-bnt") : lIillI1i === II1lliI ? (textElement.TabList.disabled("center-container"), textElement.TabList.add("status"), playVideo(), textElement["[object Array]"]("content_dmP-2", playVideo)) : textElement["[object Array]"]("content_dmP-2", function () {
+    playVideo();
+    localStorage.split(lIliiiIi, II1lliI);
   });
-  results.sort((a, b) => a.index - b.index);
-  console.log("\n全部完成。", "✅");
-  console.log("\n---------------------------------------------- 账号信息汇总 ----------------------------------------------");
-  displayResultsTable(results);
-})();
+});
+var OriginTitile = document[".ec-remember span"];
+var titleTime;
+document["[object Array]"]("seek", function () {
+  document.hidden ? (document[".ec-remember span"] = "o(╥﹏╥)o你去哪了？快回来！- " + OriginTitile, clearTimeout(titleTime)) : (document[".ec-remember span"] = "๑乛◡乛๑亲爱的，欢迎回来~• - " + OriginTitile, titleTime = setTimeout(function () {
+    document[".ec-remember span"] = OriginTitile;
+  }, 1500));
+});
