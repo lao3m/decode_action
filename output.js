@@ -1,4 +1,4 @@
-//Fri Feb 06 2026 13:07:04 GMT+0000 (Coordinated Universal Time)
+//Fri Feb 06 2026 13:09:00 GMT+0000 (Coordinated Universal Time)
 //Base:<url id="cv1cref6o68qmpt26ol0" type="url" status="parsed" title="GitHub - echo094/decode-js: JS混淆代码的AST分析工具 AST analysis tool for obfuscated JS code" wc="2165">https://github.com/echo094/decode-js</url>
 //Modify:<url id="cv1cref6o68qmpt26olg" type="url" status="parsed" title="GitHub - smallfawn/decode_action: 世界上本来不存在加密，加密的人多了，也便成就了解密" wc="741">https://github.com/smallfawn/decode_action</url>
 !function (_0x27990b) {
@@ -1125,7 +1125,7 @@
   })('versions', [])['push']({
     'version': '3.19.1',
     'mode': _0x1be9e2 ? 'pure' : 'global',
-    'copyright': '漏\x202021\x20Denis\x20Pushkarev\x20(zloirock.ru)'
+    'copyright': '©\x202021\x20Denis\x20Pushkarev\x20(zloirock.ru)'
   });
 }, function (_0x29f404, _0x48684c, _0x25802f) {
   'use strict';
@@ -2272,7 +2272,7 @@
       _0x5cd949 = /^(\d\d)(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])([01]\d|2[0-3])(?:([0-5]\d)(?:([0-5]\d)(?:[.,](\d{1,3}))?)?)?(Z|[-+](?:[0]\d|1[0-2])([0-5]\d)?)?$/,
       _0x2522d4 = /^(\d\d\d\d)(0[1-9]|1[0-2])(0[1-9]|[12]\d|3[01])([01]\d|2[0-3])(?:([0-5]\d)(?:([0-5]\d)(?:[.,](\d{1,3}))?)?)?(Z|[-+](?:[0]\d|1[0-2])([0-5]\d)?)?$/;
     function _0xd46038(_0x36e2c2, _0x49cad1) {
-      _0x36e2c2['length'] > _0x49cad1 && (_0x36e2c2 = _0x36e2c2['substring'](0x0, _0x49cad1) + '鈥�');
+      _0x36e2c2['length'] > _0x49cad1 && (_0x36e2c2 = _0x36e2c2['substring'](0x0, _0x49cad1) + '…');
       return _0x36e2c2;
     }
     var _0x33db60,
@@ -2382,7 +2382,7 @@
             _0xe50068 = _0x340cbd + _0x4d09bb;
           }
           for (var _0x757b6c = _0x340cbd; _0x757b6c < _0xe50068; ++_0x757b6c) _0x8e84ff += this['hexByte'](this['get'](_0x757b6c));
-          _0x447495 > _0x4d09bb && (_0x8e84ff += '鈥�');
+          _0x447495 > _0x4d09bb && (_0x8e84ff += '…');
           return _0x8e84ff;
         };
         _0x40a347['prototype']['parseOID'] = function (_0x42e641, _0x3666c3, _0x1185e6) {
